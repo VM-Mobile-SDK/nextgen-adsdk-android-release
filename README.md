@@ -21,7 +21,7 @@ dependencyResolutionManagement {
             url = uri("https://maven.pkg.github.com/VM-Mobile-SDK/nextgen-adsdk-android-release")
 
             credentials {
-        			username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+        		username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
             	password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
             }
         }
