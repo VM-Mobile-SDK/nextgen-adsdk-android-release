@@ -79,15 +79,13 @@ class App : Application() {
 }
 ```
 
-## Register a Renderer
+## Register the Renderer
 
-Here is an example how to register the NativeImage Renderer for Compose:
+Here is an example how to setup the default Renderers for Compose:
 
 
 ```kotlin
-        AdComposeRenderRegistry.registerRendererWithName("nativeimg") {
-            ImageAdRenderer(it)
-        }
+AdComposeRenderRegistry.registerDefaultAdRenderers()
 ```
 
 ## Requesting Ads & using AdState
