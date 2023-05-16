@@ -7,7 +7,8 @@ This repo contains the github packages for using Aditions nextgen AdSDK in Andro
 
 
 ## Add the repository dependency
-Add the repository to your settings.gradle file you have and set the correct credentials:
+Add the repository to your settings.gradle file you have and set the correct credentials:\
+(via gradle.properties or environment variables, you set in your OS)
 ```Groovy
 
 dependencyResolutionManagement {
@@ -27,8 +28,21 @@ dependencyResolutionManagement {
         }
     }
 }
-
 ```
+Alternative add the credentials via .env file:
+```Groovy
+
+def props = new Properties()
+file(".env").withInputStream { props.load(it) }
+
+...
+
+            credentials {
+                username = props.getProperty("USERNAME")
+                password = props.getProperty("TOKEN")
+            }
+```
+
 For Maven you can look here:\
 https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#installing-a-package
 
