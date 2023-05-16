@@ -8,7 +8,7 @@ This repo contains the github packages for using Aditions nextgen AdSDK in Andro
 
 ## Add the repository dependency
 Add the repository to your settings.gradle file you have and set the correct credentials:\
-(via gradle.properties or environment variables, you set in your OS)
+(via gradle.properties or environment variables)
 ```Groovy
 
 dependencyResolutionManagement {
