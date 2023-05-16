@@ -53,7 +53,6 @@ https://docs.github.com/en/packages/working-with-a-github-packages-registry/work
 
 ## Initialize and configure the AdService
 
-
 How to setup the AdService :
 
 ```kotlin
@@ -80,8 +79,18 @@ class App : Application() {
 }
 ```
 
-## Requesting Ads & using AdState
+## Register a Renderer
 
+Here is an example how to register the NativeImage Renderer for Compose:
+
+
+```kotlin
+        AdComposeRenderRegistry.registerRendererWithName("nativeimg") {
+            ImageAdRenderer(it)
+        }
+```
+
+## Requesting Ads & using AdState
 
 Here is example how you can use the AdState in composable:
 
