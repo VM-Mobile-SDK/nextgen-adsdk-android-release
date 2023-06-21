@@ -53,8 +53,8 @@ In the build.gradle file you have to add your credentials:
 ....
 
 dependencies {
-    implementation 'com.adsdk.addition:sdk_core:x.x.x'
-    implementation 'com.adsdk.addition:sdk_presentation_compose:x.x.x'
+    implementation 'com.adsdk.adition:sdk_core:x.x.x'
+    implementation 'com.adsdk.adition:sdk_presentation_compose:x.x.x'
     
 }
 
