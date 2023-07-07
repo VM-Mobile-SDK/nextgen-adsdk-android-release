@@ -169,7 +169,9 @@ You can observe the events like this:
                     }
 ```
 
+## Aditional documentation
 
+You can find aditional documentation explaining the use of the SDK [here](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/sdk_core/index.html).
 
 
 
