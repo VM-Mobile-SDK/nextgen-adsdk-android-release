@@ -13,7 +13,7 @@
       <div id="main">
         <script type="text/javascript" src="../scripts/main.js"></script><div id="leftToggler"><span class="icon-toggler"></span></div>
 
-        <div class="main-content" id="content" pageids="sdk_core::////PointingToDeclaration//22355673">
+        <div class="main-content" id="content" pageids="sdk_core::////PointingToDeclaration//-630200729">
           <div class="navigation-wrapper" id="navigation-wrapper">
             <div class="breadcrumbs"><a href="index.html">sdk_core</a></div>
             <div class="pull-right d-flex">
@@ -56,52 +56,40 @@
                 // ...
             }
         }
-    }</pre></code></div></div></div>
+    }</pre></code></div><h2 class=""> Creating custom native Ads</h2><p class="paragraph">As App developer, you can create your own custom ad formats. For example, you can implement interactive ad formats like surveys, rotating galleries or Ads that play video.</p><p class="paragraph">Your custom ad format can be configured in the Adition backend. There you can define a creative template with custom JSON that will be delivered as part of the ad. For example, you could provide a way to configure some styling aspects for the ad by adding custom JSON key-value-pairs to the creative template.</p><p class="paragraph">On the app side, you can implement your custom Ad with native technologies like Swift and SwiftUI (iOS) or Kotlin and Compose (Android).</p><p class="paragraph">As part of your custom ad you will need to:</p><ul><li><p class="paragraph">a renderer class which implements the <code>AdRenderer</code> interface</p></li><li><p class="paragraph">register this renderer via the <code>AdComposeRenderRegistry</code></p></li></ul><p class="paragraph">The new renderer have to take this <code>Advertisement</code> object for the different info's and configurations.</p><div class="sample-container"><code class="" theme="idea"><pre>class ExampleAdRender(private val advertisement: Advertisement) : AdRenderer {</pre></code></div><p class="paragraph">In the new renderer you need to override the <code>RenderAd</code> composable function.</p><p class="paragraph">To register a new renderer you use the <code>registerRendererWithName</code> function from the <code>AdComposeRenderRegistry</code> object. The <code>registerRendererWithName</code> with name will return the <code>Advertisement</code> you create via the AdSDK.</p><div class="sample-container"><code class="" theme="idea"><pre>AdComposeRenderRegistry.registerRendererWithName("ExampleAdRender") {<br>ExampleAdRender(it)<br>}</pre></code></div><p class="paragraph">For the communication with the AdSDK you need the <code>AdState</code> and can get it like this: <code>val adState = LocalAdState.current</code></p><p class="paragraph">There are two methods to interact with the AdSDK via <code>AdState</code>.</p><div class="sample-container"><code class="" theme="idea"><pre>- handleAdClick(url: String)<br>- readyToDisplay(renderMetaData: MutableMap&lt;String, Any&gt;? = null)</pre></code></div><p class="paragraph">With the <code>handleAdClick</code> you can trigger a click event from the SDK. When the renderer is ready and you made sure all data are loaded and configs are set, you call <code>readyToDisplay</code> to tell the SDK your new renderer is ready. With <code>readyToDisplay</code> you can also pass <code>renderMetaData</code> back to the SDK and the App.</p></div></div>
           </div>
           <h2 class="">Packages</h2>
-          <div class="table"><a data-name="%5Bcom.adsdk.sdk_core%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673" anchor-label="com.adsdk.sdk_core" id="%5Bcom.adsdk.sdk_core%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table"><a data-name="%5Bcom.adsdk.sdk_core%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729" anchor-label="com.adsdk.sdk_core" id="%5Bcom.adsdk.sdk_core%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
             <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
               <div>
                 <div class="main-subrow ">
-                  <div class=""><span class="inline-flex"><a href="sdk_core/com.adsdk.sdk_core/index.html">com.adsdk.sdk_core</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bcom.adsdk.sdk_core%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673"></span>
+                  <div class=""><span class="inline-flex"><a href="sdk_core/com.adsdk.sdk_core/index.html">com.adsdk.sdk_core</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bcom.adsdk.sdk_core%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729"></span>
                         <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                       </span></span></div>
                   <div class="pull-right"></div>
                 </div>
-                <div><span class="brief-comment"><a data-name="%5Bcom.adsdk.sdk_core%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673" anchor-label="com.adsdk.sdk_core" id="%5Bcom.adsdk.sdk_core%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+                <div><span class="brief-comment"><a data-name="%5Bcom.adsdk.sdk_core%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729" anchor-label="com.adsdk.sdk_core" id="%5Bcom.adsdk.sdk_core%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
                     <h2 class=""> Description</h2>
 This module contains the core functionality of the Adition Ad SDK which is independent on any display technology.</span></div>
               </div>
             </div>
-<a data-name="%5Bcom.adsdk.sdk_core.cache%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673" anchor-label="com.adsdk.sdk_core.cache" id="%5Bcom.adsdk.sdk_core.cache%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+<a data-name="%5Bcom.adsdk.sdk_core.cache%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729" anchor-label="com.adsdk.sdk_core.cache" id="%5Bcom.adsdk.sdk_core.cache%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
             <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
               <div>
                 <div class="main-subrow ">
-                  <div class=""><span class="inline-flex"><a href="sdk_core/com.adsdk.sdk_core.cache/index.html">com.adsdk.sdk_core.cache</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bcom.adsdk.sdk_core.cache%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673"></span>
+                  <div class=""><span class="inline-flex"><a href="sdk_core/com.adsdk.sdk_core.cache/index.html">com.adsdk.sdk_core.cache</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bcom.adsdk.sdk_core.cache%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729"></span>
                         <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                       </span></span></div>
                   <div class="pull-right"></div>
                 </div>
-                <div><span class="brief-comment"><a data-name="%5Bcom.adsdk.sdk_core.cache%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673" anchor-label="com.adsdk.sdk_core.cache" id="%5Bcom.adsdk.sdk_core.cache%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>Local disk cache used for preserving ad assets.</span></div>
+                <div><span class="brief-comment"><a data-name="%5Bcom.adsdk.sdk_core.cache%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729" anchor-label="com.adsdk.sdk_core.cache" id="%5Bcom.adsdk.sdk_core.cache%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>Local disk cache used for preserving ad assets.</span></div>
               </div>
             </div>
-<a data-name="%5Bcom.adsdk.sdk_core.internal%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673" anchor-label="com.adsdk.sdk_core.internal" id="%5Bcom.adsdk.sdk_core.internal%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+<a data-name="%5Bcom.adsdk.sdk_core.internal%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729" anchor-label="com.adsdk.sdk_core.internal" id="%5Bcom.adsdk.sdk_core.internal%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
             <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
               <div>
                 <div class="main-subrow ">
-                  <div class=""><span class="inline-flex"><a href="sdk_core/com.adsdk.sdk_core.internal/index.html">com.adsdk.sdk_core.internal</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bcom.adsdk.sdk_core.internal%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673"></span>
-                        <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                      </span></span></div>
-                  <div class="pull-right"></div>
-                </div>
-                <div></div>
-              </div>
-            </div>
-<a data-name="%5Bcom.adsdk.sdk_core.internal.entities%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673" anchor-label="com.adsdk.sdk_core.internal.entities" id="%5Bcom.adsdk.sdk_core.internal.entities%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
-            <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
-              <div>
-                <div class="main-subrow ">
-                  <div class=""><span class="inline-flex"><a href="sdk_core/com.adsdk.sdk_core.internal.entities/index.html">com.adsdk.sdk_core.internal.entities</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bcom.adsdk.sdk_core.internal.entities%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673"></span>
+                  <div class=""><span class="inline-flex"><a href="sdk_core/com.adsdk.sdk_core.internal/index.html">com.adsdk.sdk_core.internal</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bcom.adsdk.sdk_core.internal%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729"></span>
                         <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                       </span></span></div>
                   <div class="pull-right"></div>
@@ -109,11 +97,11 @@ This module contains the core functionality of the Adition Ad SDK which is indep
                 <div></div>
               </div>
             </div>
-<a data-name="%5Bcom.adsdk.sdk_core.internal.extensions%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673" anchor-label="com.adsdk.sdk_core.internal.extensions" id="%5Bcom.adsdk.sdk_core.internal.extensions%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+<a data-name="%5Bcom.adsdk.sdk_core.internal.entities%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729" anchor-label="com.adsdk.sdk_core.internal.entities" id="%5Bcom.adsdk.sdk_core.internal.entities%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
             <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
               <div>
                 <div class="main-subrow ">
-                  <div class=""><span class="inline-flex"><a href="sdk_core/com.adsdk.sdk_core.internal.extensions/index.html">com.adsdk.sdk_core.internal.extensions</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bcom.adsdk.sdk_core.internal.extensions%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673"></span>
+                  <div class=""><span class="inline-flex"><a href="sdk_core/com.adsdk.sdk_core.internal.entities/index.html">com.adsdk.sdk_core.internal.entities</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bcom.adsdk.sdk_core.internal.entities%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729"></span>
                         <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                       </span></span></div>
                   <div class="pull-right"></div>
@@ -121,11 +109,23 @@ This module contains the core functionality of the Adition Ad SDK which is indep
                 <div></div>
               </div>
             </div>
-<a data-name="%5Bcom.adsdk.sdk_core.internal.model%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673" anchor-label="com.adsdk.sdk_core.internal.model" id="%5Bcom.adsdk.sdk_core.internal.model%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+<a data-name="%5Bcom.adsdk.sdk_core.internal.extensions%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729" anchor-label="com.adsdk.sdk_core.internal.extensions" id="%5Bcom.adsdk.sdk_core.internal.extensions%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
             <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
               <div>
                 <div class="main-subrow ">
-                  <div class=""><span class="inline-flex"><a href="sdk_core/com.adsdk.sdk_core.internal.model/index.html">com.adsdk.sdk_core.internal.model</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bcom.adsdk.sdk_core.internal.model%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F22355673"></span>
+                  <div class=""><span class="inline-flex"><a href="sdk_core/com.adsdk.sdk_core.internal.extensions/index.html">com.adsdk.sdk_core.internal.extensions</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bcom.adsdk.sdk_core.internal.extensions%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729"></span>
+                        <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                      </span></span></div>
+                  <div class="pull-right"></div>
+                </div>
+                <div></div>
+              </div>
+            </div>
+<a data-name="%5Bcom.adsdk.sdk_core.internal.model%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729" anchor-label="com.adsdk.sdk_core.internal.model" id="%5Bcom.adsdk.sdk_core.internal.model%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+            <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+              <div>
+                <div class="main-subrow ">
+                  <div class=""><span class="inline-flex"><a href="sdk_core/com.adsdk.sdk_core.internal.model/index.html">com.adsdk.sdk_core.internal.model</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bcom.adsdk.sdk_core.internal.model%2F%2F%2F%2FPointingToDeclaration%2F%5D%2FPackages%2F-630200729"></span>
                         <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                       </span></span></div>
                   <div class="pull-right"></div>
