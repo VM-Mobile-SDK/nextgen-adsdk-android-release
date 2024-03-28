@@ -9,7 +9,7 @@ Although the repository is public, you need any Github account with a token to a
 
 Here you can enter any name and expiration date. Of the mandatory ones, you need to specify **read:packages** permission.
 
-At this point, you have everything you need to connect the dependency. You can read more about tokens [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic) if ypu want.
+At this point, you have everything you need to connect the dependency. You can read more about tokens [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic) if you want.
 
 ## Add the repository dependency
 
