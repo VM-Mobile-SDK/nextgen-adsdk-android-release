@@ -1,0 +1,1 @@
+{"@class":"org.jetbrains.dokka.base.templating.AddToSourcesetDependencies","moduleName":"sdk_presentation_compose","content":{":sdk_presentation_compose:dokkaHtmlPartial/debug":[],":sdk_presentation_compose:dokkaHtmlPartial/main":[],":sdk_presentation_compose:dokkaHtmlPartial/release":[]}}
