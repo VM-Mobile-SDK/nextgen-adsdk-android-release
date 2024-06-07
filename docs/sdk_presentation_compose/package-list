@@ -1,9 +1,0 @@
-$dokka.format:html-v1
-$dokka.linkExtension:html
-
-com.adition.sdk_presentation_compose
-com.adition.sdk_presentation_compose.render
-com.adition.sdk_presentation_compose.render.image
-com.adition.sdk_presentation_compose.render.interstitial
-com.adition.sdk_presentation_compose.render.webview
-
