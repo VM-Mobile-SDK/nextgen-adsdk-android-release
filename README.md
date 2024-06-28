@@ -84,25 +84,15 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        AdService.init("1800", this, EventHandler())
-        AdService.getInstance().setCachePath(cacheDir.path + "/ad_cache")
-        AdService.getInstance().setCacheSize(20)
-        GlobalScope.launch {
-            AdService.getInstance().configure()
+        runBlocking {
+            val isSuccess = AdService.init(NETWORK_ID, applicationContext, EventHandler())
+            Log.d("App", "Init is success: $isSuccess")
         }
 
     }
 }
 ```
 
-## Register the Renderer
-
-Here is an example how to setup the default Renderers for Compose:
-
-
-```kotlin
-AdComposeRenderRegistry.registerDefaultAdRenderers()
-```
 
 ## Requesting Ads & using AdState
 
