@@ -10,6 +10,8 @@ com.adition.sdk_core.internal.extensions
 com.adition.sdk_core.internal.model
 com.adition.sdk_core.internal.network
 com.adition.sdk_core.mraid
+com.adition.sdk_core.mraid.entities
+com.adition.sdk_core.mraid.helpers
 module:sdk_presentation_compose
 com.adition.sdk_presentation_compose
 com.adition.sdk_presentation_compose.render

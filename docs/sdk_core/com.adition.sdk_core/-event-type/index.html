@@ -62,182 +62,84 @@
   <div class="breadcrumbs"><a href="../../index.html">sdk_core</a><span class="delimiter">/</span><a href="../index.html">com.adition.sdk_core</a><span class="delimiter">/</span><span class="current">EventType</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Event</span><wbr><span><span>Type</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="index.html">EventType</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">EventType</a><span class="token operator">&gt; </span></div><p class="paragraph">Event type.</p><p class="paragraph">TAP = user triggered a URL, for example by tapping on an Ad IMPRESSION = the ad has been rendered, irregardless if it has been seen by the user or not. Can be triggered if the add is outside of the viewport VIEWABLE_MRC1 = At least 1% of the Ad has been actually seen by the user VIEWABLE_MRC50 =  At least 50% of the ad has been seen by the user VIEWABLE_MRC100 = 100% of the ad has been seen by the user</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="index.html">EventType</a></div><p class="paragraph">All possible types of events that can be processed or transmitted via the SDK.</p><p class="paragraph"><a href="-tap/index.html">Tap</a> = user triggered a URL, for example by tapping on an Ad.</p><p class="paragraph"><a href="-impression/index.html">Impression</a> = the ad has been rendered, irregardless if it has been seen by the user or not. Can be triggered if the add is outside of the viewport</p><p class="paragraph"><a href="-viewable/index.html">Viewable</a> = signals that 1, 50 or 100% of the advertising banner is visible on the screen.</p><p class="paragraph"><a href="-custom-renderer-event/index.html">CustomRendererEvent</a> = signals that the renderer has passed a custom event.</p><h4 class="">Inheritors</h4><div class="table"><div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="-tap/index.html">Tap</a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="-impression/index.html">Impression</a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="-viewable/index.html">Viewable</a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="-custom-renderer-event/index.html">CustomRendererEvent</a></div></span></div><div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="ENTRY">Entries</button></div>
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
-      <div data-togglable="ENTRY">
-        <h2 class="">Entries</h2>
-        <div class="table"><a data-name="856866355%2FClasslikes%2F-215846705" anchor-label="TAP" id="856866355%2FClasslikes%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="-t-a-p/index.html">TAP</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="856866355%2FClasslikes%2F-215846705"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-t-a-p/index.html">TAP</a></div></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="1964316161%2FClasslikes%2F-215846705" anchor-label="IMPRESSION" id="1964316161%2FClasslikes%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="-i-m-p-r-e-s-s-i-o-n/index.html">IMPRESSION</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1964316161%2FClasslikes%2F-215846705"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-i-m-p-r-e-s-s-i-o-n/index.html">IMPRESSION</a></div></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="1722765713%2FClasslikes%2F-215846705" anchor-label="VIEWABLE_MRC50" id="1722765713%2FClasslikes%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="-v-i-e-w-a-b-l-e_-m-r-c50/index.html">VIEWABLE_MRC50</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1722765713%2FClasslikes%2F-215846705"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-v-i-e-w-a-b-l-e_-m-r-c50/index.html">VIEWABLE_MRC50</a></div></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="1287584099%2FClasslikes%2F-215846705" anchor-label="VIEWABLE_MRC100" id="1287584099%2FClasslikes%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="-v-i-e-w-a-b-l-e_-m-r-c100/index.html">VIEWABLE_MRC100</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1287584099%2FClasslikes%2F-215846705"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-v-i-e-w-a-b-l-e_-m-r-c100/index.html">VIEWABLE_MRC100</a></div></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="1004411683%2FClasslikes%2F-215846705" anchor-label="VIEWABLE_MRC1" id="1004411683%2FClasslikes%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-togglable="ENTRY" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="-v-i-e-w-a-b-l-e_-m-r-c1/index.html">VIEWABLE_MRC1</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1004411683%2FClasslikes%2F-215846705"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><a href="-v-i-e-w-a-b-l-e_-m-r-c1/index.html">VIEWABLE_MRC1</a></div></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div data-togglable="PROPERTY">
-        <h2 class="">Properties</h2>
-        <div class="table"><a data-name="1912417106%2FProperties%2F-215846705" anchor-label="entries" id="1912417106%2FProperties%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="-2089803377%2FClasslikes%2F-215846705" anchor-label="CustomRendererEvent" id="-2089803377%2FClasslikes%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
           <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="entries.html"><span><span>entries</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1912417106%2FProperties%2F-215846705"></span>
+                  <div><a href="-custom-renderer-event/index.html"><span>Custom</span><wbr><span>Renderer</span><wbr><span><span>Event</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2089803377%2FClasslikes%2F-215846705"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="entries.html">entries</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.enums/-enum-entries/index.html">EnumEntries</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">EventType</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Returns a representation of an immutable list of all enum entries, in the order they're declared.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-custom-renderer-event/index.html">CustomRendererEvent</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>info<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span> : <a href="index.html">EventType</a></div><div class="brief "><p class="paragraph">Signals that the renderer has passed a custom event.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-372974862%2FProperties%2F-215846705" anchor-label="name" id="-372974862%2FProperties%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+<a data-name="1776715652%2FClasslikes%2F-215846705" anchor-label="Impression" id="1776715652%2FClasslikes%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
           <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="../../com.adition.sdk_core.internal.entities/-placement-type/-i-n-t-e-r-s-t-i-t-i-a-l/index.html#-372974862%2FProperties%2F-215846705"><span><span>name</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-372974862%2FProperties%2F-215846705"></span>
+                  <div><a href="-impression/index.html"><span><span>Impression</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1776715652%2FClasslikes%2F-215846705"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="../../com.adition.sdk_core.internal.entities/-placement-type/-i-n-t-e-r-s-t-i-t-i-a-l/index.html#-372974862%2FProperties%2F-215846705">name</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-impression/index.html">Impression</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>url<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span> : <a href="index.html">EventType</a></div><div class="brief "><p class="paragraph">The ad has been rendered, irregardless if it has been seen by the user or not. Can be triggered if the add is outside of the viewport</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-739389684%2FProperties%2F-215846705" anchor-label="ordinal" id="-739389684%2FProperties%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+<a data-name="1044789298%2FClasslikes%2F-215846705" anchor-label="Tap" id="1044789298%2FClasslikes%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
           <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="../../com.adition.sdk_core.internal.entities/-placement-type/-i-n-t-e-r-s-t-i-t-i-a-l/index.html#-739389684%2FProperties%2F-215846705"><span><span>ordinal</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-739389684%2FProperties%2F-215846705"></span>
+                  <div><a href="-tap/index.html"><span><span>Tap</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1044789298%2FClasslikes%2F-215846705"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="../../com.adition.sdk_core.internal.entities/-placement-type/-i-n-t-e-r-s-t-i-t-i-a-l/index.html#-739389684%2FProperties%2F-215846705">ordinal</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-tap/index.html">Tap</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>url<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span> : <a href="index.html">EventType</a></div><div class="brief "><p class="paragraph">User triggered a URL, for example by tapping on an Ad.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="471921361%2FProperties%2F-215846705" anchor-label="value" id="471921361%2FProperties%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+<a data-name="-1223658546%2FClasslikes%2F-215846705" anchor-label="Viewable" id="-1223658546%2FClasslikes%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
           <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="value.html"><span><span>value</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="471921361%2FProperties%2F-215846705"></span>
+                  <div><a href="-viewable/index.html"><span><span>Viewable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1223658546%2FClasslikes%2F-215846705"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="value.html">value</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Value corresponding with the server</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-viewable/index.html">Viewable</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>percentage<span class="token operator">: </span><a href="-visibility-percentage/index.html">EventType.VisibilityPercentage</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>url<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span> : <a href="index.html">EventType</a></div><div class="brief "><p class="paragraph">The ad has been rendered, irregardless if it has been seen by the user or not. Can be triggered if the add is outside of the viewport</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div data-togglable="FUNCTION">
-        <h2 class="">Functions</h2>
-        <div class="table"><a data-name="148318090%2FFunctions%2F-215846705" anchor-label="valueOf" id="148318090%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+<a data-name="-39379807%2FClasslikes%2F-215846705" anchor-label="VisibilityPercentage" id="-39379807%2FClasslikes%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
           <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="value-of.html"><span>value</span><wbr><span><span>Of</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="148318090%2FFunctions%2F-215846705"></span>
+                  <div><a href="-visibility-percentage/index.html"><span>Visibility</span><wbr><span><span>Percentage</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-39379807%2FClasslikes%2F-215846705"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="value-of.html"><span class="token function">valueOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">EventType</a></div><div class="brief "><p class="paragraph">Returns the enum constant of this type with the specified name. The string must match exactly an identifier used to declare an enum constant in this type. (Extraneous whitespace characters are not permitted.)</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-984052202%2FFunctions%2F-215846705" anchor-label="values" id="-984052202%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="values.html"><span><span>values</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-984052202%2FFunctions%2F-215846705"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="values.html"><span class="token function">values</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">EventType</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Returns an array containing the constants of this enum type, in the order they're declared.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-visibility-percentage/index.html">VisibilityPercentage</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-visibility-percentage/index.html">EventType.VisibilityPercentage</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Representation of the percentage of visibility of the advertisement on the screen.</p></div></div></div>
                 </div>
               </div>
             </div>
