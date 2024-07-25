@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css"> <!-- Link to your CSS file if needed -->
+</head>
+<body>
+<header>
+    <h1>{{ site.title }}</h1>
+    <nav>
+        <ul>
+            <li><a href="{{ site.baseurl }}/">Home</a></li>
+            <li><a href="{{ site.baseurl }}/second-page">Second Page</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    {{ content }}
+</main>
+<footer>
+    <p>© {{ site.title }}</p>
+</footer>
+</body>
+</html>
