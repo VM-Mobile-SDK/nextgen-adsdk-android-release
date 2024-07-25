@@ -1,3 +1,4 @@
-title: Additional Documentation
-baseurl: "/nextgen-adsdk-android-release/additional-docs"
+title: Tutorial
+baseurl: "/nextgen-adsdk-android-release/additional-docs/"
 url: "https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/"
+theme: just-the-docs

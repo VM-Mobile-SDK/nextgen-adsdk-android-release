@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: home
 title: "Your Second Page Title"
 ---
 

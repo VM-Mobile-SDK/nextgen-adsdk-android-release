@@ -1,0 +1,30 @@
+{"0": {
+    "doc": "Your first Page Title",
+    "title": "This is the first page",
+    "content": "Here is some content for the first page. ",
+    "url": "/nextgen-adsdk-android-release/additional-docs/first-page.html#this-is-the-first-page",
+    
+    "relUrl": "/first-page.html#this-is-the-first-page"
+  },"1": {
+    "doc": "Your first Page Title",
+    "title": "Your first Page Title",
+    "content": " ",
+    "url": "/nextgen-adsdk-android-release/additional-docs/first-page.html",
+    
+    "relUrl": "/first-page.html"
+  },"2": {
+    "doc": "Your Second Page Title",
+    "title": "This is the second page",
+    "content": "Here is some content for the second page. ",
+    "url": "/nextgen-adsdk-android-release/additional-docs/second-page.html#this-is-the-second-page",
+    
+    "relUrl": "/second-page.html#this-is-the-second-page"
+  },"3": {
+    "doc": "Your Second Page Title",
+    "title": "Your Second Page Title",
+    "content": " ",
+    "url": "/nextgen-adsdk-android-release/additional-docs/second-page.html",
+    
+    "relUrl": "/second-page.html"
+  }
+}
