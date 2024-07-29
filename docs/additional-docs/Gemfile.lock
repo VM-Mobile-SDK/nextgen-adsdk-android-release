@@ -323,8 +323,8 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll
+  jekyll-remote-theme
   just-the-docs
-  minima
   webrick
 
 BUNDLED WITH
