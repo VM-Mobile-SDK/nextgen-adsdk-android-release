@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 title: "1. Create and display inline ads"
 ---
 

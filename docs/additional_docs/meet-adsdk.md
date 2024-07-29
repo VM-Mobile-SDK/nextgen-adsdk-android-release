@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 title: "0. Meet nextgen AdSDK"
 ---
 
