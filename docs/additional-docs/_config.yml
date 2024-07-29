@@ -1,4 +1,6 @@
-title: Tutorial
-baseurl: "/nextgen-adsdk-android-release/additional-docs/"
+title: Meet AdSDK  Tutorials
+baseurl: "/nextgen-adsdk-android-release/additional-docs"
 url: "https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/"
 theme: just-the-docs
+include:
+  - favicon.ico
