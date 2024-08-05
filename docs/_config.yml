@@ -1,8 +1,0 @@
-title: Meet AdSDK  Tutorials
-baseurl: "/nextgen-adsdk-android-release"
-url: "https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/"
-remote_theme: just-the-docs/just-the-docs
-plugins:
-  - jekyll-remote-theme
-include:
-  - favicon.ico
