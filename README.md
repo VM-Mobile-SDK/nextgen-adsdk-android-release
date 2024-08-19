@@ -48,9 +48,6 @@ credentials {
 }
 ```
 
-For Maven you can look here:\
-https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#installing-a-package
-
 ## Add the package dependencies
 In the build.gradle file you have to add your credentials:
 ```Groovy
