@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <style>
+        body {
+            display: flex; /* Use flexbox for layout */
+            background-color: #121212; /* Dark background */
+            color: #ffffff; /* Light text color */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Sidebar styles */
+        nav {
+            background-color: #1f1f1f; /* Darker background for sidebar */
+            width: 200px; /* Fixed width for sidebar */
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 10px 0; /* Spacing between links */
+        }
+        nav ul li a {
+            color: #ffffff; /* White text for links */
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: block; /* Make links block elements for full clickable area */
+        }
+        nav ul li a:hover {
+            background-color: #333333; /* Lighter background on hover */
+            transition: background-color 0.3s;
+        }
+        /* Main content styles */
+        main {
+            flex-grow: 1; /* Allow main content to fill the remaining space */
+            padding: 20px;
+        }
+        footer {
+            background-color: #1f1f1f; /* Dark footer */
+            text-align: center;
+            padding: 10px 0;
+            position: relative; /* Change to relative to avoid footer overlap */
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <h2>{{ site.title }}</h2>
+    <ul>
+        <li><a href="{{ site.baseurl }}/">Home</a></li>
+        <li><a href="{{ site.baseurl }}/second-page">Second Page</a></li>
+        <!-- Add more links as needed -->
+    </ul>
+</nav>
+<main>
+    {{ content }} <!-- This is where the page content will be inserted -->
+</main>
+<footer>
+    <p>© {{ site.title }}</p>
+</footer>
+</body>
+</html>
