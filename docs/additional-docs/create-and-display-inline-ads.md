@@ -79,7 +79,7 @@ class MainActivity : ComponentActivity() {
 ## Section 2: Loading and displaying advertisements
 
 ### Step 1
-Before we create an [Advertisement](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/sdk_core/com.adition.sdk_core/-advertisement/index.html) object we want to add a `viewModel`:  
+Before we create an [Advertisement](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/sdk_core/com.adition.sdk_core/-advertisement/index.html) object we want to add a `ViewModel`:  
 ```kotlin
 class MainViewModel: ViewModel() {
 
@@ -87,9 +87,12 @@ class MainViewModel: ViewModel() {
 ```
 
 ### Step 2
-To create advertisements, we use the [Advertisement](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/sdk_core/com.adition.sdk_core/-advertisement/index.html) object, which essentially is the advertisement you will be displaying. To create [Advertisement](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/sdk_core/com.adition.sdk_core/-advertisement/index.html) object, the only mandatory parameters are is the `contentUnit` and `adTypes`. 
-Content Unit is the unique ID of your advertising space and for ad type we use [AdComposeRenderRegistry.getAllRendererNames()](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/sdk_presentation_compose/com.adition.sdk_presentation_compose/-ad-compose-render-registry/get-all-renderer-names.html) this will enable all available `adTypes`. 
+To create an [Advertisement](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/sdk_core/com.adition.sdk_core/-advertisement/index.html) object, you need to specify parameters, two of which are required:
+* [contentId](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/sdk_core/com.adition.sdk_core.internal.entities/-advertisement-parameters/content-id.html) or [learningTag](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/sdk_core/com.adition.sdk_core.internal.entities/-advertisement-parameters/learning-tag.html)
+* [adTypes](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/sdk_core/com.adition.sdk_core.internal.entities/-advertisement-parameters/ad-types.html)
+We're going to use the [contentId](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/sdk_core/com.adition.sdk_core.internal.entities/-advertisement-parameters/content-id.html) because it's used more often than the [learningTag](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/sdk_core/com.adition.sdk_core.internal.entities/-advertisement-parameters/learning-tag.html). Content Unit is the unique ID of your advertising space and for ad type we use [AdComposeRenderRegistry.getAllRendererNames()](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/sdk_presentation_compose/com.adition.sdk_presentation_compose/-ad-compose-render-registry/get-all-renderer-names.html) this will enable all available `adTypes`. 
 Another important parameter is `placementType`. In this case, we need [AdPlacementType.INLINE](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/sdk_core/com.adition.sdk_core.internal.entities/-placement-type/-i-n-l-i-n-e/index.html), which is the default, so we ignore it.
+All possible parameters can be found in the [AdvertisementParameters documentation](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/sdk_core/com.adition.sdk_core.internal.entities/-advertisement-parameters/index.html).
 
 ```kotlin
 class MainViewModel: ViewModel() {

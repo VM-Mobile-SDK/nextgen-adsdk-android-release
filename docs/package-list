@@ -6,7 +6,6 @@ com.adition.sdk_core
 com.adition.sdk_core.cache
 com.adition.sdk_core.internal.annotation
 com.adition.sdk_core.internal.entities
-com.adition.sdk_core.internal.extensions
 com.adition.sdk_core.internal.model
 com.adition.sdk_core.internal.network
 com.adition.sdk_core.mraid

@@ -62,7 +62,7 @@
   <div class="breadcrumbs"><a href="../../index.html">sdk_core</a><span class="delimiter">/</span><a href="../index.html">com.adition.sdk_core</a><span class="delimiter">/</span><span class="current">Event</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Event</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">Event</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>contentId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>eventType<span class="token operator">: </span><a href="../-event-type/index.html">EventType</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>adData<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html">MutableMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>adMetaData<span class="token operator">: </span><a href="../../com.adition.sdk_core.internal.model/-ad-meta-data/index.html">AdMetaData</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><p class="paragraph">Event data class that is returned to developer when an Ad is observed/triggered</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">Event</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>id<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>eventType<span class="token operator">: </span><a href="../-event-type/index.html">EventType</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>adData<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html">MutableMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>adMetaData<span class="token operator">: </span><a href="../../com.adition.sdk_core.internal.model/-ad-meta-data/index.html">AdMetaData</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><p class="paragraph">Event data class that is returned to developer when an Ad is observed/triggered</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
@@ -79,7 +79,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">contentId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">eventType<span class="token operator">: </span><a href="../-event-type/index.html">EventType</a><span class="token punctuation">, </span></span><span class="parameter ">adData<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html">MutableMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">adMetaData<span class="token operator">: </span><a href="../../com.adition.sdk_core.internal.model/-ad-meta-data/index.html">AdMetaData</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Create empty Event</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">id<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">eventType<span class="token operator">: </span><a href="../-event-type/index.html">EventType</a><span class="token punctuation">, </span></span><span class="parameter ">adData<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html">MutableMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">adMetaData<span class="token operator">: </span><a href="../../com.adition.sdk_core.internal.model/-ad-meta-data/index.html">AdMetaData</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Create empty Event</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -118,21 +118,6 @@
               </div>
             </div>
           </div>
-<a data-name="-1526589112%2FProperties%2F-215846705" anchor-label="contentId" id="-1526589112%2FProperties%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="content-id.html"><span>content</span><wbr><span><span>Id</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1526589112%2FProperties%2F-215846705"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="content-id.html">contentId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">the contentID of the Ad the event got triggered from</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
 <a data-name="-1840663608%2FProperties%2F-215846705" anchor-label="eventType" id="-1840663608%2FProperties%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
           <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
             <div class="main-subrow keyValue ">
@@ -144,6 +129,21 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="event-type.html">eventType</a><span class="token operator">: </span><a href="../-event-type/index.html">EventType</a></div><div class="brief "><p class="paragraph">Type of event</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="586829155%2FProperties%2F-215846705" anchor-label="id" id="586829155%2FProperties%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="id.html"><span><span>id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="586829155%2FProperties%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="id.html">id</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">the contentID or the learningTag of the Ad the event got triggered from</p></div></div></div>
                 </div>
               </div>
             </div>

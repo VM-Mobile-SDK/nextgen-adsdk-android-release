@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>getRendererFactory</title>
+    <title>networkId</title>
 <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js","js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
@@ -45,7 +45,7 @@
             </div>
         </div>
         <div class="filter-section" id="filter-section">
-                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sdk_presentation_compose:dokkaHtmlPartial/release">androidJvm</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sdk_core:dokkaHtmlPartial/release">androidJvm</button>
         </div>
     </div>
     <div class="navigation-controls">
@@ -58,12 +58,12 @@
                 <div class="sidebar--inner" id="sideMenu"></div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="member" id="content" pageids="sdk_presentation_compose::com.adition.sdk_presentation_compose/AdComposeRenderRegistry/getRendererFactory/#kotlin.String/PointingToDeclaration//-340163007">
-  <div class="breadcrumbs"><a href="../../index.html">sdk_presentation_compose</a><span class="delimiter">/</span><a href="../index.html">com.adition.sdk_presentation_compose</a><span class="delimiter">/</span><a href="index.html">AdComposeRenderRegistry</a><span class="delimiter">/</span><span class="current">getRendererFactory</span></div>
+<div class="main-content" data-page-type="member" id="content" pageids="sdk_core::com.adition.sdk_core/AdService/networkId/#/PointingToDeclaration//-215846705">
+  <div class="breadcrumbs"><a href="../../index.html">sdk_core</a><span class="delimiter">/</span><a href="../index.html">com.adition.sdk_core</a><span class="delimiter">/</span><a href="index.html">AdService</a><span class="delimiter">/</span><span class="current">networkId</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>get</span><wbr><span>Renderer</span><wbr><span><span>Factory</span></span></h1>
+    <h1 class="cover"><span>network</span><wbr><span><span>Id</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_presentation_compose:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-renderer-factory.html"><span class="token function">getRendererFactory</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="../../../sdk_core/com.adition.sdk_core/-advertisement/index.html">Advertisement</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="../../com.adition.sdk_presentation_compose.render/-ad-renderer/index.html">AdRenderer</a><span class="token operator">?</span></div><p class="paragraph">Get renderer by name</p><span class="kdoc-tag"><h4 class="">Return</h4></span><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":sdk_presentation_compose:dokkaHtmlPartial/release" data-filterable-set=":sdk_presentation_compose:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>name</span></span></u></div></span></div><div><div class="title"><p class="paragraph">Name of the renderer</p></div></div></div></div></div></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="network-id.html">networkId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><p class="paragraph">Initialization method for the AdService.</p><p class="paragraph">Required Id for creating an <a href="index.html">AdService</a>:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">runBlocking {<br>     val isSuccess = AdService.init(NETWORK_ID, applicationContext, EventHandler())<br>     Log.d("App", "Init is success: $isSuccess")<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
 </div>
       <div class="footer">
         <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
