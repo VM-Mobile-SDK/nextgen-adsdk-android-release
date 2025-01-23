@@ -1,0 +1,135 @@
+{"0": {
+    "doc": "1. Create and display inline ads",
+    "title": "Create and display inline ads",
+    "content": "This tutorial will guide you through creating a simple application that can load and display a list of ads. ",
+    "url": "/4.4.0/additional-docs/create-and-display-inline-ads.html#create-and-display-inline-ads",
+    
+    "relUrl": "/additional-docs/create-and-display-inline-ads.html#create-and-display-inline-ads"
+  },"1": {
+    "doc": "1. Create and display inline ads",
+    "title": "Section 1: Getting started with AdSDK",
+    "content": "Add and configure the AdSDK to create and load ads. Step 1 . Let’s create a new Android project and remove all unnecessary code. Make sure you have added the correct packages from the readme. Step 2 . The entry point into the SDK is the AdService class. To make an easy start we just initialize the AdService in the onCreate method of the MainActivity. This is the first thing we should create, as it will be used to generate advertisements in the future. To do this, we will add this code: . coroutineScope.launch { val isSuccess = AdService.init(\"1800\", applicationContext, EventHandler()) Log.d(\"AdSDK\", \"Init is success: $isSuccess\") } . Lets create an App file and class to add the AdService initialisation. To do this, create this class and add the code snippet from above. The only mandatory parameter when creating AdService is the networkId. Network ID is the ID of your advertising account. Our Code should now look like this: . class App: Application() { private val coroutineScope = CoroutineScope(Dispatchers.Default + SupervisorJob()) override fun onCreate() { super.onCreate() coroutineScope.launch { val isSuccess = AdService.init(\"1800\", applicationContext, EventHandler()) Log.d(\"App\", \"Init is success: $isSuccess\") } } } . Remember to add this class as an entry point, so add it to the application in your `Manifest: . android:name=\"com.adition.adsdk.App\" . Step 3 . The next step will be to create a composable, which we will display upon successful creation of AdService. On this composable, we will be creating and displaying our advertisement. @Composable fun AdView() { Text( text = \"Advertisement should be here\" ) } . Now we can call this in our composable in the MainActivity. class MainActivity : ComponentActivity() { override fun onCreate(savedInstanceState: Bundle?) { super.onCreate(savedInstanceState) setContent { AdsdkdemoappandroidTheme { AdView() } } } } . ",
+    "url": "/4.4.0/additional-docs/create-and-display-inline-ads.html#section-1-getting-started-with-adsdk",
+    
+    "relUrl": "/additional-docs/create-and-display-inline-ads.html#section-1-getting-started-with-adsdk"
+  },"2": {
+    "doc": "1. Create and display inline ads",
+    "title": "Section 2: Loading and displaying advertisements",
+    "content": "Step 1 . Before we create an Advertisement object we want to add a ViewModel: . class MainViewModel: ViewModel() { } . Step 2 . To create an Advertisement object, you need to specify parameters, two of which are required: . | contentId or learningTag | adTypes We’re going to use the contentId because it’s used more often than the learningTag. Content Unit is the unique ID of your advertising space and for ad type we use AdComposeRenderRegistry.getAllRendererNames() this will enable all available adTypes. Another important parameter is placementType. In this case, we need AdPlacementType.INLINE, which is the default, so we ignore it. All possible parameters can be found in the AdvertisementParameters documentation. | . class MainViewModel: ViewModel() { var ad: Advertisement = Advertisement( \"4810915\", AdComposeRenderRegistry.getAllRendererNames(), ) } . We can now load this advertisement using loadAdvertisement: . class MainViewModel: ViewModel() { var ad: Advertisement = Advertisement( \"4810915\", AdComposeRenderRegistry.getAllRendererNames(), ) init { viewModelScope.launch { ad.loadAdvertisement() } } } . Step 3 . We can pass this Advertisement now to the rememberAdState composable. The rememberAdState creates the AdState which we will use later. There are multiple versions of the rememberAdState. For example we could pass a content unit directly to the rememberAdState and it would create the Advertisement for us. @Composable fun AdView(viewModel: MainViewModel) { val adState = rememberAdState(advertisement = viewModel.ad) } . Step 4 . We can pass the AdState to Ad composable. The Ad is the main composable used to display the ad with provided adState. @Composable fun AdView() { val adState = rememberAdState(advertisement = viewModel.ad) Ad(adState = adState, modifier = Modifier) } . How our MainActivity should look like: . class MainActivity : ComponentActivity() { private val viewModel by viewModels&lt;MainViewModel&gt;() override fun onCreate(savedInstanceState: Bundle?) { super.onCreate(savedInstanceState) setContent { AdsdkdemoappandroidTheme { AdView(viewModel) } } } } @Composable fun AdView(viewModel: MainViewModel) { val adState = rememberAdState(advertisement = viewModel.ad) Ad(adState = adState, modifier = Modifier) } . Now we should see the Banner on our device: . ",
+    "url": "/4.4.0/additional-docs/create-and-display-inline-ads.html#section-2-loading-and-displaying-advertisements",
+    
+    "relUrl": "/additional-docs/create-and-display-inline-ads.html#section-2-loading-and-displaying-advertisements"
+  },"3": {
+    "doc": "1. Create and display inline ads",
+    "title": "1. Create and display inline ads",
+    "content": " ",
+    "url": "/4.4.0/additional-docs/create-and-display-inline-ads.html",
+    
+    "relUrl": "/additional-docs/create-and-display-inline-ads.html"
+  },"4": {
+    "doc": "3. Create and display interstitial ad section",
+    "title": "Create and display interstitial ad section",
+    "content": "A full-screen advertisement that fills the host app’s interface is known as an interstitial ad. In this tutorial we are going to add interstitial ad into our application. ",
+    "url": "/4.4.0/additional-docs/create-and-display-interstitial-ad-section.html#create-and-display-interstitial-ad-section",
+    
+    "relUrl": "/additional-docs/create-and-display-interstitial-ad-section.html#create-and-display-interstitial-ad-section"
+  },"5": {
+    "doc": "3. Create and display interstitial ad section",
+    "title": "Section 1: Interstitial Ad Object",
+    "content": "In this section we will create an interstitial Advertisement object. Step 1 . Lets change the structure of our AdsdkdemoappandroidTheme composable. We create a MainContent composable and move the AdView call over there. AdsdkdemoappandroidTheme { MainContent(viewModel) } . @Composable fun MainContent(viewModel: MainViewModel) { Box(modifier = Modifier.fillMaxSize()) { AdView(viewModel) } } . Step 2 . To create a interstitial banner we use the Advertisement class again. Only difference this time we add the different placementType INTERSTITIAL We add the interstitialAd in the MainViewModel. var interstitialAd: Advertisement = Advertisement( \"5192923\", AdComposeRenderRegistry.getAllRendererNames(), placementType = PlacementType.INTERSTITIAL ) . Step 3 . We can add now a composable for the fullscreen interstitial. @Composable fun ShowInterstitial(viewModel: MainViewModel) { var adState = rememberAdState(viewModel.interstitialAd) Box ( contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize() ){ Ad(adState = adState) } } . Step 4 . To trigger the interstitial composable we will use a button which we add at the bottom. @Composable fun BottomButton(onClick: () -&gt; Unit) { Box(modifier = Modifier.fillMaxSize()) { Button( onClick = onClick, modifier = Modifier .align(Alignment.BottomCenter) .padding(bottom = 16.dp) ) { Text(\"Show interstitial\") } } } . Step 5 . To control the interstitial presentation we will use a state value, which will be set to true if we click on the button. val showInterstitialComposable = remember { mutableStateOf(false) } BottomButton( onClick = { showInterstitialComposable.value = !showInterstitialComposable.value } ) . Step 6 . Now lets structure this all together in our MainContent composable we created above. @Composable fun MainContent(viewModel: MainViewModel) { val showInterstitialComposable = remember { mutableStateOf(false) } Box(modifier = Modifier.fillMaxSize()) { AdView(viewModel) BottomButton( onClick = { showInterstitialComposable.value = !showInterstitialComposable.value } ) if (showInterstitialComposable.value) { ShowInterstitial(viewModel) } } } . ",
+    "url": "/4.4.0/additional-docs/create-and-display-interstitial-ad-section.html#section-1-interstitial-ad-object",
+    
+    "relUrl": "/additional-docs/create-and-display-interstitial-ad-section.html#section-1-interstitial-ad-object"
+  },"6": {
+    "doc": "3. Create and display interstitial ad section",
+    "title": "3. Create and display interstitial ad section",
+    "content": " ",
+    "url": "/4.4.0/additional-docs/create-and-display-interstitial-ad-section.html",
+    
+    "relUrl": "/additional-docs/create-and-display-interstitial-ad-section.html"
+  },"7": {
+    "doc": "4. Global ad request parameters",
+    "title": "Global ad request parameters",
+    "content": "An ad request can have additional parameters beyond those you pass during initialization. These additional parameters are global for all ad requests. The SDK provides the ability to add global parameters once so that you don’t have to copy them when creating each ad request. ",
+    "url": "/4.4.0/additional-docs/global-adRequest-parameters.html#global-ad-request-parameters",
+    
+    "relUrl": "/additional-docs/global-adRequest-parameters.html#global-ad-request-parameters"
+  },"8": {
+    "doc": "4. Global ad request parameters",
+    "title": "Section 1: Modifying global parameters",
+    "content": "In this section, we’ll configure the gdpr parameter for each ad request that we have in our app. In addition, we will review the possibility of removing global parameters. You can configure not only GDPR but also other parameters. You can find a list of all global parameters in the AdRequestGlobalParameters documentation. Step 1 . We can add global parameters via the AdService. The AdService has setAdRequestGlobalParameter method which we use to set the gdpr parameter. AdService.getInstance().setAdRequestGlobalParameter( AdRequestGlobalParameters::gdpr, GDPR(consent = \"gdprconsentexample\", isRulesEnabled = true) ) . Step 2 . To make it easy we will add the global parameters in the App class. class App : Application() { private val coroutineScope = CoroutineScope(Dispatchers.Default + SupervisorJob()) override fun onCreate() { super.onCreate() coroutineScope.launch { val isSuccess = AdService.init(\"1800\", applicationContext, EventHandler()) Log.d(\"App\", \"Init is success: $isSuccess\") launch { AdService.getInstance().eventHandler?.events?.collect { event -&gt; Log.d(\"Events\", \"Collected EVENT - $event\") when (event.eventType) { is EventType.Tap -&gt; { // Ad got tapped. } else -&gt; {} } } } launch { AdService.getInstance().setAdRequestGlobalParameter( AdRequestGlobalParameters::gdpr, GDPR(consent = \"gdprconsentexample\", isRulesEnabled = true) ) } } } override fun onTerminate() { super.onTerminate() coroutineScope.cancel() } } . Step 3 . If we want to remove an global parameter we could use the removeAdRequestGlobalParameter method. AdService.getInstance().removeAdRequestGlobalParameter( AdRequestGlobalParameters::gdpr ) . ",
+    "url": "/4.4.0/additional-docs/global-adRequest-parameters.html#section-1-modifying-global-parameters",
+    
+    "relUrl": "/additional-docs/global-adRequest-parameters.html#section-1-modifying-global-parameters"
+  },"9": {
+    "doc": "4. Global ad request parameters",
+    "title": "4. Global ad request parameters",
+    "content": " ",
+    "url": "/4.4.0/additional-docs/global-adRequest-parameters.html",
+    
+    "relUrl": "/additional-docs/global-adRequest-parameters.html"
+  },"10": {
+    "doc": "2. Handling the state and events of advertising",
+    "title": "Handling the state and events",
+    "content": "This tutorial will help you observe and respond to changes in the state and events. In it, we will continue the development of the application we started in the previous section. ",
+    "url": "/4.4.0/additional-docs/handling-the-state-and-events-of-advertising.html#handling-the-state-and-events",
+    
+    "relUrl": "/additional-docs/handling-the-state-and-events-of-advertising.html#handling-the-state-and-events"
+  },"11": {
+    "doc": "2. Handling the state and events of advertising",
+    "title": "Section 1: Observing the states",
+    "content": "When we talk about state we mean the lifecycle state of the Ads composable. Step 1 . The state of an Ad is called AdState. This is an example of how we can observe the AdState: . when (val state = adState?.state) { is AdState.State.Error -&gt; { // We have an error. } is AdState.State.Loading -&gt; { // We are Caching. } is AdState.State.Caching -&gt; { // We are Caching. } is AdState.State.AdReadyToDisplay -&gt; { // Ad is ready and will be displayed. } else -&gt; {} } . Here we can see the different ad states we can observe: . | Error | Loading | Caching | ",
+    "url": "/4.4.0/additional-docs/handling-the-state-and-events-of-advertising.html#section-1-observing-the-states",
+    
+    "relUrl": "/additional-docs/handling-the-state-and-events-of-advertising.html#section-1-observing-the-states"
+  },"12": {
+    "doc": "2. Handling the state and events of advertising",
+    "title": "AdReadyToDisplay",
+    "content": "Step 2 . Let’s add the code snippet from above to our AdView example: . @Composable fun AdView() { val adState = rememberAdState(advertisement = viewModel.ad) Ad(adState = adState, modifier = Modifier) when (val state = adState?.state) { is AdState.State.Error -&gt; { // We have an error. } is AdState.State.Loading -&gt; { // We are Caching. } is AdState.State.Caching -&gt; { // We are Caching. } is AdState.State.AdReadyToDisplay -&gt; { // Ad is ready and will be displayed and we could additional work } else -&gt; {} } } . We are able now to act accordingly to each AdState state. | . ",
+    "url": "/4.4.0/additional-docs/handling-the-state-and-events-of-advertising.html#adreadytodisplay",
+    
+    "relUrl": "/additional-docs/handling-the-state-and-events-of-advertising.html#adreadytodisplay"
+  },"13": {
+    "doc": "2. Handling the state and events of advertising",
+    "title": "Section 2: Handling errors during the loading and decoding",
+    "content": "Sometimes it’s important for an app to be able to handle errors correctly. With the help of AdError, you can catch a specific error and implement the logic for handling it the way you need. Step 1 . We can observe errors in the AdSDK with AdException. An AdException holds the exception itself and the type of the error via AdError. With AdError we can observe different error types. For example lets catch a decoding error. when(state.adException.adError) { AdError.DECODING -&gt; { // Act accordingly e.g. repeat the request. } } . Step 2 . You can catch a number of different error types, just check AdError. Let’s just log the error and have a look how our composable should look like. @Composable fun AdView(viewModel: MainViewModel) { val adState = rememberAdState(advertisement = viewModel.ad) Ad(adState = adState, modifier = Modifier) when (val state = adState?.state) { is AdState.State.Error -&gt; { when(state.adException.adError) { AdError.DECODING -&gt; { Log.e(\"MainActivity\", \"Decoding error: ${state.adException.exception}\") } } } is AdState.State.Loading -&gt; { // We are Caching. } is AdState.State.Caching -&gt; { // We are Caching. } is AdState.State.AdReadyToDisplay -&gt; { // Ad is ready and will be displayed. } else -&gt; {} } } . ",
+    "url": "/4.4.0/additional-docs/handling-the-state-and-events-of-advertising.html#section-2-handling-errors-during-the-loading-and-decoding",
+    
+    "relUrl": "/additional-docs/handling-the-state-and-events-of-advertising.html#section-2-handling-errors-during-the-loading-and-decoding"
+  },"14": {
+    "doc": "2. Handling the state and events of advertising",
+    "title": "Section 3: Observing the advertising events",
+    "content": "Observe the advertising events to respond to them in the application. The SDK can send many events related to advertisements, like impressions, visibility percentages and tap events. Step 1 . With the use of the AdService we can collect all ad Event. AdService.getInstance().eventHandler?.events?.collect { event -&gt; Log.d(\"Events\", \"Collected EVENT - $event\") } . Step 2 . Start the event observing before the composable loads if you want to make sure you get every event. For example, we could add it in the App class. class App: Application() { private val coroutineScope = CoroutineScope(Dispatchers.Default + SupervisorJob()) override fun onCreate() { super.onCreate() coroutineScope.launch { val isSuccess = AdService.init(\"1800\", applicationContext, EventHandler()) Log.d(\"App\", \"Init is success: $isSuccess\") launch { AdService.getInstance().eventHandler?.events?.collect { event -&gt; Log.d(\"Events\", \"Collected EVENT - $event\") when (event.eventType) { is EventType.Tap -&gt; { // Ad got tapped. } else -&gt; {} } } } } } } . Step 3 . You can observe the specific EventTypes you are interested in. For example, you can react to the tap on ads: . when(event.eventType) { is EventType.Tap -&gt; { // Ad got tapped. } else -&gt; {} } . Step 4 . Let’s add this to the App class as well. class App : Application() { private val coroutineScope = CoroutineScope(Dispatchers.Default + SupervisorJob()) override fun onCreate() { super.onCreate() coroutineScope.launch { val isSuccess = AdService.init(\"1800\", applicationContext, EventHandler()) Log.d(\"App\", \"Init is success: $isSuccess\") launch { AdService.getInstance().eventHandler?.events?.collect { event -&gt; Log.d(\"Events\", \"Collected EVENT - $event\") when (event.eventType) { is EventType.Tap -&gt; { // Ad got tapped. } else -&gt; {} } } } } } } . Now we could act accordingly to a specific event in any way we wanted. ",
+    "url": "/4.4.0/additional-docs/handling-the-state-and-events-of-advertising.html#section-3-observing-the-advertising-events",
+    
+    "relUrl": "/additional-docs/handling-the-state-and-events-of-advertising.html#section-3-observing-the-advertising-events"
+  },"15": {
+    "doc": "2. Handling the state and events of advertising",
+    "title": "2. Handling the state and events of advertising",
+    "content": " ",
+    "url": "/4.4.0/additional-docs/handling-the-state-and-events-of-advertising.html",
+    
+    "relUrl": "/additional-docs/handling-the-state-and-events-of-advertising.html"
+  },"16": {
+    "doc": " Meet nextgen AdSDK",
+    "title": "Meet nextgen AdSDK",
+    "content": "Manage, display, and create your custom advertisements on Android using cutting-edge technologies such as Compose and Coroutines based on the AdSDK. ",
+    "url": "/4.4.0/additional-docs/meet-adsdk.html#meet-nextgen-adsdk",
+    
+    "relUrl": "/additional-docs/meet-adsdk.html#meet-nextgen-adsdk"
+  },"17": {
+    "doc": " Meet nextgen AdSDK",
+    "title": "Chapter 1",
+    "content": "Working with the built-in capabilities of the SDK In this chapter, you will learn how to create, display, and manage advertisements using AdSDK. | Create and display inline ads | Handling the state and events of advertising | Create and display interstitial ad | Global ad request parameters | . ",
+    "url": "/4.4.0/additional-docs/meet-adsdk.html#chapter-1",
+    
+    "relUrl": "/additional-docs/meet-adsdk.html#chapter-1"
+  },"18": {
+    "doc": " Meet nextgen AdSDK",
+    "title": " Meet nextgen AdSDK",
+    "content": " ",
+    "url": "/4.4.0/additional-docs/meet-adsdk.html",
+    
+    "relUrl": "/additional-docs/meet-adsdk.html"
+  }
+}

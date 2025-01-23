@@ -1,0 +1,51 @@
+{"0": {
+    "doc": "1. Create and display inline ads",
+    "title": "Create and display inline ads",
+    "content": "This tutorial will guide you through creating a simple application that can load and display a list of ads. ",
+    "url": "/4.3.0/additional-docs/create-and-display-inline-ads.html#create-and-display-inline-ads",
+    
+    "relUrl": "/additional-docs/create-and-display-inline-ads.html#create-and-display-inline-ads"
+  },"1": {
+    "doc": "1. Create and display inline ads",
+    "title": "Section 1: Getting started with AdSDK",
+    "content": "Add and configure the AdSDK to create and load ads. Step 1: . Let’s create a new Android project and remove all unnecessary code. Make sure you have added the correct packages from the readme. Step 2 . The entry point into the SDK is the AdService class. To make an easy start we just initialize the AdService in the onCreate method of the MainActivity. This is the first thing we should create, as it will be used to generate advertisements in the future. To do this, we will add this code: . runBlocking { val isSuccess = AdService.init(\"1800\", applicationContext, EventHandler()) Log.d(\"AdSDK\", \"Init is success: $isSuccess\") } . The only mandatory parameter when creating AdService is the networkId. Network ID is the ID of your advertising account. Our Code should now look like this: . class MainActivity : ComponentActivity() { override fun onCreate(savedInstanceState: Bundle?) { super.onCreate(savedInstanceState) runBlocking { val isSuccess = AdService.init(\"1800\", applicationContext, EventHandler()) Log.d(\"AdSDK\", \"Init is success: $isSuccess\") } setContent { AdsdkdemoappandroidTheme { } } } } . Step 3 . The next step will be to create a composable, which we will display upon successful creation of AdService. On this composable, we will be creating and displaying our advertisement. @Composable fun AdView() { Text( text = \"Advertisement should be here\" ) } . Now we can call this in our composable in the MainActivity. class MainActivity : ComponentActivity() { override fun onCreate(savedInstanceState: Bundle?) { super.onCreate(savedInstanceState) runBlocking { val isSuccess = AdService.init(\"1800\", applicationContext, EventHandler()) Log.d(\"AdSDK\", \"Init is success: $isSuccess\") } setContent { AdsdkdemoappandroidTheme { AdView() } } } } . ",
+    "url": "/4.3.0/additional-docs/create-and-display-inline-ads.html#section-1-getting-started-with-adsdk",
+    
+    "relUrl": "/additional-docs/create-and-display-inline-ads.html#section-1-getting-started-with-adsdk"
+  },"2": {
+    "doc": "1. Create and display inline ads",
+    "title": "Section 2: Loading and displaying advertisements",
+    "content": "Step 1 . To create advertisements, we use the Advertisement object. To create Advertisement object, the only mandatory parameters are is the contentUnit and adTypes. Content Unit is the unique ID of your advertising space and for ad type we use AdComposeRenderRegistry.getAllRendererNames() this will enable all available adTypes. This method returns an Advertisement object, which essentially is the advertisement you will be displaying. Another important parameter is placementType. In this case, we need AdPlacementType.INLINE, which is the default, so we ignore it. @Composable fun AdView() { var ad = Advertisement( \"5192923\", AdComposeRenderRegistry.getAllRendererNames() ) } . Step 2 . We can pass this Advertisement now to the rememberAdState composable: The rememberAdState creates the AdState which we will use later. There are multiple versions of the rememberAdState. For example we could pass a content unit directly to the rememberAdState and it would create the Advertisement for us. @Composable fun AdView() { var ad = Advertisement( \"5192923\", AdComposeRenderRegistry.getAllRendererNames() ) val adState = rememberAdState(advertisement = ad) } . Step 3 . We can pass the AdState to Ad composable. The Ad is the main composable used to display the ad with provided adState. @Composable fun AdView() { var ad = Advertisement( \"5192923\", AdComposeRenderRegistry.getAllRendererNames() ) val adState = rememberAdState(advertisement = ad) Ad(adState = adState, modifier = Modifier) } . Now we should see the Banner on our device: . ",
+    "url": "/4.3.0/additional-docs/create-and-display-inline-ads.html#section-2-loading-and-displaying-advertisements",
+    
+    "relUrl": "/additional-docs/create-and-display-inline-ads.html#section-2-loading-and-displaying-advertisements"
+  },"3": {
+    "doc": "1. Create and display inline ads",
+    "title": "1. Create and display inline ads",
+    "content": " ",
+    "url": "/4.3.0/additional-docs/create-and-display-inline-ads.html",
+    
+    "relUrl": "/additional-docs/create-and-display-inline-ads.html"
+  },"4": {
+    "doc": "0. Meet nextgen AdSDK",
+    "title": "Meet nextgen AdSDK",
+    "content": "Manage, display, and create your custom advertisements on Android using cutting-edge technologies such as Compose and Coroutines based on the AdSDK. ",
+    "url": "/4.3.0/additional-docs/meet-adsdk.html#meet-nextgen-adsdk",
+    
+    "relUrl": "/additional-docs/meet-adsdk.html#meet-nextgen-adsdk"
+  },"5": {
+    "doc": "0. Meet nextgen AdSDK",
+    "title": "Chapter 1",
+    "content": "Working with the built-in capabilities of the SDK In this chapter, you will learn how to create, display, and manage advertisements using AdSDK. | Create and display inline ads | . ",
+    "url": "/4.3.0/additional-docs/meet-adsdk.html#chapter-1",
+    
+    "relUrl": "/additional-docs/meet-adsdk.html#chapter-1"
+  },"6": {
+    "doc": "0. Meet nextgen AdSDK",
+    "title": "0. Meet nextgen AdSDK",
+    "content": " ",
+    "url": "/4.3.0/additional-docs/meet-adsdk.html",
+    
+    "relUrl": "/additional-docs/meet-adsdk.html"
+  }
+}
