@@ -4,5 +4,27 @@ url: "https://vm-mobile-sdk.github.io"
 remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-remote-theme
-include:
-  - favicon.ico
+collections_dir: tutorials
+collections:
+  4.6.0:
+    output: true
+  4.5.0:
+    output: true
+  4.4.0:
+    output: true
+  4.3.0:
+    output: true
+just_the_docs:
+  collections:
+    4.6.0:
+      name: SDK v.4.6.0
+      nav_fold: true
+    4.5.0:
+      name: SDK v.4.5.0
+      nav_fold: true
+    4.4.0:
+      name: SDK v.4.4.0
+      nav_fold: true
+    4.3.0:
+      name: SDK v.4.3.0
+      nav_fold: true
