@@ -35,13 +35,13 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            "$api_url" -o "doc.zip" || exit 1
+            "$api_url" -o "docs.zip" || exit 1
             
           unzip -o "docs.zip" -d "$temp_dir"
           cp -r "$temp_dir/$doc_version" "docs/"
           cp -r "$temp_dir/_$doc_version" "docs/tutorials/"
 
-          rm "doc.zip" & rm "$temp_dir"
+          rm "docs.zip" & rm "$temp_dir"
       - name: Cleanup old documentation metadata
         run: bundle exec jekyll clean
         working-directory: ./docs
