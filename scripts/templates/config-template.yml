@@ -1,0 +1,12 @@
+title: AdSDK Documentation
+baseurl: "/nextgen-adsdk-android-release"
+url: "https://vm-mobile-sdk.github.io"
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
+collections_dir: tutorials
+collections:
+<!-- jekyll_collection_list -->
+just_the_docs:
+  collections:
+<!-- just_docs_collection_list -->
