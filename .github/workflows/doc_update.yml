@@ -43,7 +43,7 @@ jobs:
           cp -r "$temp_dir/docs/$doc_version" "docs/"
           cp -r "$temp_dir/docs/_$doc_version" "docs/tutorials/"
 
-          rm "docs.zip" & rm "$temp_dir"
+          rm "docs.zip" & rm -rf "$temp_dir"
       - name: Cleanup old documentation metadata
         run: bundle exec jekyll clean
         working-directory: ./docs
