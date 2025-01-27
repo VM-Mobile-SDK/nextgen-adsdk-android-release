@@ -39,6 +39,7 @@ jobs:
 
           mkdir -p "$temp_dir"
           unzip -o "docs.zip" -d "$temp_dir"
+          unzip -o "$temp_dir/docs.zip" -d "$temp_dir"
           cd "$temp_dir"
           ls
       # cp -r "$temp_dir/docs/$doc_version" "docs/"
