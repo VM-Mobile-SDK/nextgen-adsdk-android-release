@@ -39,8 +39,8 @@ just_docs_collection_list=""
 
 for folder in "${doc_version_folders[@]}"; do
   html_version_list+="<li><a href=\"$folder/\">SDK v.$folder</a></li>\n"
-  jekyll_collection_list+="\t$folder:\n\t\toutput: true\n"
-  just_docs_collection_list+="\t\t$folder:\n\t\t\tname: SDK v$folder\n\t\t\tnav_fold: true\n"
+  jekyll_collection_list+="$folder:\noutput: true\n"
+  just_docs_collection_list+="$folder:\nname: SDK v$folder\nnav_fold: true\n"
 done
 
 # Update <!-- version_list --> inside index-template.html with the new versions
