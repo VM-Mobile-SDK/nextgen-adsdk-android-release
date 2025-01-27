@@ -41,10 +41,10 @@ jobs:
           unzip -o "docs.zip" -d "$temp_dir"
           cd "$temp_dir"
           ls
-          # cp -r "$temp_dir/docs/$doc_version" "docs/"
-          # cp -r "$temp_dir/docs/_$doc_version" "docs/tutorials/"
+      # cp -r "$temp_dir/docs/$doc_version" "docs/"
+      # cp -r "$temp_dir/docs/_$doc_version" "docs/tutorials/"
 
-          # rm "docs.zip" & rm "$temp_dir"
+      # rm "docs.zip" & rm "$temp_dir"
       # - name: Cleanup old documentation metadata
       #   run: bundle exec jekyll clean
       #   working-directory: ./docs
