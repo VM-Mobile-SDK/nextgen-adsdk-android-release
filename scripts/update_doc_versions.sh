@@ -15,7 +15,7 @@ cd ..
 
 # Find all the folders with different versions of the doc, and sort them.
 versions_count=$1
-doc_version_folders=($(find docs -type d -name "[0-9].[0-9].[0-9]" | awk -F/ '{print $NF}' | sort -Vr))
+doc_version_folders=($(find docs -maxdepth 1 -type d -name "[0-9].[0-9].[0-9]" | awk -F/ '{print $NF}' | sort -Vr))
 
 # Remove oldest doc versions if size is bigger than passed.
 if [ ${#doc_version_folders[@]} -gt $versions_count ]; then
