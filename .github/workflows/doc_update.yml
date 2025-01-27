@@ -39,23 +39,24 @@ jobs:
 
           mkdir -p "$temp_dir"
           unzip -o "docs.zip" -d "$temp_dir"
+          cd "$temp_dir"
           ls
-          cp -r "$temp_dir/docs/$doc_version" "docs/"
-          cp -r "$temp_dir/docs/_$doc_version" "docs/tutorials/"
+          # cp -r "$temp_dir/docs/$doc_version" "docs/"
+          # cp -r "$temp_dir/docs/_$doc_version" "docs/tutorials/"
 
-          rm "docs.zip" & rm "$temp_dir"
-      - name: Cleanup old documentation metadata
-        run: bundle exec jekyll clean
-        working-directory: ./docs
-      - name: Update documentation files
-        run: bash update_doc_versions.sh 5
-        working-directory: ./scripts
-      - name: Build documentation
-        run: bundle exec jekyll build
-        working-directory: ./docs
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v9
-        with:
-          author_name: mobilesdk
-          author_email: mobilesdk@virtualminds.com
-          message: 'Documentation updated'
+          # rm "docs.zip" & rm "$temp_dir"
+      # - name: Cleanup old documentation metadata
+      #   run: bundle exec jekyll clean
+      #   working-directory: ./docs
+      # - name: Update documentation files
+      #   run: bash update_doc_versions.sh 5
+      #   working-directory: ./scripts
+      # - name: Build documentation
+      #   run: bundle exec jekyll build
+      #   working-directory: ./docs
+      # - name: Commit changes
+      #   uses: EndBug/add-and-commit@v9
+      #   with:
+      #     author_name: mobilesdk
+      #     author_email: mobilesdk@virtualminds.com
+      #     message: 'Documentation updated'
