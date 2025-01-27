@@ -39,8 +39,9 @@ jobs:
 
           mkdir -p "$temp_dir"
           unzip -o "docs.zip" -d "$temp_dir"
-          cp -r "$temp_dir/$doc_version" "docs/"
-          cp -r "$temp_dir/_$doc_version" "docs/tutorials/"
+          ls
+          cp -r "$temp_dir/docs/$doc_version" "docs/"
+          cp -r "$temp_dir/docs/_$doc_version" "docs/tutorials/"
 
           rm "docs.zip" & rm "$temp_dir"
       - name: Cleanup old documentation metadata
