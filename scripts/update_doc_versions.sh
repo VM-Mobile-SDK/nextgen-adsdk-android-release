@@ -46,7 +46,6 @@ done
 # Update <!-- version_list --> inside index-template.html with the new versions
 # and pass updated content from index-template.html to index.html
 sed "s|<!-- version_list -->|$html_version_list|" "$html_template_file" > "$html_output_file"
-echo "$html_output_file"
 echo "✅ index.html updated with the new versions: $doc_version_folders"
 
 # Update <!-- jekyll_collection_list --> and <!-- just_docs_collection_list --> inside config-template.yml
@@ -55,5 +54,5 @@ yml_content=$(<"$yml_template_file")
 updated_yml_content=$(echo "$yml_content" | sed "s|<!-- jekyll_collection_list -->|$jekyll_collection_list|")
 updated_yml_content=$(echo "$updated_yml_content" | sed "s|<!-- just_docs_collection_list -->|$just_docs_collection_list|")
 echo "$updated_yml_content" > "$yml_output_file"
-echo "$yml_output_file"
+echo "$updated_yml_content"
 echo "✅ _config.yml updated with the new versions: $doc_version_folders"
