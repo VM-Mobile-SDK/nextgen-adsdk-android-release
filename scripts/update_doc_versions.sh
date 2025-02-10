@@ -38,9 +38,11 @@ jekyll_collection_list=""
 just_docs_collection_list=""
 
 for folder in "${doc_version_folders[@]}"; do
-  html_version_list+="<li><a href=\"$folder/\">SDK v.$folder</a></li>\n"
+  # short_version used to trim last 0 character. For example 6.0.0 > 6.0
+  short_version=$(echo "$folder" | sed -E 's/([0-9]+\.[0-9]+)\.0$/\1/')
+  html_version_list+="<li><a href=\"$folder/\">SDK v.$short_version</a></li>\n"
   jekyll_collection_list+="  $folder:\n    output: true\n"
-  just_docs_collection_list+="    $folder:\n      name: SDK v$folder\n      nav_fold: true\n"
+  just_docs_collection_list+="    $folder:\n      name: SDK v.$folder\n      nav_fold: true\n"
 done
 
 # Update <!-- version_list --> inside index-template.html with the new versions
