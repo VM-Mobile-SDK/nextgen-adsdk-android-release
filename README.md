@@ -1,9 +1,9 @@
 # nextgen-adsdk-android-release
-This repo contains the github packages for using Aditions nextgen AdSDK in Android.
+This repo contains the GitHub packages for using Aditions nextgen AdSDK in Android.
 
 ## Authorization
 
-Although the repository is public, you need any Github account with a token to add the dependency to your project. To create a token, you need to go to:
+Although the repository is public, you need a Github account with a token to add the dependency to your project. To create a token, you need to go to:
 
 *Github Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token (classic)*
 
@@ -13,11 +13,10 @@ At this point, you have everything you need to connect the dependency. You can r
 
 ## Add the repository dependency
 
-Add the repository to your settings.gradle file and set the correct credentials, where username is the username of your github account, password is the token that was created in the Authorisation step.
-(via gradle.properties or environment variables)
+Add the repository to your settings.gradle file and set the correct credentials, where username is the username of your github account, password is the token that was created in the Authorization step.
+(via gradle.properties, environment variables)
 ```Groovy
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
