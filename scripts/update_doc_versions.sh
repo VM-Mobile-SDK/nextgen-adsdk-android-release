@@ -29,6 +29,7 @@ if [ ${#doc_version_folders[@]} -gt $versions_count ]; then
 fi
 
 # Generate strings with versions to pass into index.html and _config.yml
+latest_version="${doc_version_folders[0]}"
 html_template_file="scripts/templates/index-template.html"
 yml_template_file="scripts/templates/config-template.yml"
 html_output_file="docs/index.html"
@@ -47,7 +48,10 @@ done
 
 # Update <!-- version_list --> inside index-template.html with the new versions
 # and pass updated content from index-template.html to index.html
-sed "s|<!-- version_list -->|$html_version_list|" "$html_template_file" > "$html_output_file"
+sed -e "s|<!-- version_list -->|$html_version_list|" \
+    -e "s|<!-- latest_version -->|$latest_version|" \
+    "$html_template_file" > "$html_output_file"
+
 echo "✅ index.html updated with the new versions: $doc_version_folders"
 
 # Update <!-- jekyll_collection_list --> and <!-- just_docs_collection_list --> inside config-template.yml
