@@ -1,0 +1,76 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>makeAdvertisement</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../index.html">
+                            nextgenAdSDK
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sdk_core:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="member" id="content" pageids="sdk_core::com.adition.sdk_core.api.core/AdService/makeAdvertisement/#com.adition.sdk_core.api.entities.request.AdRequest#com.adition.sdk_core.api.entities.request.AdPlacementType#com.adition.sdk_core.api.services.event_listener.AdEventListener?#com.adition.sdk_core.api.services.event_handler.TargetURLHandler?/PointingToDeclaration//-215846705">
+  <div class="breadcrumbs"><a href="../../index.html">sdk_core</a><span class="delimiter">/</span><a href="../index.html">com.adition.sdk_core.api.core</a><span class="delimiter">/</span><a href="index.html">AdService</a><span class="delimiter">/</span><span class="current">makeAdvertisement</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>make</span><wbr><span><span>Advertisement</span></span></h1>
+  </div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="make-advertisement.html"><span class="token function">makeAdvertisement</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">adRequest<span class="token operator">: </span><a href="../../com.adition.sdk_core.api.entities.request/-ad-request/index.html">AdRequest</a><span class="token punctuation">, </span></span><span class="parameter ">placementType<span class="token operator">: </span><a href="../../com.adition.sdk_core.api.entities.request/-ad-placement-type/index.html">AdPlacementType</a><span class="token operator"> = </span>AdPlacementType.INLINE<span class="token punctuation">, </span></span><span class="parameter ">adEventListener<span class="token operator">: </span><a href="../../com.adition.sdk_core.api.services.event_listener/-ad-event-listener/index.html">AdEventListener</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">targetURLHandler<span class="token operator">: </span><a href="../../com.adition.sdk_core.api.services.event_handler/-target-u-r-l-handler/index.html">TargetURLHandler</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.adition.sdk_core.api.entities.exception/-ad-result/index.html">AdResult</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-advertisement/index.html">Advertisement</a><span class="token operator">&gt;</span></div><p class="paragraph">Creating an <a href="../-advertisement/index.html">Advertisement</a> object and performing ad request.</p><p class="paragraph">This method is the one that creates and load the <a href="../-advertisement/index.html">Advertisement</a>. All parameters of the ad can be set using <a href="../../com.adition.sdk_core.api.entities.request/-ad-request/index.html">AdRequest</a> and <a href="set-ad-request-global-parameter.html">setAdRequestGlobalParameter</a>.</p><p class="paragraph">In addition, when you try to load an <a href="../../com.adition.sdk_core.api.entities.request/-ad-placement-type/-i-n-t-e-r-s-t-i-t-i-a-l/index.html">AdPlacementType.INTERSTITIAL</a> ad, you should not forget to pass the required <a href="make-advertisement.html">placementType</a> parameter.</p><p class="paragraph">The SDK also allows you to override the way ads are handled when they are tapped. In this case, you can implement your own <a href="../../com.adition.sdk_core.api.services.event_handler/-target-u-r-l-handler/index.html">TargetURLHandler</a> implementation and pass it to the <a href="make-advertisement.html">targetURLHandler</a> parameter.</p><blockquote class="quotation"><p class="paragraph"><strong>Note:</strong> Please note that your <a href="index.html">AdService</a> must be successfully configured before calling this method. Otherwise, you will receive an <a href="../../com.adition.sdk_core.api.entities.exception/-ad-error/-configuration/index.html">AdError.Configuration</a> error.</p></blockquote><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">The loaded <a href="../-advertisement/index.html">Advertisement</a> object or an error.</p></span><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>ad</span><wbr><span><span>Request</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The <a href="../../com.adition.sdk_core.api.entities.request/-ad-request/index.html">AdRequest</a> instance, which describes a request parameters.</p></div></div></div></div><div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>placement</span><wbr><span><span>Type</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The <a href="../../com.adition.sdk_core.api.entities.request/-ad-placement-type/index.html">AdPlacementType</a> describing the expected type of placement for the <a href="../-advertisement/index.html">Advertisement</a>. The default value is <a href="../../com.adition.sdk_core.api.entities.request/-ad-placement-type/-i-n-l-i-n-e/index.html">AdPlacementType.INLINE</a>. If you want to present an Ad as a interstitial you have to select <a href="../../com.adition.sdk_core.api.entities.request/-ad-placement-type/-i-n-t-e-r-s-t-i-t-i-a-l/index.html">AdPlacementType.INTERSTITIAL</a>.</p></div></div></div></div><div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>ad</span><wbr><span>Event</span><wbr><span><span>Listener</span></span></u></div></span></div><div><div class="title"><p class="paragraph">An optional object for tracking and processing <a href="../-advertisement/index.html">Advertisement</a> related events.</p></div></div></div></div><div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>target</span><wbr><span><span>URLHandler</span></span></u></div></span></div><div><div class="title"><p class="paragraph">An optional <a href="../../com.adition.sdk_core.api.services.event_handler/-target-u-r-l-handler/index.html">TargetURLHandler</a> object in which you can handle URLs that should be opened in the browser.</p></div></div></div></div></div></div></div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2025 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
