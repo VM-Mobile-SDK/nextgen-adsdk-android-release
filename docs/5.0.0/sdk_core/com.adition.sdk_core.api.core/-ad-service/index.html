@@ -1,0 +1,359 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>AdService</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../index.html">
+                            nextgenAdSDK
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sdk_core:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="sdk_core::com.adition.sdk_core.api.core/AdService///PointingToDeclaration//-215846705">
+  <div class="breadcrumbs"><a href="../../index.html">sdk_core</a><span class="delimiter">/</span><a href="../index.html">com.adition.sdk_core.api.core</a><span class="delimiter">/</span><span class="current">AdService</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Ad</span><wbr><span><span>Service</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">AdService</a></div><p class="paragraph">A key object for configuring your advertisements.</p><p class="paragraph">It is responsible for initial configuration, creating <a href="../-advertisement/index.html">Advertisement</a> objects, managing caching, and performing tag and tracking requests.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-1995495522%2FProperties%2F-215846705" anchor-label="context" id="-1995495522%2FProperties%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="context.html"><span><span>context</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1995495522%2FProperties%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="context.html">context</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Global information about an application environment.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1737619108%2FProperties%2F-215846705" anchor-label="networkId" id="1737619108%2FProperties%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="network-id.html"><span>network</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1737619108%2FProperties%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="network-id.html">networkId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">The unique identifier of the ad network.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-1415336465%2FFunctions%2F-215846705" anchor-label="flushCache" id="-1415336465%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="flush-cache.html"><span>flush</span><wbr><span><span>Cache</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1415336465%2FFunctions%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="flush-cache.html"><span class="token function">flushCache</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.adition.sdk_core.api.entities.exception/-ad-result/index.html">AdResult</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Removes all objects from the cache.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="642335660%2FFunctions%2F-215846705" anchor-label="getCacheInstance" id="642335660%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-cache-instance.html"><span>get</span><wbr><span>Cache</span><wbr><span><span>Instance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="642335660%2FFunctions%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-cache-instance.html"><span class="token function">getCacheInstance</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.adition.sdk_core.api.entities.exception/-ad-result/index.html">AdResult</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.adition.sdk_core.api.services.cache/-drive-cache/index.html">DriveCache</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">A method to get the built-in cache.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-682356030%2FFunctions%2F-215846705" anchor-label="getInstance" id="-682356030%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-instance.html"><span>get</span><wbr><span><span>Instance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-682356030%2FFunctions%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-instance.html"><span class="token function">getInstance</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">AdService</a></div><div class="brief "><p class="paragraph">Getter method for the <a href="index.html">AdService</a> object.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2062093753%2FFunctions%2F-215846705" anchor-label="getSdkVersion" id="2062093753%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-sdk-version.html"><span>get</span><wbr><span>Sdk</span><wbr><span><span>Version</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2062093753%2FFunctions%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-sdk-version.html"><span class="token function">getSdkVersion</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">The current version of the sdk.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="824775522%2FFunctions%2F-215846705" anchor-label="init" id="824775522%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="init.html"><span><span>init</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="824775522%2FFunctions%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="init.html"><span class="token function">init</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">networkId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">timeout<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-u-int/index.html">UInt</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">cacheSize<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-u-short/index.html">UShort</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">cachePath<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.adition.sdk_core.api.entities.exception/-ad-result/index.html">AdResult</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Internal method for configuring <a href="index.html">AdService</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1449592162%2FFunctions%2F-215846705" anchor-label="makeAdvertisement" id="-1449592162%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="make-advertisement.html"><span>make</span><wbr><span><span>Advertisement</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1449592162%2FFunctions%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="make-advertisement.html"><span class="token function">makeAdvertisement</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">adRequest<span class="token operator">: </span><a href="../../com.adition.sdk_core.api.entities.request/-ad-request/index.html">AdRequest</a><span class="token punctuation">, </span></span><span class="parameter ">placementType<span class="token operator">: </span><a href="../../com.adition.sdk_core.api.entities.request/-ad-placement-type/index.html">AdPlacementType</a><span class="token operator"> = </span>AdPlacementType.INLINE<span class="token punctuation">, </span></span><span class="parameter ">adEventListener<span class="token operator">: </span><a href="../../com.adition.sdk_core.api.services.event_listener/-ad-event-listener/index.html">AdEventListener</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">targetURLHandler<span class="token operator">: </span><a href="../../com.adition.sdk_core.api.services.event_handler/-target-u-r-l-handler/index.html">TargetURLHandler</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.adition.sdk_core.api.entities.exception/-ad-result/index.html">AdResult</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-advertisement/index.html">Advertisement</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Creating an <a href="../-advertisement/index.html">Advertisement</a> object and performing ad request.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="21615245%2FFunctions%2F-215846705" anchor-label="registerRenderer" id="21615245%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="register-renderer.html"><span>register</span><wbr><span><span>Renderer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="21615245%2FFunctions%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="register-renderer.html"><span class="token function">registerRenderer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">factory<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="../-ad-renderer/index.html">AdRenderer</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Registers a custom ad renderer.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1489306151%2FFunctions%2F-215846705" anchor-label="removeAdRequestGlobalParameter" id="1489306151%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="remove-ad-request-global-parameter.html"><span>remove</span><wbr><span>Ad</span><wbr><span>Request</span><wbr><span>Global</span><wbr><span><span>Parameter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1489306151%2FFunctions%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="remove-ad-request-global-parameter.html">T</a><span class="token operator">&gt; </span><a href="remove-ad-request-global-parameter.html"><span class="token function">removeAdRequestGlobalParameter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">keyPath<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.reflect/-k-mutable-property1/index.html">KMutableProperty1</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.adition.sdk_core.api.entities.request/-ad-request-global-parameters/index.html">AdRequestGlobalParameters</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="remove-ad-request-global-parameter.html">T</a><span class="token operator">?</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">A method for removing global parameters from <a href="../../com.adition.sdk_core.api.entities.request/-ad-request/index.html">AdRequest</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1997371009%2FFunctions%2F-215846705" anchor-label="removeTrackingGlobalParameter" id="-1997371009%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="remove-tracking-global-parameter.html"><span>remove</span><wbr><span>Tracking</span><wbr><span>Global</span><wbr><span><span>Parameter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1997371009%2FFunctions%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="remove-tracking-global-parameter.html">T</a><span class="token operator">&gt; </span><a href="remove-tracking-global-parameter.html"><span class="token function">removeTrackingGlobalParameter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">keyPath<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.reflect/-k-mutable-property1/index.html">KMutableProperty1</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.adition.sdk_core.api.entities.request/-tracking-global-parameters/index.html">TrackingGlobalParameters</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="remove-tracking-global-parameter.html">T</a><span class="token operator">?</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">A method for removing global parameters from <a href="../../com.adition.sdk_core.api.entities.request/-tag-request/index.html">TagRequest</a> and <a href="../../com.adition.sdk_core.api.entities.request/-tracking-request/index.html">TrackingRequest</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1297128357%2FFunctions%2F-215846705" anchor-label="setAdRequestGlobalParameter" id="-1297128357%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-ad-request-global-parameter.html"><span>set</span><wbr><span>Ad</span><wbr><span>Request</span><wbr><span>Global</span><wbr><span><span>Parameter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1297128357%2FFunctions%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="set-ad-request-global-parameter.html">T</a><span class="token operator">&gt; </span><a href="set-ad-request-global-parameter.html"><span class="token function">setAdRequestGlobalParameter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">keyPath<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.reflect/-k-mutable-property1/index.html">KMutableProperty1</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.adition.sdk_core.api.entities.request/-ad-request-global-parameters/index.html">AdRequestGlobalParameters</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="set-ad-request-global-parameter.html">T</a><span class="token operator">?</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="set-ad-request-global-parameter.html">T</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">A method for setting global parameters for <a href="../../com.adition.sdk_core.api.entities.request/-ad-request/index.html">AdRequest</a> before calling the <a href="make-advertisement.html">makeAdvertisement</a> method.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-275988516%2FFunctions%2F-215846705" anchor-label="setCachePath" id="-275988516%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-cache-path.html"><span>set</span><wbr><span>Cache</span><wbr><span><span>Path</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-275988516%2FFunctions%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="set-cache-path.html"><span class="token function">setCachePath</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">path<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.adition.sdk_core.api.entities.exception/-ad-result/index.html">AdResult</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Method to set the path for the ad cache.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="215944450%2FFunctions%2F-215846705" anchor-label="setCacheSize" id="215944450%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-cache-size.html"><span>set</span><wbr><span>Cache</span><wbr><span><span>Size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="215944450%2FFunctions%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="set-cache-size.html"><span class="token function">setCacheSize</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">sizeInMb<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-u-short/index.html">UShort</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.adition.sdk_core.api.entities.exception/-ad-result/index.html">AdResult</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Changes the maximum cache size on disk.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="220770179%2FFunctions%2F-215846705" anchor-label="setTrackingGlobalParameter" id="220770179%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-tracking-global-parameter.html"><span>set</span><wbr><span>Tracking</span><wbr><span>Global</span><wbr><span><span>Parameter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="220770179%2FFunctions%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="set-tracking-global-parameter.html">T</a><span class="token operator">&gt; </span><a href="set-tracking-global-parameter.html"><span class="token function">setTrackingGlobalParameter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">keyPath<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.reflect/-k-mutable-property1/index.html">KMutableProperty1</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.adition.sdk_core.api.entities.request/-tracking-global-parameters/index.html">TrackingGlobalParameters</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="set-tracking-global-parameter.html">T</a><span class="token operator">?</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="set-tracking-global-parameter.html">T</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">A method for setting global parameters for <a href="../../com.adition.sdk_core.api.entities.request/-tag-request/index.html">TagRequest</a> and <a href="../../com.adition.sdk_core.api.entities.request/-tracking-request/index.html">TrackingRequest</a> before calling <a href="tag-user.html">tagUser</a>&amp;<a href="tracking-request.html">trackingRequest</a> methods.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1319830404%2FFunctions%2F-215846705" anchor-label="tagUser" id="1319830404%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="tag-user.html"><span>tag</span><wbr><span><span>User</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1319830404%2FFunctions%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="tag-user.html"><span class="token function">tagUser</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">tagRequest<span class="token operator">: </span><a href="../../com.adition.sdk_core.api.entities.request/-tag-request/index.html">TagRequest</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.adition.sdk_core.api.entities.exception/-ad-result/index.html">AdResult</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Trigger a request to "tag" a user.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1849927716%2FFunctions%2F-215846705" anchor-label="trackingRequest" id="1849927716%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="tracking-request.html"><span>tracking</span><wbr><span><span>Request</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1849927716%2FFunctions%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="tracking-request.html"><span class="token function">trackingRequest</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">trackingRequest<span class="token operator">: </span><a href="../../com.adition.sdk_core.api.entities.request/-tracking-request/index.html">TrackingRequest</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.adition.sdk_core.api.entities.exception/-ad-result/index.html">AdResult</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Trigger a request for conversion tracking.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1245564150%2FFunctions%2F-215846705" anchor-label="unregisterRenderer" id="1245564150%2FFunctions%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="unregister-renderer.html"><span>unregister</span><wbr><span><span>Renderer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1245564150%2FFunctions%2F-215846705"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="unregister-renderer.html"><span class="token function">unregisterRenderer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="../-ad-renderer/index.html">AdRenderer</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Unregisters the custom ad renderer.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2025 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
