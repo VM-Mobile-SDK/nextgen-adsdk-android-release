@@ -6,6 +6,8 @@ plugins:
   - jekyll-remote-theme
 collections_dir: tutorials
 collections:
+  5.0.0:
+    output: true
   4.6.0:
     output: true
   4.5.0:
@@ -17,6 +19,9 @@ collections:
 
 just_the_docs:
   collections:
+    5.0.0:
+      name: SDK v.5.0.0
+      nav_fold: true
     4.6.0:
       name: SDK v.4.6.0
       nav_fold: true
