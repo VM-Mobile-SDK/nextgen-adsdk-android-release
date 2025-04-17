@@ -1,0 +1,238 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>sdk_core</title>
+<link href="../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../scripts/sourceset_dependencies.js" async></script>
+<link href="../styles/style.css" rel="Stylesheet">
+<link href="../styles/main.css" rel="Stylesheet">
+<link href="../styles/prism.css" rel="Stylesheet">
+<link href="../styles/logo-styles.css" rel="Stylesheet">
+<link href="../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../scripts/main.js" defer></script>
+<script type="text/javascript" src="../scripts/prism.js" async></script>
+<script type="text/javascript" src="../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../index.html">
+                            nextgenAdSDK
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sdk_core:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" id="content" pageids="sdk_core::////PointingToDeclaration//-215846705">
+  <div class="breadcrumbs"></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>sdk_core</span></span></h1>
+    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sdk_core:dokkaHtmlPartial/release"><p class="paragraph">Manage, display, and create your custom advertisements on Android using cutting-edge technologies such as Coroutines, and Jetpack Compose.</p><h2 class=""> Note</h2><p class="paragraph">To use the Adition AdSDK the application developer will need to acquire the AdSDK library as well as <code class="lang-kotlin">networkId</code> and <code class="lang-kotlin">contentUnit</code> or <code class="lang-kotlin">learningTag</code> pairs from an Adition.</p><p class="paragraph">If your experience "cannot load page" errors when navigating between entries in this documentation, then the culprit is very likely an activated ad blocker. Many of the documented classes and services have names related to advertising terms. We found that this can trigger ad blockers. So please disable your adblocker if you have issues.</p><h2 class=""> Overview</h2><p class="paragraph">To serve advertisements using the Adition AdSDK you will typically:</p><ul><li><p class="paragraph">Add the package dependencies.</p></li><li><p class="paragraph">Configure the AdService via AdService.configure method.</p></li><li><p class="paragraph">Request the creation of an Advertisement from AdService passing AdRequest.</p></li></ul><p class="paragraph">Apps using this AdSDK must be built at least for Android SDK Level 24.</p><p class="paragraph">You can follow the AdSDK integration tutorial documentation with code examples where you will create your first application using the AdSDK.</p><h2 class=""> Important Classes &amp; Functions</h2><p class="paragraph">When dealing with Ads you will interact with the following API:</p><ul><li><p class="paragraph">AdService – core SDK's interface. You use it as a singleton.</p></li><ul><li><p class="paragraph">AdService.configure – includes configuring the AdService, registering native renderers, and setting the cache size and path.</p></li><li><p class="paragraph">AdService.setAdRequestGlobalParameter – setting global parameters that will apply to each AdRequest.</p></li><li><p class="paragraph">AdService.makeAdvertisement – creating an Advertisement object with inline or interstitial placement type and initiating a request to the ad server.</p></li></ul><li><p class="paragraph">Advertisement – represents an advertisement.</p></li><li><p class="paragraph">Ad – while Advertisement represents the content of an advertisement, Ad is the element for displaying AdPlacementType.INLINE ad on a view hierarchy.</p></li><li><p class="paragraph">Interstitial – while Advertisement represents the content of an advertisement, Interstitial is the element for displaying AdPlacementType.INTERSTITIAL ad as a full screen cover.</p></li><li><p class="paragraph">AdResult – a wrapper class that represents either a success or a failure that contains AdError.</p></li></ul><p class="paragraph">If you are creating a custom ad, you will also use:</p><ul><li><p class="paragraph">AdRenderer&amp;AdComposeRenderer – interface of the future presentation layer of the ad. </p></li><li><p class="paragraph">AdService.registerRenderer – registers your custom ad in the SDK.</p></li></ul><p class="paragraph">To gain a more detailed understanding of how to work with these objects and how they are related, we recommend going through our tutorial documentation.</p><h2 class=""> Explaining the Concepts of AdSDK Server Requests</h2><p class="paragraph">Your app uses the AdSDK to request ads from an ad server.</p><p class="paragraph">To enable the ad server to serve relevant ads, you should pass certain information. The first argument you will pass when configuring an AdService is the AdService.networkId.</p><p class="paragraph">When creating an Advertisement, you can pass additional information and interfaces through the AdService.makeAdvertisement method:</p><ul><li><p class="paragraph">AdRequest (required)</p></li><ul><li><p class="paragraph">AdRequest.contentUnit or AdRequest.learningTag (required)</p></li><li><p class="paragraph">AdRequest.profiles (optional)</p></li><li><p class="paragraph">AdRequest.keywords (optional)</p></li><li><p class="paragraph">AdRequest.window (optional)</p></li><li><p class="paragraph">AdRequest.timeoutAfterSeconds (optional)</p></li><li><p class="paragraph">AdRequest.gdprPd (optional)</p></li><li><p class="paragraph">AdRequest.campaignId (optional)</p></li><li><p class="paragraph">AdRequest.bannerId (optional)</p></li><li><p class="paragraph">AdRequest.isSHBEnabled (optional)</p></li><li><p class="paragraph">AdRequest.dsa (optional)</p></li></ul><li><p class="paragraph">AdPlacementType (required)</p></li><li><p class="paragraph">AdEventListener (optional)</p></li><li><p class="paragraph">TargetURLHandler (optional)</p></li></ul><p class="paragraph">Some parameters of AdRequest are designed to be passed in all requests, not just individual ones. To avoid duplicating code, SDK provide AdService.setAdRequestGlobalParameter and AdService.removeAdRequestGlobalParameter methods, which will modify these optional parameters:</p><ul><li><p class="paragraph">BaseGlobalParameters.gdpr</p></li><li><p class="paragraph">BaseGlobalParameters.externalUID</p></li><li><p class="paragraph">BaseGlobalParameters.isOptOutEnabled</p></li><li><p class="paragraph">BaseGlobalParameters.userIds</p></li><li><p class="paragraph">AdRequestGlobalParameters.isIpIdentified</p></li><li><p class="paragraph">AdRequestGlobalParameters.isSHBEnabled</p></li><li><p class="paragraph">AdRequestGlobalParameters.dsa</p></li><li><p class="paragraph">AdRequestGlobalParameters.cookiesAccess</p></li></ul><p class="paragraph">Learn more about AdRequestGlobalParameters in our tutorial documentation.</p><h2 class=""> Asset Caching</h2><p class="paragraph">The SDK has a built-in FIFO persistent cache that caches all possible advertising resources, such as banners on the device.</p><p class="paragraph">Both the application and renderers can get a cache object using the AdService.getCacheInstance method. You can set the initial path for the cache to work with AdService.configure or change it over time with AdService.setCachePath.</p><p class="paragraph">The built-in cache limit is 100 MB, but you can set another size when configuring an AdService, or change it over time using AdService.setCacheSize. You can also clear the cache with AdService.flushCache.</p><p class="paragraph">Learn more about DriveCache in our tutorial documentation.</p><h2 class=""> Controlling Advertisement's Events</h2><p class="paragraph">Advertisement can be configured to send certain tracking events to the ad server or to pass information to the app. To monitor these events, you can pass the AdEventListener to the AdService.makeAdvertisement method.</p><p class="paragraph">With the help of this interface, you will be able to monitor:</p><ul><li><p class="paragraph">Tracking events:</p><ul><li><p class="paragraph">AdEventType.Impression</p></li><li><p class="paragraph">AdEventType.Viewable</p></li></ul><blockquote class="quotation"><p class="paragraph">Note: Which tracking events are enabled for which advertisement is configured in the Adition Backend.</p></blockquote></li><li><p class="paragraph">User interaction events: </p></li><ul><li><p class="paragraph">AdEventType.Tap</p></li><li><p class="paragraph">AdEventType.UnloadRequest</p></li></ul><li><p class="paragraph">Custom renderer events:</p></li><ul><li><p class="paragraph">AdEventType.RendererMessageReceived</p></li><li><p class="paragraph">AdEventType.CustomTrackingEvent</p></li></ul></ul><p class="paragraph">To gain a more detailed understanding of how to work with the AdEventListener and AdEventType, we recommend going through our tutorial documentation.</p><h2 class=""> Advertisement Tap Handling</h2><h3 class=""> Target URL Handling</h3><p class="paragraph">We call the target URL the URL that should be shown to the user as a result of tapping on the ad.</p><p class="paragraph">By default, the SDK opens an external browser when processing a target URL. You can override this behaviour with your own. For example, this can be useful if you want to open your internal browser in your application to process the target URL. To do this, you pass the TargetURLHandler to the AdService.makeAdvertisement method.</p><p class="paragraph">Learn more in our tutorial documentation.</p><h3 class=""> Handling inApp-ClickURL</h3><p class="paragraph">inApp-ClickURLs is a feature which allows you to specify a custom schemed tap url. An example of a custom scheme url is <code class="lang-kotlin">`myschema://coupons`</code>. Banners with this option selected will not open a browser when it is tapped. It will attempt to fire an intent which has been registered to handle the custom schemed tap url.</p><p class="paragraph">The Adition click counting works by initially calling the ad server url which will then count the click and redirect to the banner click url. The exception to this default click handling is with inApp-ClickURL banners, as they are handled by the SDK internally which ensures the click is successfully counted and the intent fired.</p><p class="paragraph">It is important that the app has registered intent-filters for the banner being delivered otherwise the fired intent will be silently ignored. It is possible to have multiple http-schema redirects with this option activated, but they will be silently requested and ignored if they don't end up redirecting to a custom schema. Using common schemas like http will result in a dialog popup which will request the user to select the (default) app to handle the intent.</p><h3 class=""> Manual Tap Event Triggering</h3><p class="paragraph">There is method called Advertisement.performTapEvent, responsible for performing AdEventType.Tap. This method use for app developer when they need to call tap event manually.</p><h2 class=""> User Tagging and Conversion Tracking Features</h2><p class="paragraph">AdSDK provides powerful functionality for user tagging and conversion tracking. You can find an example of the implementation in our tutorial documentation.</p><h3 class=""> Tagging Request</h3><p class="paragraph">Tagging targeting is a server side tagging (user profile) feature. You are able to tag a user currently using your application with key = value tags that can be used in targeting of campaigns within the Adition ad serving platform.</p><p class="paragraph">See TagRequest. This class uses as a parameter the AdService.tagUser method. You can pass all tags through the constructor.</p><h3 class=""> Tracking Request</h3><p class="paragraph">Tracking is a server side feature. You are able to perform tracking request to track your conversions.</p><p class="paragraph">See TrackingRequest. The app can fire the track request as soon as a conversion occurs within the app via AdService.trackingRequest method.</p><h3 class=""> Global Parameters</h3><p class="paragraph">TagRequest and TrackingRequest has ability to set global parameter, which are designed to be passed in all requests, not just individual ones. To avoid duplicating code, SDK provide AdService.setTrackingGlobalParameter and AdService.removeTrackingGlobalParameter methods, which will modify these optional parameters:</p><ul><li><p class="paragraph">BaseGlobalParameters.gdpr</p></li><li><p class="paragraph">BaseGlobalParameters.externalUID</p></li><li><p class="paragraph">BaseGlobalParameters.isOptOutEnabled</p></li><li><p class="paragraph">BaseGlobalParameters.userIds</p></li></ul><p class="paragraph">Learn more about TrackingGlobalParameters in our tutorial documentation.</p><h2 class=""> Creating Custom Native Ads</h2><p class="paragraph">As App developer, you can create your own custom ad formats. For example, you can implement interactive ad formats like surveys, rotating galleries or Ads that play video.</p><h3 class=""> 1. Server Side</h3><p class="paragraph">Your custom ad format can be configured in the Adition backend. There you can define a creative template with custom JSON that will be delivered as part of the ad. For example, you could provide a way to configure some styling aspects for the ad by adding custom JSON key-value-pairs to the creative template.</p><h3 class=""> 2. Renderer</h3><p class="paragraph">On the app side, you can implement your custom Ad with native technologies like Kotlin and Jetpack Compose. As part of your custom ad you will need to create a renderer class which implements the AdComposeRenderer interface. Your renderer class needs to implement the AdRenderer.configure method. This method will be called every time Advertisement manages to load or reload advertisement data. In it you can process the data, and prepare the renderer for display. The last step will be overriding the AdComposeRenderer.RenderAd composable method with your the presentation logic.</p><h3 class=""> 3.Communication</h3><p class="paragraph">Also, there are some methods to interact with the AdSDK and App via AdRendererEventHandler:</p><ul><li><p class="paragraph">AdRendererEventHandler.sendMessage</p></li><li><p class="paragraph">AdRendererEventHandler.performTapEvent</p></li><li><p class="paragraph">AdRendererEventHandler.unloadRequest</p></li><li><p class="paragraph">AdRendererEventHandler.downloadBitmap</p></li><li><p class="paragraph">AdRendererEventHandler.performCustomTrackingEvent</p></li></ul><h3 class=""> 4. Renderer Registry</h3><p class="paragraph">To make the SDK aware of your ad, you need to register it with the SDK using AdService.registerRenderer. Once your custom ad is registered, the SDK will signal the Adition ad server that it can handle this new ad format for subsequent ad request. The SDK will also manage the creation of the instances of your renderer classes in case actual ad content is delivered by the ad server.</p></div></div>
+  </div>
+  <h2 class="">Packages</h2>
+  <div class="table"><a data-name="558918814%2FPackages%2F-215846705" anchor-label="com.adition.sdk_core.api.core" id="558918814%2FPackages%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="com.adition.sdk_core.api.core/index.html">com.adition.sdk_core.api.core</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="558918814%2FPackages%2F-215846705"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="558918814%2FPackages%2F-215846705" anchor-label="com.adition.sdk_core.api.core" id="558918814%2FPackages%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+            <p class="paragraph">Contains the main interfaces that you will encounter when working with the AdSDK.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-740784192%2FPackages%2F-215846705" anchor-label="com.adition.sdk_core.api.entities" id="-740784192%2FPackages%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="com.adition.sdk_core.api.entities/index.html">com.adition.sdk_core.api.entities</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-740784192%2FPackages%2F-215846705"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-740784192%2FPackages%2F-215846705" anchor-label="com.adition.sdk_core.api.entities" id="-740784192%2FPackages%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+            <p class="paragraph">Contains all public entities that you will encounter when working with the AdSDK.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-1473894687%2FPackages%2F-215846705" anchor-label="com.adition.sdk_core.api.entities.exception" id="-1473894687%2FPackages%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="com.adition.sdk_core.api.entities.exception/index.html">com.adition.sdk_core.api.entities.exception</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1473894687%2FPackages%2F-215846705"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-1473894687%2FPackages%2F-215846705" anchor-label="com.adition.sdk_core.api.entities.exception" id="-1473894687%2FPackages%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+            <p class="paragraph">Contains all public entities related to the SDK's result handling that you will encounter when working with the AdSDK.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-855321311%2FPackages%2F-215846705" anchor-label="com.adition.sdk_core.api.entities.request" id="-855321311%2FPackages%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="com.adition.sdk_core.api.entities.request/index.html">com.adition.sdk_core.api.entities.request</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-855321311%2FPackages%2F-215846705"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-855321311%2FPackages%2F-215846705" anchor-label="com.adition.sdk_core.api.entities.request" id="-855321311%2FPackages%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+            <p class="paragraph">Contains all public entities related to requests to the ad server that you will encounter when working with the AdSDK.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="1465011571%2FPackages%2F-215846705" anchor-label="com.adition.sdk_core.api.entities.response" id="1465011571%2FPackages%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="com.adition.sdk_core.api.entities.response/index.html">com.adition.sdk_core.api.entities.response</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1465011571%2FPackages%2F-215846705"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="1465011571%2FPackages%2F-215846705" anchor-label="com.adition.sdk_core.api.entities.response" id="1465011571%2FPackages%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+            <p class="paragraph">Contains all public entities related to responses from the ad server that you will encounter when working with the AdSDK.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-521246479%2FPackages%2F-215846705" anchor-label="com.adition.sdk_core.api.services.cache" id="-521246479%2FPackages%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="com.adition.sdk_core.api.services.cache/index.html">com.adition.sdk_core.api.services.cache</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-521246479%2FPackages%2F-215846705"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-521246479%2FPackages%2F-215846705" anchor-label="com.adition.sdk_core.api.services.cache" id="-521246479%2FPackages%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+            <p class="paragraph">Includes all public interfaces that you will use if you work with AdSDK built-in caching.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-774038188%2FPackages%2F-215846705" anchor-label="com.adition.sdk_core.api.services.event_handler" id="-774038188%2FPackages%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="com.adition.sdk_core.api.services.event_handler/index.html">com.adition.sdk_core.api.services.event_handler</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-774038188%2FPackages%2F-215846705"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-774038188%2FPackages%2F-215846705" anchor-label="com.adition.sdk_core.api.services.event_handler" id="-774038188%2FPackages%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+            <p class="paragraph">Includes all public interfaces related to customisation of event handling in the AdSDK.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-157170706%2FPackages%2F-215846705" anchor-label="com.adition.sdk_core.api.services.event_listener" id="-157170706%2FPackages%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":sdk_core:dokkaHtmlPartial/release" data-filterable-set=":sdk_core:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="com.adition.sdk_core.api.services.event_listener/index.html">com.adition.sdk_core.api.services.event_listener</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-157170706%2FPackages%2F-215846705"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-157170706%2FPackages%2F-215846705" anchor-label="com.adition.sdk_core.api.services.event_listener" id="-157170706%2FPackages%2F-215846705" data-filterable-set=":sdk_core:dokkaHtmlPartial/release"></a>
+            <p class="paragraph">Includes all public interfaces related to monitoring advertising-related events in the AdSDK.</p>
+          </span></div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2025 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
