@@ -22,7 +22,7 @@ The major difference when using XML instead of Compose comes when you try to use
 
 There are several ways to do this. You can use the XML layout. 
 
-```XML
+```xml
 <androidx.compose.ui.platform.ComposeView
     android:id="@+id/composeView1"
     android:layout_width="wrap_content"
