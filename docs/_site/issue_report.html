@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdSDK Issue Report</title>
+    <style>
+        @font-face {
+            font-family: 'JetBrainsMono';
+            src: url('resources/fonts/JetBrainsMono-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'JetBrainsMono';
+            src: url('resources/fonts/JetBrainsMono-Bold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        body {
+            background-color: rgb(45, 36, 39);
+            color: rgb(211, 211, 212);
+            font-family: 'JetBrainsMono', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: rgb(54, 53, 57);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header img {
+            width: 50px;
+            height: 50px;
+            filter: contrast(0);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 400;
+            margin: 5px 0 0;
+            color: rgb(211, 211, 212);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding: 0;
+            margin: 20px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        a {
+            color: rgb(211, 211, 212);
+            font-size: 1rem;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-text {
+            font-family: 'JetBrainsMono', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 20px;
+            font-size: 1rem;
+            color: rgb(211, 211, 212);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>AdSDK Issue Report</h1>
+        <h4>Thank you for your contribution to improving the AdSDK.</h4>
+
+        <p>
+            Since we use private keys and identifiers when working with AdSDK, we accept private issue reports by email.
+        </p>
+        <p class="bold">To create an issue report, please:</p>
+
+        <ul>
+            <li>
+                Prepare any additional data you can provide us with: logs, stack traces, etc.
+            </li>
+            <li>
+                Prepare a demo app where we can reproduce the issue.
+                <span class="highlight">
+                    You can use our
+                    <a href="https://github.com/VM-Mobile-SDK/nextgen-adsdk-android-issue-demo">template</a>
+                    as a starter project and edit it to reproduce the error.
+                </span>
+            </li>
+            <li>
+                Send us all the
+                <a href="issue_report_template.html">
+                    necessary information
+                </a>
+                to our email: <b>mobilesdk@virtualminds.com</b>,<br />
+                or
+                <a
+                    href="mailto:mobilesdk@virtualminds.com?subject=Android%20SDK%20issue%20report&body=-%20Description%3A%0A%0A-%20Expected%20behaviour%3A%0A%0A-%20Actual%20behaviour%3A%0A%0A-%20SDK%20version%3A%0A%0A-%20Device%3A%0AIf%20the%20issue%20occurs%20only%20on%20specific%20devices%2C%20you%20can%20specify%20them.%0A%0A-%20Android%20version%3A%0AIf%20the%20issue%20occurs%20only%20on%20specific%20Android%20versions%2C%20you%20can%20specify%20them.%0A%0A-%20Android%20Studio%20version%3A%0AIf%20the%20issue%20is%20more%20related%20to%20development%20than%20production%2C%20you%20can%20specify%20the%20version%20of%20Android%20Studio%20in%20which%20you%20are%20experiencing%20the%20problem.%0A%0A-%20Steps%20to%20reproduce%20the%20issue%3A%0ADescribe%20the%20steps%20we%20need%20to%20take%20to%20reproduce%20the%20issue.%0A%0A-%20Integration%20method%3A%0AGitHub%20Packages%20or%20Nexus%20integration.%0A%0A-%20Attachments%3A%0AIt%20can%20include%20a%20crash%20report%2C%20logs%2C%20or%20other%20useful%20information.%0A%0AAlso%2C%20we%20need%20a%20demo%20app%20to%20reproduce%20the%20error.%20You%20can%20use%20our%20template%20as%20a%20starter%20project%20and%20edit%20it%20to%20reproduce%20the%20error%3A%0Ahttps%3A%2F%2Fgithub.com%2FVM-Mobile-SDK%2Fnextgen-adsdk-android-issue-demo">
+                    follow the link
+                </a>
+                and fill in as much information as possible.
+                <span class="highlight">
+                    In addition, don't forget to attach the demo app and the files described in the steps above.
+                </span>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
