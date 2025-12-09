@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>GlobalParameters</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../../index.html">
+                            ad_sdk
+                    </a>
+            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":ad_sdk:dokkaHtml/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="ad_sdk::com.adition.ad_sdk.api.entities.request.global_parameters/GlobalParameters///PointingToDeclaration//-837518960">
+  <div class="breadcrumbs"><a href="../../../index.html">ad_sdk</a><span class="delimiter">/</span><a href="../index.html">com.adition.ad_sdk.api.entities.request.global_parameters</a><span class="delimiter">/</span><span class="current">GlobalParameters</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Global</span><wbr></wbr><span><span>Parameters</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ad_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">GlobalParameters</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">var </span>gdpr<span class="token operator">: </span><a href="../-g-d-p-r/index.html">GDPR</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>externalUID<span class="token operator">: </span><a href="../-external-u-i-d/index.html">ExternalUID</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>isOptOutEnabled<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>accessMode<span class="token operator">: </span><a href="../-access-mode/index.html">AccessMode</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>userIds<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-user-id-type/index.html">UserIdType</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><p class="paragraph">An object for storing common global parameters that will be applied when creating an <a href="../../com.adition.ad_sdk.api.entities.request/-ad-request/index.html">AdRequest</a>, <a href="../../com.adition.ad_sdk.api.entities.request/-tag-request/index.html">TagRequest</a>, and <a href="../../com.adition.ad_sdk.api.entities.request/-tracking-request/index.html">TrackingRequest</a>.</p><p class="paragraph">Some parameters of <a href="../../com.adition.ad_sdk.api.entities.request/-tag-request/index.html">TagRequest</a>, <a href="../../com.adition.ad_sdk.api.entities.request/-tracking-request/index.html">TrackingRequest</a> and <a href="../../com.adition.ad_sdk.api.entities.request/-ad-request/index.html">AdRequest</a> are designed to be passed in all requests, not just individual ones. To avoid duplicating code when creating requests you can pass all parameters via <a href="../../com.adition.ad_sdk.api.core/-ad-service-provider/configure.html">AdServiceProvider.configure</a> using the <code class="lang-kotlin">globalParameters</code> parameter, and change them later using <a href="../../com.adition.ad_sdk.api.core/-ad-service/set-global-parameters.html">AdService.setGlobalParameters</a> and <a href="../../com.adition.ad_sdk.api.core/-ad-service/remove-global-parameter.html">AdService.removeGlobalParameter</a>.</p><blockquote class="quotation"><p class="paragraph"><strong>Note:</strong> This object describes common global parameters for <a href="../../com.adition.ad_sdk.api.entities.request/-ad-request/index.html">AdRequest</a>, <a href="../../com.adition.ad_sdk.api.entities.request/-tracking-request/index.html">TrackingRequest</a>, and <a href="../../com.adition.ad_sdk.api.entities.request/-tag-request/index.html">TagRequest</a>. At the same time, <a href="../../com.adition.ad_sdk.api.entities.request/-ad-request/index.html">AdRequest</a> has some unique parameters – <a href="../-ad-request-global-parameters/index.html">AdRequestGlobalParameters</a>. You can also set them separately via <a href="../../com.adition.ad_sdk.api.core/-ad-service-provider/configure.html">AdServiceProvider.configure</a> using the <code class="lang-kotlin">adRequestGlobalParameters</code> parameter, and change them later using <a href="../../com.adition.ad_sdk.api.core/-ad-service/set-ad-request-global-parameters.html">AdService.setAdRequestGlobalParameters</a> and <a href="../../com.adition.ad_sdk.api.core/-ad-service/remove-ad-request-global-parameter.html">AdService.removeAdRequestGlobalParameter</a>.</p></blockquote><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">// Set parameter<br>val result = adServiceProvider.configure(<br>     networkId = NETWORK_ID,<br>     parentCoroutineScope = coroutineScope,<br>     globalParameters = GlobalParameters(accessMode = AccessMode.OPT_OUT),<br>     adRequestGlobalParameters = AdRequestGlobalParameters(isIpIdentified = false)<br>)<br><br>// Change parameter over time<br>adService.setGlobalParameters(<br>     GlobalParameter(<br>         GlobalParameters::externalUID,<br>         ExternalUID(externalId, true)<br>     )<br>     GlobalParameter(<br>         GlobalParameters::userIds,<br>         listOf(UserIdType.Idfa(&quot;AAAA&quot;), UserIdType.Netid(&quot;BBBB&quot;))<br>     )<br>)<br><br>// Clear parameter<br>adService.removeGlobalParameter(GlobalParameter::externalUID)</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h4 class="">See also</h4><div class="table"><div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.adition.ad_sdk.api.core/-ad-service-provider/configure.html"><span>Ad</span><wbr></wbr><span>Service</span><wbr></wbr><span>Provider.</span><wbr></wbr><span>configure</span></a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-ad-request-global-parameters/index.html"><span>Ad</span><wbr></wbr><span>Request</span><wbr></wbr><span>Global</span><wbr></wbr><span><span>Parameters</span></span></a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.adition.ad_sdk.api.core/-ad-service/set-global-parameters.html"><span>AdService.</span><wbr></wbr><span>set</span><wbr></wbr><span>Global</span><wbr></wbr><span><span>Parameters</span></span></a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.adition.ad_sdk.api.core/-ad-service/remove-global-parameter.html"><span>AdService.</span><wbr></wbr><span>remove</span><wbr></wbr><span>Global</span><wbr></wbr><span><span>Parameter</span></span></a></div></span></div><div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="893233433%2FConstructors%2F-837518960" anchor-label="GlobalParameters" id="893233433%2FConstructors%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-global-parameters.html"><span>Global</span><wbr></wbr><span><span>Parameters</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="893233433%2FConstructors%2F-837518960"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ad_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">gdpr<span class="token operator">: </span><a href="../-g-d-p-r/index.html">GDPR</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">externalUID<span class="token operator">: </span><a href="../-external-u-i-d/index.html">ExternalUID</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">isOptOutEnabled<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">accessMode<span class="token operator">: </span><a href="../-access-mode/index.html">AccessMode</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">userIds<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-user-id-type/index.html">UserIdType</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-1730090362%2FProperties%2F-837518960" anchor-label="accessMode" id="-1730090362%2FProperties%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="access-mode.html"><span>access</span><wbr></wbr><span><span>Mode</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1730090362%2FProperties%2F-837518960"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ad_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="access-mode.html">accessMode</a><span class="token operator">: </span><a href="../-access-mode/index.html">AccessMode</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">An ad server automatically processes data on an opt-out basis, but if it has the right to collect user data, it can instead be configured to use an opt-in approach.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="424032968%2FProperties%2F-837518960" anchor-label="externalUID" id="424032968%2FProperties%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="external-u-i-d.html"><span>external</span><wbr></wbr><span><span>UID</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="424032968%2FProperties%2F-837518960"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ad_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="external-u-i-d.html">externalUID</a><span class="token operator">: </span><a href="../-external-u-i-d/index.html">ExternalUID</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">If your app has means to identify a user, for example through association with an user account or an advertising ID, you can share this with the ad server.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1344461042%2FProperties%2F-837518960" anchor-label="gdpr" id="-1344461042%2FProperties%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="gdpr.html"><span><span>gdpr</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1344461042%2FProperties%2F-837518960"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ad_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="gdpr.html">gdpr</a><span class="token operator">: </span><a href="../-g-d-p-r/index.html">GDPR</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">App can ask users about their consent for sharing information with third parties.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1211918063%2FProperties%2F-837518960" anchor-label="isOptOutEnabled" id="-1211918063%2FProperties%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-opt-out-enabled.html"><span>is</span><wbr></wbr><span>Opt</span><wbr></wbr><span>Out</span><wbr></wbr><span><span>Enabled</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1211918063%2FProperties%2F-837518960"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ad_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="is-opt-out-enabled.html">isOptOutEnabled</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">An app can ask users if they want to opt out from process data. Use <a href="is-opt-out-enabled.html">isOptOutEnabled</a> to make the users choice visible for the ad server.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1579542880%2FProperties%2F-837518960" anchor-label="userIds" id="1579542880%2FProperties%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="user-ids.html"><span>user</span><wbr></wbr><span><span>Ids</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1579542880%2FProperties%2F-837518960"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ad_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="user-ids.html">userIds</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-user-id-type/index.html">UserIdType</a><span class="token operator">&gt;</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">List of identifiers for additional extended IDs on the Identity Service. The data type of <a href="user-ids.html">userIds</a> is a list of <a href="../-user-id-type/index.html">UserIdType</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2025 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

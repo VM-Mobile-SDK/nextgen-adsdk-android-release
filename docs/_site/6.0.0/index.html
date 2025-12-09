@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>ad_sdk</title>
+    <link href="images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="scripts/sourceset_dependencies.js" async="async"></script>
+<link href="styles/style.css" rel="Stylesheet">
+<link href="styles/main.css" rel="Stylesheet">
+<link href="styles/prism.css" rel="Stylesheet">
+<link href="styles/logo-styles.css" rel="Stylesheet">
+<link href="styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="index.html">
+                            ad_sdk
+                    </a>
+            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":ad_sdk:dokkaHtml/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" id="content" pageIds="ad_sdk::////PointingToDeclaration//-837518960">
+  <div class="breadcrumbs"></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>ad_sdk</span></span></h1>
+    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ad_sdk:dokkaHtml/release"><p class="paragraph">Manage, display, and create your custom advertisements on Android using cutting-edge technologies such as Coroutines, and Jetpack Compose.</p><h2 class=""> Note</h2><p class="paragraph">To use the Adition AdSDK the application developer will need to acquire the AdSDK library as well as <code class="lang-kotlin">networkId</code> and <code class="lang-kotlin">contentUnit</code> or <code class="lang-kotlin">learningTag</code> pairs from an Adition.</p><p class="paragraph">If your experience &quot;cannot load page&quot; errors when navigating between entries in this documentation, then the culprit is very likely an activated ad blocker. Many of the documented classes and services have names related to advertising terms. We found that this can trigger ad blockers. So please disable your adblocker if you have issues.</p><h2 class=""> Requirements</h2><p class="paragraph">Apps using AdSDK must be built at least for Android SDK Level 24.</p><h3 class=""> Permissions Required</h3><p class="paragraph">This library requires the following permissions to function correctly:</p><ul><li><p class="paragraph"><code class="lang-kotlin">INTERNET</code> – to access the network.</p></li><li><p class="paragraph"><code class="lang-kotlin">ACCESS_NETWORK_STATE</code> – to check network connectivity status (if applicable).</p></li></ul><p class="paragraph">Make sure to include the following permissions in your app's <code class="lang-kotlin">AndroidManifest.xml</code>:</p><div class="sample-container"><pre><code class="block lang-xml" theme="idea">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;<br>&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h2 class=""> Overview</h2><p class="paragraph">To serve advertisements using the Adition AdSDK you will typically:</p><ul><li><p class="paragraph">Add the package dependencies.</p></li><li><p class="paragraph">Create <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service-provider/index.html">AdServiceProvider</a>.</p></li><li><p class="paragraph">Create and configure the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/index.html">AdService</a> via <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service-provider/configure.html">AdServiceProvider.configure</a> method.</p></li><li><p class="paragraph">Obtain <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/index.html">AdService</a> using the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service-provider/get.html">AdServiceProvider.get</a> method.</p></li><li><p class="paragraph">Request the creation of an <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-advertisement/index.html">Advertisement</a> from <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/index.html">AdService</a> passing <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-request/index.html">AdRequest</a> via <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/make-advertisement.html">AdService.makeAdvertisement</a>.</p></li></ul><p class="paragraph">You can follow the AdSDK integration <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/meet-adsdk.html">tutorial documentation</a> with code examples where you will create your first application using the AdSDK.</p><h2 class=""> Important Classes & Functions</h2><p class="paragraph">When dealing with Ads you will interact with the following API:</p><ul><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service-provider/index.html">AdServiceProvider</a> – provider for creating and configuring <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/index.html">AdService</a> that can be used in DI containers.</p></li><ul><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service-provider/configure.html">AdServiceProvider.configure</a> – includes creating and configuring the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/index.html">AdService</a>, setting global requests parameters, registering native renderers, and setting the cache size.</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service-provider/get.html">AdServiceProvider.get</a> – method for getting a configured <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/index.html">AdService</a>.</p></li></ul><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/index.html">AdService</a> – core SDK's interface.</p></li><ul><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/make-advertisement.html">AdService.makeAdvertisement</a> – creating an <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-advertisement/index.html">Advertisement</a> object with inline or interstitial placement type and initiating a request to the ad server.</p></li></ul><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-advertisement/index.html">Advertisement</a> – represents an advertisement.</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.presentation/-ad.html">Ad</a> – while <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-advertisement/index.html">Advertisement</a> represents the content of an advertisement, <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.presentation/-ad.html">Ad</a> is the element for displaying <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-placement-type/-i-n-l-i-n-e/index.html">AdPlacementType.INLINE</a> ad on a view hierarchy.</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.internal.presentation.renderers/-interstitial.html">Interstitial</a> – while <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-advertisement/index.html">Advertisement</a> represents the content of an advertisement, <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.internal.presentation.renderers/-interstitial.html">Interstitial</a> is the element for displaying <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-placement-type/-i-n-t-e-r-s-t-i-t-i-a-l/index.html">AdPlacementType.INTERSTITIAL</a> ad as a full screen cover.</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.exception/-ad-result/index.html">AdResult</a> – a wrapper class that represents either a success or a failure that contains <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.exception/-ad-error/index.html">AdError</a>.</p></li></ul><p class="paragraph">If you are creating a custom ad, you will also use:</p><ul><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-renderer/index.html">AdRenderer</a> – interface of the future presentation layer of the ad.</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/register-renderer.html">AdService.registerRenderer</a> – registers your custom ad in the SDK.</p></li></ul><p class="paragraph">To gain a more detailed understanding of how to work with these objects and how they are related, we recommend going through our <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/meet-adsdk.html">tutorial documentation</a>.</p><h2 class=""> Explaining the Concepts of AdSDK Server Requests</h2><p class="paragraph">Your app uses the AdSDK to request ads from an ad server.</p><p class="paragraph">To enable the ad server to serve relevant ads, you should pass certain information. The first argument you will pass when configuring an <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/index.html">AdService</a> via <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service-provider/configure.html">AdServiceProvider.configure</a> is the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/network-id.html">AdService.networkId</a>.</p><h3 class=""> Consent Management</h3><p class="paragraph">An app can ask users about their consent for sharing information with third parties. The SDK can forward users preferences automatically if they follow the <a href="https://iabeurope.eu/transparency-consent-framework/">TCF v2 format</a>. To control the observation of such changes, you should pass <code class="lang-kotlin">parentCoroutineScope</code> to method <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service-provider/configure.html">AdServiceProvider.configure</a>, which should be cancelled at the same time as <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/index.html">AdService</a> is destroyed.</p><p class="paragraph">If your application does not use CMP, or your CMP does not follow the <a href="https://iabeurope.eu/transparency-consent-framework/">TCF v2</a>, you can transfer these parameters manually using the <code class="lang-kotlin">globalParameters</code> in the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service-provider/configure.html">AdServiceProvider.configure</a> method. See more about <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request.global_parameters/-global-parameters/index.html">GlobalParameters</a> and <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request.global_parameters/-ad-request-global-parameters/index.html">AdRequestGlobalParameters</a> in #requests-global-parameters.</p><h3 class=""> Advertisement Request</h3><p class="paragraph">When creating an <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-advertisement/index.html">Advertisement</a>, you can pass additional information and interfaces through the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/make-advertisement.html">AdService.makeAdvertisement</a> method:</p><ul><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-request/index.html">AdRequest</a> (required)</p></li><ul><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-request/content-unit.html">AdRequest.contentUnit</a> or <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-request/learning-tag.html">AdRequest.learningTag</a> (required)</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-request/profiles.html">AdRequest.profiles</a> (optional)</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-request/keywords.html">AdRequest.keywords</a> (optional)</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-request/window.html">AdRequest.window</a> (optional)</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-request/timeout-after-seconds.html">AdRequest.timeoutAfterSeconds</a> (optional)</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-request/gdpr-pd.html">AdRequest.gdprPd</a> (optional)</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-request/campaign-id.html">AdRequest.campaignId</a> (optional)</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-request/banner-id.html">AdRequest.bannerId</a> (optional)</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-request/is-s-h-b-enabled.html">AdRequest.isSHBEnabled</a> (optional)</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-request/dsa.html">AdRequest.dsa</a> (optional)</p></li></ul><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-placement-type/index.html">AdPlacementType</a> (required)</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/index.html">AdEventListener</a> (optional)</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_handler/-target-u-r-l-handler/index.html">TargetURLHandler</a> (optional)</p></li></ul><h3 class=""> User Tagging and Conversion Tracking Features</h3><p class="paragraph">AdSDK provides powerful functionality for user tagging and conversion tracking. You can find an example of the implementation in our <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/meet-adsdk.html">tutorial documentation</a>.</p><h4 class=""> Tagging Request</h4><p class="paragraph">You can build retargeting segments by exposing a user in your application to tagging requests. Segments can be used in Adition campaign targeting.</p><p class="paragraph">See <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-tag-request/index.html">TagRequest</a>. This class uses as a parameter the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/tag-user.html">AdService.tagUser</a> method. You can pass all tags through the constructor.</p><h4 class=""> Tracking Request</h4><p class="paragraph">You can use tracking requests to track your app users conversions.</p><p class="paragraph">See <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-tracking-request/index.html">TrackingRequest</a>. The app can fire the track request as soon as a conversion occurs within the app via <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/tracking-request.html">AdService.trackingRequest</a> method.</p><h3 class=""> Requests Global Parameters</h3><p class="paragraph">Some parameters of <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-request/index.html">AdRequest</a>, <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-tag-request/index.html">TagRequest</a> and <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-tracking-request/index.html">TrackingRequest</a> are designed to be passed in all requests, not just individual ones. To avoid duplicating code when creating requests you can pass all parameters via <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service-provider/configure.html">AdServiceProvider.configure</a> using the <code class="lang-kotlin">globalParameters</code> parameter, and change them later using <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/set-global-parameters.html">AdService.setGlobalParameters</a> and <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/remove-global-parameter.html">AdService.removeGlobalParameter</a>.</p><ul><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request.global_parameters/-global-parameters/gdpr.html">GlobalParameters.gdpr</a> (Can be set automatically if the app uses a CMP that follows <a href="https://iabeurope.eu/transparency-consent-framework/">TCF v2 format</a>)</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request.global_parameters/-global-parameters/external-u-i-d.html">GlobalParameters.externalUID</a></p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request.global_parameters/-global-parameters/is-opt-out-enabled.html">GlobalParameters.isOptOutEnabled</a></p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request.global_parameters/-global-parameters/access-mode.html">GlobalParameters.accessMode</a></p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request.global_parameters/-global-parameters/user-ids.html">GlobalParameters.userIds</a></p></li></ul><p class="paragraph">In addition to <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request.global_parameters/-global-parameters/index.html">GlobalParameters</a>, <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-request/index.html">AdRequest</a> also has its own unique <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request.global_parameters/-ad-request-global-parameters/index.html">AdRequestGlobalParameters</a> that will be used each time <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request/-ad-request/index.html">AdRequest</a> is executed. You can pass all parameters via <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service-provider/configure.html">AdServiceProvider.configure</a> using the <code class="lang-kotlin">adRequestGlobalParameters</code> parameter, and change them later using <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/set-ad-request-global-parameters.html">AdService.setAdRequestGlobalParameters</a> and <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/remove-ad-request-global-parameter.html">AdService.removeAdRequestGlobalParameter</a>.</p><ul><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request.global_parameters/-ad-request-global-parameters/is-ip-identified.html">AdRequestGlobalParameters.isIpIdentified</a></p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request.global_parameters/-ad-request-global-parameters/is-s-h-b-enabled.html">AdRequestGlobalParameters.isSHBEnabled</a></p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request.global_parameters/-ad-request-global-parameters/dsa.html">AdRequestGlobalParameters.dsa</a></p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request.global_parameters/-ad-request-global-parameters/cookies-access.html">AdRequestGlobalParameters.cookiesAccess</a></p></li></ul><p class="paragraph">Learn more about <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request.global_parameters/-global-parameters/index.html">GlobalParameters</a> and <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.entities.request.global_parameters/-ad-request-global-parameters/index.html">AdRequestGlobalParameters</a> in our <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/meet-adsdk.html">tutorial documentation</a>.</p><h2 class=""> Asset Caching</h2><p class="paragraph">The SDK has a built-in FIFO persistent cache that caches all possible advertising resources, such as banners on the device.</p><p class="paragraph">The renderers can get a cache object via the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-renderer/-service-locator/index.html">AdRenderer.ServiceLocator</a>. In turn, the application can control the cache using <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/index.html">AdService</a>.</p><p class="paragraph">The built-in cache limit is 100 MB, but you can set another size when configuring an <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/index.html">AdService</a>, or change it over time using <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/set-cache-size.html">AdService.setCacheSize</a>. You can also clear the cache with <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/flush-cache.html">AdService.flushCache</a>.</p><p class="paragraph">Learn more about <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.cache/-asset-cache/index.html">AssetCache</a> in our <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/meet-adsdk.html">tutorial documentation</a>.</p><h2 class=""> Controlling Advertisement's Events</h2><p class="paragraph">Advertisement can be configured to send certain tracking events to the ad server or to pass information to the app. To monitor these events, you can pass the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/index.html">AdEventListener</a> to the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/make-advertisement.html">AdService.makeAdvertisement</a> method.</p><p class="paragraph">With the help of this interface, you will be able to monitor:</p><ul><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tap-event/index.html">AdTapEvent</a> via <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/tap-event-processed.html">AdEventListener.tapEventProcessed</a> and <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/tap-event-processing-failed.html">AdEventListener.tapEventProcessingFailed</a> methods.</p></li><ul><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tap-event/-tap/index.html">AdTapEvent.Tap</a></p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tap-event/-tap-u-r-l/index.html">AdTapEvent.TapURL</a></p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tap-event/-tap-asset/index.html">AdTapEvent.TapAsset</a></p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tap-event/-silent-tap/index.html">AdTapEvent.SilentTap</a></p></li></ul><li><p class="paragraph">Custom tracking events in case of using custom advertising via  <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/custom-tracking-event-processed.html">AdEventListener.customTrackingEventProcessed</a> and <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/custom-tracking-event-processing-failed.html">AdEventListener.customTrackingEventProcessingFailed</a> methods.</p></li><li><p class="paragraph">Custom message from the advert via <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/renderer-message-received.html">AdEventListener.rendererMessageReceived</a> method.</p></li><li><p class="paragraph">Request to unload advertising via <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/unload-request.html">AdEventListener.unloadRequest</a> method.</p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tracking-event/index.html">AdTrackingEvent</a> via <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/tracking-event-processed.html">AdEventListener.trackingEventProcessed</a> and <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/tracking-event-processing-failed.html">AdEventListener.trackingEventProcessingFailed</a> methods.</p><ul><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tracking-event/-impression/index.html">AdTrackingEvent.Impression</a></p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/--ad-tracking-event/-viewable/index.html">AdTrackingEvent.Viewable</a></p></li></ul><blockquote class="quotation"><p class="paragraph">Note: Which tracking events are enabled for which advertisement is configured in the Adition Backend.</p></blockquote></li></ul><p class="paragraph">To gain a more detailed understanding of how to work with the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/index.html">AdEventListener</a>, we recommend going through our <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/meet-adsdk.html">tutorial documentation</a>.</p><h2 class=""> Advertisement Tap Handling</h2><h3 class=""> Target URL Handling</h3><p class="paragraph">We call the target URL the URL that should be shown to the user as a result of tapping on the ad.</p><p class="paragraph">By default, the SDK opens an external browser when processing a target URL. You can override this behaviour with your own. For example, this can be useful if you want to open your internal browser in your application to process the target URL. To do this, you pass the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_handler/-target-u-r-l-handler/index.html">TargetURLHandler</a> to the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/make-advertisement.html">AdService.makeAdvertisement</a> method.</p><p class="paragraph">Learn more in our <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/meet-adsdk.html">tutorial documentation</a>.</p><h3 class=""> Handling inApp-ClickURL</h3><p class="paragraph">inApp-ClickURLs is a feature which allows you to specify a custom schemed tap url. An example of a custom scheme url is <code class="lang-kotlin">`myschema://coupons`</code>. Banners with this option selected will not open a browser when it is tapped. It will attempt to fire an intent which has been registered to handle the custom schemed tap url.</p><p class="paragraph">The Adition click counting works by initially calling the ad server url which will then count the click and redirect to the banner click url. The exception to this default click handling is with inApp-ClickURL banners, as they are handled by the SDK internally which ensures the click is successfully counted and the intent fired.</p><p class="paragraph">It is important that the app has registered intent-filters for the banner being delivered otherwise the fired intent will be silently ignored. It is possible to have multiple http-schema redirects with this option activated, but they will be silently requested and ignored if they don't end up redirecting to a custom schema. Using common schemas like http will result in a dialog popup which will request the user to select the (default) app to handle the intent.</p><h3 class=""> Manual Tap Event Triggering</h3><p class="paragraph">There is method called <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-advertisement/perform-tap-event.html">Advertisement.performTapEvent</a>, responsible for performing <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tap-event/index.html">AdTapEvent</a>. This method use for app developer when they need to call tap event manually.</p><h2 class=""> Advertisement Life Cycle Control</h2><p class="paragraph">Since the object of <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-advertisement/index.html">Advertisement</a> is not a lifecycle-aware component, the application developer should control the lifecycle from within the application in order to avoid leaks.</p><p class="paragraph">To clean up and cancel all internal tasks, the application developer should call the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-advertisement/dispose.html">Advertisement.dispose</a> method before removing the reference to the object.</p><h2 class=""> Creating Custom Native Ads</h2><p class="paragraph">As App developer, you can create your own custom ad formats. For example, you can implement interactive ad formats like surveys, rotating galleries or Ads that play video.</p><h3 class=""> 1. Server Side</h3><p class="paragraph">Your custom ad format can be configured in the Adition backend. There you can define a creative template with custom JSON that will be delivered as part of the ad. For example, you could provide a way to configure some styling aspects for the ad by adding custom JSON key-value-pairs to the creative template.</p><h3 class=""> 2. Renderer</h3><p class="paragraph">On the app side, you can implement your custom Ad with native technologies like Kotlin and Jetpack Compose. As part of your custom ad you will need to create a renderer class which implements the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-renderer/index.html">AdRenderer</a> interface. Your renderer class needs to implement the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-renderer/configure.html">configure</a> method. This method will be called every time <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-advertisement/index.html">Advertisement</a> manages to load or reload advertisement data. In it you can process the data, and prepare the renderer for display.</p><p class="paragraph">Optionally, you can implement an <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-renderer/prepare-for-reload.html">prepareForReload</a> method that will be called each time before <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-advertisement/index.html">Advertisement</a> is reloaded.</p><p class="paragraph">To clean up your renderer before disposing of it, you can implement the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-renderer/dispose.html">dispose</a> method.</p><p class="paragraph">The last step will be overriding the <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-renderer/-render-ad.html">AdRenderer.RenderAd</a> composable method with your presentation logic.</p><h3 class=""> 3. Communication</h3><p class="paragraph">Also, there are some methods to interact with the AdSDK and App via <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-renderer-event-handler/index.html">AdRendererEventHandler</a>:</p><ul><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-renderer-event-handler/perform-tap.html">AdRendererEventHandler.performTap</a></p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-renderer-event-handler/perform-tracking-custom-event.html">AdRendererEventHandler.performTrackingCustomEvent</a></p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-renderer-event-handler/unload-request.html">AdRendererEventHandler.unloadRequest</a></p></li><li><p class="paragraph"><a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-renderer-event-handler/send-message.html">AdRendererEventHandler.sendMessage</a></p></li></ul><h3 class=""> 4. Renderer Registry</h3><p class="paragraph">To make the SDK aware of your ad, you need to register it with the SDK using <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-service/register-renderer.html">AdService.registerRenderer</a>. In the factory method, you can use <a href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/ad_sdk/com.adition.ad_sdk.api.core/-ad-renderer/-service-locator/index.html">AdRenderer.ServiceLocator</a> as a service locator or DI container when creating your renderer object. Once your custom ad is registered, the SDK will signal the Adition ad server that it can handle this new ad format for subsequent ad request. The SDK will also manage the creation of the instances of your renderer classes in case actual ad content is delivered by the ad server.</p></div></div>
+  </div>
+  <h2 class="">Packages</h2>
+  <div class="table"><a data-name="-691932028%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.core" id="-691932028%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="ad_sdk/com.adition.ad_sdk.api.core/index.html">com.adition.ad_sdk.api.core</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-691932028%2FPackages%2F-837518960"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-691932028%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.core" id="-691932028%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+            <p class="paragraph">Contains the main interfaces that you will encounter when working with the AdSDK.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-472404826%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.entities" id="-472404826%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="ad_sdk/com.adition.ad_sdk.api.entities/index.html">com.adition.ad_sdk.api.entities</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-472404826%2FPackages%2F-837518960"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-472404826%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.entities" id="-472404826%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+            <p class="paragraph">Contains all public entities that you will encounter when working with the AdSDK.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-201268153%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.entities.exception" id="-201268153%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="ad_sdk/com.adition.ad_sdk.api.entities.exception/index.html">com.adition.ad_sdk.api.entities.exception</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-201268153%2FPackages%2F-837518960"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-201268153%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.entities.exception" id="-201268153%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+            <p class="paragraph">Contains all public entities related to the SDK's result handling that you will encounter when working with the AdSDK.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="1125889031%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.entities.request" id="1125889031%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="ad_sdk/com.adition.ad_sdk.api.entities.request/index.html">com.adition.ad_sdk.api.entities.request</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1125889031%2FPackages%2F-837518960"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="1125889031%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.entities.request" id="1125889031%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+            <p class="paragraph">Contains all public entities related to requests to the ad server that you will encounter when working with the AdSDK.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-872850613%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.entities.request.dsa" id="-872850613%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="ad_sdk/com.adition.ad_sdk.api.entities.request.dsa/index.html">com.adition.ad_sdk.api.entities.request.dsa</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-872850613%2FPackages%2F-837518960"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-544872353%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.entities.request.global_parameters" id="-544872353%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="ad_sdk/com.adition.ad_sdk.api.entities.request.global_parameters/index.html">com.adition.ad_sdk.api.entities.request.global_parameters</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-544872353%2FPackages%2F-837518960"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-1541977267%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.entities.response" id="-1541977267%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="ad_sdk/com.adition.ad_sdk.api.entities.response/index.html">com.adition.ad_sdk.api.entities.response</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1541977267%2FPackages%2F-837518960"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-1541977267%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.entities.response" id="-1541977267%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+            <p class="paragraph">Contains all public entities related to responses from the ad server that you will encounter when working with the AdSDK.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="2132352319%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.presentation" id="2132352319%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="ad_sdk/com.adition.ad_sdk.api.presentation/index.html">com.adition.ad_sdk.api.presentation</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2132352319%2FPackages%2F-837518960"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-1055564216%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.services.asset_repository" id="-1055564216%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="ad_sdk/com.adition.ad_sdk.api.services.asset_repository/index.html">com.adition.ad_sdk.api.services.asset_repository</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1055564216%2FPackages%2F-837518960"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-1829405557%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.services.asset_request_service" id="-1829405557%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="ad_sdk/com.adition.ad_sdk.api.services.asset_request_service/index.html">com.adition.ad_sdk.api.services.asset_request_service</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1829405557%2FPackages%2F-837518960"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-1663317673%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.services.cache" id="-1663317673%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="ad_sdk/com.adition.ad_sdk.api.services.cache/index.html">com.adition.ad_sdk.api.services.cache</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1663317673%2FPackages%2F-837518960"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-1663317673%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.services.cache" id="-1663317673%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+            <p class="paragraph">Includes all public interfaces that you will use if you work with AdSDK built-in caching.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="229554106%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.services.event_handler" id="229554106%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="ad_sdk/com.adition.ad_sdk.api.services.event_handler/index.html">com.adition.ad_sdk.api.services.event_handler</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="229554106%2FPackages%2F-837518960"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="229554106%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.services.event_handler" id="229554106%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+            <p class="paragraph">Includes all public interfaces related to customisation of event handling in the AdSDK.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="889419336%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.services.event_listener" id="889419336%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/index.html">com.adition.ad_sdk.api.services.event_listener</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="889419336%2FPackages%2F-837518960"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="889419336%2FPackages%2F-837518960" anchor-label="com.adition.ad_sdk.api.services.event_listener" id="889419336%2FPackages%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+            <p class="paragraph">Includes all public interfaces related to monitoring advertising-related events in the AdSDK.</p>
+          </span></div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2025 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

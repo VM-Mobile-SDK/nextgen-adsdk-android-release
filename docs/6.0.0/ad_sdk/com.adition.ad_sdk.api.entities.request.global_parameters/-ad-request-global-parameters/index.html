@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>AdRequestGlobalParameters</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../../index.html">
+                            ad_sdk
+                    </a>
+            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":ad_sdk:dokkaHtml/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="ad_sdk::com.adition.ad_sdk.api.entities.request.global_parameters/AdRequestGlobalParameters///PointingToDeclaration//-837518960">
+  <div class="breadcrumbs"><a href="../../../index.html">ad_sdk</a><span class="delimiter">/</span><a href="../index.html">com.adition.ad_sdk.api.entities.request.global_parameters</a><span class="delimiter">/</span><span class="current">AdRequestGlobalParameters</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Ad</span><wbr></wbr><span>Request</span><wbr></wbr><span>Global</span><wbr></wbr><span><span>Parameters</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ad_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">AdRequestGlobalParameters</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">var </span>isSHBEnabled<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>dsa<span class="token operator">: </span><a href="-d-s-a/index.html">AdRequestGlobalParameters.DSA</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>isIpIdentified<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>cookiesAccess<span class="token operator">: </span><a href="-cookies-access/index.html">AdRequestGlobalParameters.CookiesAccess</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><p class="paragraph">An object for storing global parameters that will be applied when creating an <a href="../../com.adition.ad_sdk.api.entities.request/-ad-request/index.html">AdRequest</a>.</p><p class="paragraph">Some parameters of <a href="../../com.adition.ad_sdk.api.entities.request/-ad-request/index.html">AdRequest</a> are designed to be passed in all requests, not just individual ones. To avoid duplicating code when creating <a href="../../com.adition.ad_sdk.api.entities.request/-ad-request/index.html">AdRequest</a> you can pass all parameters via <a href="../../com.adition.ad_sdk.api.core/-ad-service-provider/configure.html">AdServiceProvider.configure</a> using the <code class="lang-kotlin">adRequestGlobalParameters</code> parameter, and change them later using <a href="../../com.adition.ad_sdk.api.core/-ad-service/set-ad-request-global-parameters.html">AdService.setAdRequestGlobalParameters</a> and <a href="../../com.adition.ad_sdk.api.core/-ad-service/remove-ad-request-global-parameter.html">AdService.removeAdRequestGlobalParameter</a>.</p><blockquote class="quotation"><p class="paragraph"><strong>Note:</strong> This object describes global parameters specific only for <a href="../../com.adition.ad_sdk.api.entities.request/-ad-request/index.html">AdRequest</a>. However, you can also set <a href="../-global-parameters/index.html">GlobalParameters</a> that will apply to all requests, including <a href="../../com.adition.ad_sdk.api.entities.request/-ad-request/index.html">AdRequest</a> via <a href="../../com.adition.ad_sdk.api.core/-ad-service-provider/configure.html">AdServiceProvider.configure</a> using the <code class="lang-kotlin">globalParameters</code> parameter, and change them later using <a href="../../com.adition.ad_sdk.api.core/-ad-service/set-global-parameters.html">AdService.setGlobalParameters</a> and <a href="../../com.adition.ad_sdk.api.core/-ad-service/remove-global-parameter.html">AdService.removeGlobalParameter</a>.</p></blockquote><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">// Set parameter<br>val result = adServiceProvider.configure(<br>     networkId = NETWORK_ID,<br>     parentCoroutineScope = coroutineScope,<br>     globalParameters = GlobalParameters(accessMode = AccessMode.OPT_OUT),<br>     adRequestGlobalParameters = AdRequestGlobalParameters(isIpIdentified = false)<br>)<br><br>// Change parameter over time<br>adService.setAdRequestGlobalParameters(<br>     AdRequestGlobalParameter(<br>         AdRequestGlobalParameters::cookiesAccess,<br>         AdRequestGlobalParameters.CookiesAccess.NO_COOKIES<br>     ),<br>     AdRequestGlobalParameter(<br>         AdRequestGlobalParameters::isSHBEnabled,<br>         true<br>     )<br>)<br><br>// Clear parameter<br>adService.removeAdRequestGlobalParameter(AdRequestGlobalParameters::cookiesAccess)</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h4 class="">See also</h4><div class="table"><div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.adition.ad_sdk.api.core/-ad-service-provider/configure.html"><span>Ad</span><wbr></wbr><span>Service</span><wbr></wbr><span>Provider.</span><wbr></wbr><span>configure</span></a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-global-parameters/index.html"><span>Global</span><wbr></wbr><span><span>Parameters</span></span></a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.adition.ad_sdk.api.core/-ad-service/set-ad-request-global-parameters.html"><span>AdService.</span><wbr></wbr><span>set</span><wbr></wbr><span>Ad</span><wbr></wbr><span>Request</span><wbr></wbr><span>Global</span><wbr></wbr><span><span>Parameters</span></span></a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.adition.ad_sdk.api.core/-ad-service/remove-ad-request-global-parameter.html"><span>AdService.</span><wbr></wbr><span>remove</span><wbr></wbr><span>Ad</span><wbr></wbr><span>Request</span><wbr></wbr><span>Global</span><wbr></wbr><span><span>Parameter</span></span></a></div></span></div><div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="-60499692%2FConstructors%2F-837518960" anchor-label="AdRequestGlobalParameters" id="-60499692%2FConstructors%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-ad-request-global-parameters.html"><span>Ad</span><wbr></wbr><span>Request</span><wbr></wbr><span>Global</span><wbr></wbr><span><span>Parameters</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-60499692%2FConstructors%2F-837518960"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ad_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">isSHBEnabled<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">dsa<span class="token operator">: </span><a href="-d-s-a/index.html">AdRequestGlobalParameters.DSA</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">isIpIdentified<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">cookiesAccess<span class="token operator">: </span><a href="-cookies-access/index.html">AdRequestGlobalParameters.CookiesAccess</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="185629605%2FClasslikes%2F-837518960" anchor-label="CookiesAccess" id="185629605%2FClasslikes%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-cookies-access/index.html"><span>Cookies</span><wbr></wbr><span><span>Access</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="185629605%2FClasslikes%2F-837518960"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ad_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-cookies-access/index.html">CookiesAccess</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-cookies-access/index.html">AdRequestGlobalParameters.CookiesAccess</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Enum containing all possible configurations of the server's work with cookies.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-213810074%2FClasslikes%2F-837518960" anchor-label="DSA" id="-213810074%2FClasslikes%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-s-a/index.html"><span><span>DSA</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-213810074%2FClasslikes%2F-837518960"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ad_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-d-s-a/index.html">DSA</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>required<span class="token operator">: </span><a href="../../com.adition.ad_sdk.api.entities.request.dsa/-d-s-a-requirement/index.html">DSARequirement</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>pubRender<span class="token operator">: </span><a href="../../com.adition.ad_sdk.api.entities.request.dsa/-d-s-a-pub-render/index.html">DSAPubRender</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>dataToPubs<span class="token operator">: </span><a href="../../com.adition.ad_sdk.api.entities.request.dsa/-d-s-a-data-to-pubs/index.html">DSADataToPubs</a></span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/android/os/Parcelable.html">Parcelable</a></div><div class="brief "><p class="paragraph"><a href="https://digital-strategy.ec.europa.eu/en/policies/digital-services-act-package">Digital Service Act (“DSA”)</a> is a EU regulation which aims among other things to increase transparency on online platforms for users in relation to recommended content – including advertising.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="777147474%2FProperties%2F-837518960" anchor-label="cookiesAccess" id="777147474%2FProperties%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="cookies-access.html"><span>cookies</span><wbr></wbr><span><span>Access</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="777147474%2FProperties%2F-837518960"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ad_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="cookies-access.html">cookiesAccess</a><span class="token operator">: </span><a href="-cookies-access/index.html">AdRequestGlobalParameters.CookiesAccess</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">A parameter that indicates how the ad server will work with cookies.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-873718189%2FProperties%2F-837518960" anchor-label="dsa" id="-873718189%2FProperties%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="dsa.html"><span><span>dsa</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-873718189%2FProperties%2F-837518960"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ad_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="dsa.html">dsa</a><span class="token operator">: </span><a href="-d-s-a/index.html">AdRequestGlobalParameters.DSA</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph"><a href="https://digital-strategy.ec.europa.eu/en/policies/digital-services-act-package">Digital Service Act (“DSA”)</a> is a EU regulation which aims among other things to increase transparency on online platforms for users in relation to recommended content – including advertising.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1877584073%2FProperties%2F-837518960" anchor-label="isIpIdentified" id="1877584073%2FProperties%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-ip-identified.html"><span>is</span><wbr></wbr><span>Ip</span><wbr></wbr><span><span>Identified</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1877584073%2FProperties%2F-837518960"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ad_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="is-ip-identified.html">isIpIdentified</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Determines whether the IP address is anonymised.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1195895767%2FProperties%2F-837518960" anchor-label="isSHBEnabled" id="1195895767%2FProperties%2F-837518960" data-filterable-set=":ad_sdk:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":ad_sdk:dokkaHtml/release" data-filterable-set=":ad_sdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-s-h-b-enabled.html"><span>is</span><wbr></wbr><span><span>SHBEnabled</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1195895767%2FProperties%2F-837518960"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":ad_sdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="is-s-h-b-enabled.html">isSHBEnabled</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Defines, if the request should also consider the server side header bidding.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2025 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

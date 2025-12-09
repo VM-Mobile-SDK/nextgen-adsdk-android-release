@@ -1,0 +1,481 @@
+<!DOCTYPE html> <html lang="en-US"> <head> <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=Edge"> <link rel="stylesheet" href="/nextgen-adsdk-android-release/assets/css/just-the-docs-default.css"> <link rel="stylesheet" href="/nextgen-adsdk-android-release/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet"> <style id="jtd-nav-activation"> .site-nav > ul:nth-of-type(1) > li > ul > li:not(:nth-child(5)) > a, .site-nav > ul:nth-of-type(1) > li > ul > li > ul > li a { background-image: none; } .site-nav > ul:not(:nth-of-type(1)) a, .site-nav li.external a { background-image: none; } .site-nav > ul:nth-of-type(1) > li > ul > li:nth-child(5) > a { font-weight: 600; text-decoration: none; } .site-nav > ul.nav-category-list > li > button svg, .site-nav > ul:nth-of-type(1) > li > ul > li:nth-child(5) > button svg { transform: rotate(-90deg); } .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list, .site-nav > ul:nth-of-type(1) > li > ul > li.nav-list-item:nth-child(5) > ul.nav-list { display: block; } </style> <script src="/nextgen-adsdk-android-release/assets/js/vendor/lunr.min.js"></script> <script src="/nextgen-adsdk-android-release/assets/js/just-the-docs.js"></script> <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Begin Jekyll SEO tag v2.8.0 --> <title>Handling the ad events | AdSDK Documentation</title> <meta name="generator" content="Jekyll v3.10.0" /> <meta property="og:title" content="Handling the ad events" /> <meta property="og:locale" content="en_US" /> <meta name="description" content="Monitor and process ad-related events" /> <meta property="og:description" content="Monitor and process ad-related events" /> <link rel="canonical" href="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/handling-the-ad-events.html" /> <meta property="og:url" content="https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/handling-the-ad-events.html" /> <meta property="og:site_name" content="AdSDK Documentation" /> <meta property="og:type" content="website" /> <meta name="twitter:card" content="summary" /> <meta property="twitter:title" content="Handling the ad events" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","description":"Monitor and process ad-related events","headline":"Handling the ad events","url":"https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/handling-the-ad-events.html"}</script> <!-- End Jekyll SEO tag --> </head> <body> <a class="skip-to-main" href="#main-content">Skip to main content</a> <svg xmlns="http://www.w3.org/2000/svg" class="d-none"> <symbol id="svg-link" viewBox="0 0 24 24"> <title>Link</title> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"> <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path> </svg> </symbol> <symbol id="svg-menu" viewBox="0 0 24 24"> <title>Menu</title> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"> <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line> </svg> </symbol> <symbol id="svg-arrow-right" viewBox="0 0 24 24"> <title>Expand</title> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"> <polyline points="9 18 15 12 9 6"></polyline> </svg> </symbol> <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE --> <symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"> <title id="svg-external-link-title">(external link)</title> <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol> <symbol id="svg-doc" viewBox="0 0 24 24"> <title>Document</title> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"> <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline> </svg> </symbol> <symbol id="svg-search" viewBox="0 0 24 24"> <title>Search</title> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"> <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line> </svg> </symbol> <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md --> <symbol id="svg-copy" viewBox="0 0 16 16"> <title>Copy</title> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg> </symbol> <symbol id="svg-copied" viewBox="0 0 16 16"> <title>Copied</title> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg> </symbol> </svg> <div class="side-bar"> <div class="site-header" role="banner"> <a href="/nextgen-adsdk-android-release/" class="site-title lh-tight"> AdSDK Documentation </a> <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false"> <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg> </button> </div> <nav aria-label="Main" id="site-nav" class="site-nav"> <ul class="nav-list nav-category-list"> <li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Toggle collection SDK v.6.0.0" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><div class="nav-category">SDK v.6.0.0</div> <ul class="nav-list"><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/6.0.0/meet-adsdk.html" class="nav-list-link">Meet nextgen AdSDK</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/6.0.0/first-steps.html" class="nav-list-link">First steps for working with AdSDK</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/6.0.0/create-and-display-inline-ads.html" class="nav-list-link">Create and display inline ads</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/6.0.0/create-and-display-interstitial-ad.html" class="nav-list-link">Create and display interstitial ad</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/6.0.0/handling-the-ad-events.html" class="nav-list-link">Handling the ad events</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/6.0.0/user-tagging-conversion-tracking.html" class="nav-list-link">User tagging and conversion tracking</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/6.0.0/global-request-parameters.html" class="nav-list-link">Global request parameters</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/6.0.0/cache-management.html" class="nav-list-link">AdSDK Cache Management</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/6.0.0/create-target-url-handler.html" class="nav-list-link">Custom handling of target tap URLs</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/6.0.0/creating-customised-advertising.html" class="nav-list-link">Creating customised advertising</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/6.0.0/compose_with_xml_guide.html" class="nav-list-link">How to use AdSDK with XML views</a></li></ul> </li> </ul> <ul class="nav-list nav-category-list"> <li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Toggle collection SDK v.5.3.0" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><div class="nav-category">SDK v.5.3.0</div> <ul class="nav-list"><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.3.0/meet-adsdk.html" class="nav-list-link">Meet nextgen AdSDK</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.3.0/first-steps.html" class="nav-list-link">First steps for working with AdSDK</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.3.0/create-and-display-inline-ads.html" class="nav-list-link">Create and display inline ads</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.3.0/create-and-display-interstitial-ad.html" class="nav-list-link">Create and display interstitial ad</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.3.0/handling-the-ad-events.html" class="nav-list-link">Handling the ad events</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.3.0/user-tagging-conversion-tracking.html" class="nav-list-link">User tagging and conversion tracking</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.3.0/global-request-parameters.html" class="nav-list-link">Global request parameters</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.3.0/cache-management.html" class="nav-list-link">AdSDK Cache Management</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.3.0/creating-customised-advertising.html" class="nav-list-link">Creating customised advertising</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.3.0/compose_with_xml_guide.html" class="nav-list-link">How to use AdSDK with XML views</a></li></ul> </li> </ul> <ul class="nav-list nav-category-list"> <li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Toggle collection SDK v.5.0.1" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><div class="nav-category">SDK v.5.0.1</div> <ul class="nav-list"><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.1/meet-adsdk.html" class="nav-list-link">Meet nextgen AdSDK</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.1/first-steps.html" class="nav-list-link">First steps for working with AdSDK</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.1/create-and-display-inline-ads.html" class="nav-list-link">Create and display inline ads</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.1/create-and-display-interstitial-ad.html" class="nav-list-link">Create and display interstitial ad</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.1/handling-the-ad-events.html" class="nav-list-link">Handling the ad events</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.1/user-tagging-conversion-tracking.html" class="nav-list-link">User tagging and conversion tracking</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.1/global-request-parameters.html" class="nav-list-link">Global request parameters</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.1/cache-management.html" class="nav-list-link">AdSDK Cache Management</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.1/creating-customised-advertising.html" class="nav-list-link">Creating customised advertising</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.1/compose_with_xml_guide.html" class="nav-list-link">How to use AdSDK with XML views</a></li></ul> </li> </ul> <ul class="nav-list nav-category-list"> <li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Toggle collection SDK v.5.0.0" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><div class="nav-category">SDK v.5.0.0</div> <ul class="nav-list"><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.0/meet-adsdk.html" class="nav-list-link">Meet nextgen AdSDK</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.0/first-steps.html" class="nav-list-link">First steps for working with AdSDK</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.0/create-and-display-inline-ads.html" class="nav-list-link">Create and display inline ads</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.0/create-and-display-interstitial-ad.html" class="nav-list-link">Create and display interstitial ad</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.0/handling-the-ad-events.html" class="nav-list-link">Handling the ad events</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.0/user-tagging-conversion-tracking.html" class="nav-list-link">User tagging and conversion tracking</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.0/global-request-parameters.html" class="nav-list-link">Global request parameters</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/5.0.0/cache-management.html" class="nav-list-link">AdSDK Cache Management</a></li></ul> </li> </ul> <ul class="nav-list nav-category-list"> <li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Toggle collection SDK v.4.6.0" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><div class="nav-category">SDK v.4.6.0</div> <ul class="nav-list"><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/4.6.0/meet-adsdk.html" class="nav-list-link">Meet nextgen AdSDK</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/4.6.0/create-and-display-inline-ads.html" class="nav-list-link">Create and display inline ads</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/4.6.0/handling-the-state-and-events-of-advertising.html" class="nav-list-link">Handling the state and events of advertising</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/4.6.0/defining-the-size-of-the-advertisement.html" class="nav-list-link">Defining the size of the advertisement</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/4.6.0/create-and-display-interstitial-ad-section.html" class="nav-list-link">Create and display interstitial ad section</a></li><li class="nav-list-item"><a href="/nextgen-adsdk-android-release/4.6.0/global-adRequest-parameters.html" class="nav-list-link">Global ad request parameters</a></li></ul> </li> </ul> </nav> <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll. </footer> </div> <div class="main" id="top"> <div id="main-header" class="main-header"> <div class="search" role="search"> <div class="search-input-wrap"> <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search AdSDK Documentation" aria-label="Search AdSDK Documentation" autocomplete="off"> <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label> </div> <div id="search-results" class="search-results"></div> </div> </div> <div class="main-content-wrap"> <div id="main-content" class="main-content"> <main> <h1 id="monitor-and-process-ad-related-events"> <a href="#monitor-and-process-ad-related-events" class="anchor-heading" aria-labelledby="monitor-and-process-ad-related-events"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Monitor and process ad-related events </h1> <p><a href="ad_sdk/com.adition.ad_sdk.api.core/-advertisement/index.html">Advertisement</a> do a lot of work under the hood and can send messages about them to the app. In turn, you can monitor and react to it in some way. In this tutorial, we’ll look at what events are handled by <a href="ad_sdk/com.adition.ad_sdk.api.core/-advertisement/index.html">Advertisement</a> and how we can interact with them.</p> <p>We will continue to build the app, so be sure to follow all the previous tutorials. You can download this <a href="https://github.com/VM-Mobile-SDK/nextgen-adsdk-android-tutorial/tree/built-in-capabilities/monitoring-ad-events">project</a> which has already implemented all steps from this tutorial.</p> <h2 id="section-1-monitoring-of-ad-related-events"> <a href="#section-1-monitoring-of-ad-related-events" class="anchor-heading" aria-labelledby="section-1-monitoring-of-ad-related-events"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Section 1: Monitoring of ad-related events </h2> <p>In this section, we’ll look at how you can know when and what kind of event happened.</p> <h3 id="step-1"> <a href="#step-1" class="anchor-heading" aria-labelledby="step-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 1 </h3> <p>Let’s open <code class="language-plaintext highlighter-rouge">AdItem.kt</code>, and pay attention to the parameters of the <a href="ad_sdk/com.adition.ad_sdk.api.core/-ad-service/make-advertisement.html">AdService.makeAdvertisement</a> method.</p> <p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">AdItem.kt</code></p> <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ...</span>
+<span class="kd">class</span> <span class="nc">AdItemState</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">adService</span><span class="p">:</span> <span class="nc">AdService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">request</span><span class="p">:</span> <span class="nc">AdRequest</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+
+    <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">loadAdvertisement</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">_state</span><span class="p">.</span><span class="n">value</span> <span class="p">=</span> <span class="nc">PresentationState</span><span class="p">.</span><span class="nc">Loading</span>
+
+        <span class="n">adService</span>
+            <span class="p">.</span><span class="nf">makeAdvertisement</span><span class="p">(</span>
+                <span class="n">adRequest</span> <span class="p">=</span> <span class="n">request</span><span class="p">,</span>
+                <span class="n">placementType</span>  <span class="p">=</span> <span class="nc">AdPlacementType</span><span class="p">.</span><span class="nc">INLINE</span><span class="p">,</span> <span class="c1">// Inline by default</span>
+                <span class="n">targetURLHandler</span> <span class="p">=</span> <span class="k">null</span><span class="p">,</span> <span class="c1">// Can be skipped</span>
+                <span class="n">adEventListener</span> <span class="p">=</span> <span class="k">null</span> <span class="c1">// Can be skipped</span>
+            <span class="p">)</span>
+            <span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="nc">ItemData</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">it</span><span class="p">.</span><span class="nf">getMetadata</span><span class="p">()</span><span class="o">?.</span><span class="n">aspectRatio</span><span class="p">)</span> <span class="p">}</span>
+            <span class="p">.</span><span class="k">get</span><span class="p">(</span>
+                <span class="n">onSuccess</span> <span class="p">=</span> <span class="p">{</span> <span class="n">data</span> <span class="p">-&gt;</span>
+                    <span class="n">advertisement</span> <span class="p">=</span> <span class="n">data</span><span class="p">.</span><span class="n">advertisement</span>
+                    <span class="n">_state</span><span class="p">.</span><span class="n">value</span> <span class="p">=</span> <span class="nc">PresentationState</span><span class="p">.</span><span class="nc">Loaded</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                <span class="p">},</span>
+                <span class="n">onError</span> <span class="p">=</span> <span class="p">{</span> <span class="n">error</span> <span class="p">-&gt;</span>
+                    <span class="n">_state</span><span class="p">.</span><span class="n">value</span> <span class="p">=</span> <span class="nc">PresentationState</span><span class="p">.</span><span class="nc">Error</span><span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">description</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+    <span class="p">}</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+<span class="c1">// ...</span>
+</code></pre></div></div> <h3 id="step-2"> <a href="#step-2" class="anchor-heading" aria-labelledby="step-2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 2 </h3> <p>To monitor and interact with any ad event, we should implement <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/index.html">AdEventListener</a> and pass it when creating an <a href="ad_sdk/com.adition.ad_sdk.api.core/-advertisement/index.html">Advertisement</a>.</p> <p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">AdItem.kt</code></p> <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ...</span>
+<span class="kd">class</span> <span class="nc">AdItemState</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">adService</span><span class="p">:</span> <span class="nc">AdService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">request</span><span class="p">:</span> <span class="nc">AdRequest</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+
+    <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">loadAdvertisement</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">_state</span><span class="p">.</span><span class="n">value</span> <span class="p">=</span> <span class="nc">PresentationState</span><span class="p">.</span><span class="nc">Loading</span>
+
+        <span class="n">adService</span>
+            <span class="p">.</span><span class="nf">makeAdvertisement</span><span class="p">(</span>
+                <span class="n">adRequest</span> <span class="p">=</span> <span class="n">request</span><span class="p">,</span>
+                <span class="n">placementType</span>  <span class="p">=</span> <span class="nc">AdPlacementType</span><span class="p">.</span><span class="nc">INLINE</span><span class="p">,</span> <span class="c1">// Inline by default</span>
+                <span class="n">targetURLHandler</span> <span class="p">=</span> <span class="k">null</span><span class="p">,</span> <span class="c1">// Can be skipped</span>
+                <span class="n">adEventListener</span> <span class="p">=</span> <span class="n">eventListener</span>
+            <span class="p">)</span>
+            <span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="nc">ItemData</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">it</span><span class="p">.</span><span class="nf">getMetadata</span><span class="p">()</span><span class="o">?.</span><span class="n">aspectRatio</span><span class="p">)</span> <span class="p">}</span>
+            <span class="p">.</span><span class="k">get</span><span class="p">(</span>
+                <span class="n">onSuccess</span> <span class="p">=</span> <span class="p">{</span> <span class="n">data</span> <span class="p">-&gt;</span>
+                    <span class="n">advertisement</span> <span class="p">=</span> <span class="n">data</span><span class="p">.</span><span class="n">advertisement</span>
+                    <span class="n">_state</span><span class="p">.</span><span class="n">value</span> <span class="p">=</span> <span class="nc">PresentationState</span><span class="p">.</span><span class="nc">Loaded</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                <span class="p">},</span>
+                <span class="n">onError</span> <span class="p">=</span> <span class="p">{</span> <span class="n">error</span> <span class="p">-&gt;</span>
+                    <span class="n">_state</span><span class="p">.</span><span class="n">value</span> <span class="p">=</span> <span class="nc">PresentationState</span><span class="p">.</span><span class="nc">Error</span><span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">description</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+    <span class="p">}</span>
+    <span class="c1">// ...</span>
+
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">eventListener</span> <span class="p">=</span> <span class="kd">object</span> <span class="err">: </span><span class="nc">AdEventListener</span> <span class="p">{</span>
+        
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// ...</span>
+</code></pre></div></div> <p>Now we’re ready to get started with various advertising-related events!</p> <h2 id="section-2-request-to-unload-or-hide-ad"> <a href="#section-2-request-to-unload-or-hide-ad" class="anchor-heading" aria-labelledby="section-2-request-to-unload-or-hide-ad"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Section 2: Request to unload or hide ad </h2> <p>In this section, we’ll look at how an <a href="ad_sdk/com.adition.ad_sdk.api.core/-advertisement/index.html">Advertisement</a> can signal to unload or hide the ad.</p> <h3 id="step-1-1"> <a href="#step-1-1" class="anchor-heading" aria-labelledby="step-1-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 1 </h3> <p>To monitor the moment when an ad wants to be removed or hidden, you can implement <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/unload-request.html">AdEventListener.unloadRequest</a>.</p> <p>You may already remember its use with interstitial ads, where it is an essential part of the implementation. In the case of inline ads, this method can also be used in customised ads.</p> <p><strong>Note:</strong> If you know that you do not have inline ads that can be hidden or removed, you can ignore this method for inline ads.</p> <p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">AdItem.kt</code></p> <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ...</span>
+<span class="kd">class</span> <span class="nc">AdItemState</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">adService</span><span class="p">:</span> <span class="nc">AdService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">request</span><span class="p">:</span> <span class="nc">AdRequest</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">eventListener</span> <span class="p">=</span> <span class="kd">object</span> <span class="err">: </span><span class="nc">AdEventListener</span> <span class="p">{</span>
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">unloadRequest</span><span class="p">()</span> <span class="p">{</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// ...</span>
+</code></pre></div></div> <h3 id="step-2-1"> <a href="#step-2-1" class="anchor-heading" aria-labelledby="step-2-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 2 </h3> <p>Let’s implement this method so that it displays the message to the user and removes the <a href="ad_sdk/com.adition.ad_sdk.api.core/-advertisement/index.html">Advertisement</a>.</p> <p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">AdItem.kt</code></p> <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ...</span>
+<span class="kd">class</span> <span class="nc">AdItemState</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">adService</span><span class="p">:</span> <span class="nc">AdService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">request</span><span class="p">:</span> <span class="nc">AdRequest</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">eventListener</span> <span class="p">=</span> <span class="kd">object</span> <span class="err">: </span><span class="nc">AdEventListener</span> <span class="p">{</span>
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">unloadRequest</span><span class="p">()</span> <span class="p">{</span>
+            <span class="n">_state</span><span class="p">.</span><span class="n">value</span> <span class="p">=</span> <span class="nc">PresentationState</span><span class="p">.</span><span class="nc">Error</span><span class="p">(</span><span class="s">"Unloaded by event listener"</span><span class="p">)</span>
+            <span class="n">advertisement</span><span class="o">?.</span><span class="nf">dispose</span><span class="p">()</span>
+            <span class="n">advertisement</span> <span class="p">=</span> <span class="k">null</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// ...</span>
+</code></pre></div></div> <h2 id="section-3-monitor-and-process-advertising-tracking-events"> <a href="#section-3-monitor-and-process-advertising-tracking-events" class="anchor-heading" aria-labelledby="section-3-monitor-and-process-advertising-tracking-events"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Section 3: Monitor and process advertising tracking events </h2> <p><a href="ad_sdk/com.adition.ad_sdk.api.core/-advertisement/index.html">Advertisement</a> can perform tracking, depending on the response from the server. The SDK uses <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tracking-event/index.html">AdTrackingEvent</a> to identify them. Most often, you’ll use these methods for debugging or handling errors related to tracking. In this section, we’ll look how we can work with <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tracking-event/index.html">AdTrackingEvent</a>.</p> <h3 id="step-1-2"> <a href="#step-1-2" class="anchor-heading" aria-labelledby="step-1-2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 1 </h3> <p>You can use two methods to monitor tracking events:</p> <ul> <li><a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/tracking-event-processed.html">AdEventListener.trackingEventProcessed</a></li> <li><a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/tracking-event-processing-failed.html">AdEventListener.trackingEventProcessingFailed</a></li> </ul> <p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">AdItem.kt</code></p> <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ...</span>
+<span class="kd">class</span> <span class="nc">AdItemState</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">adService</span><span class="p">:</span> <span class="nc">AdService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">request</span><span class="p">:</span> <span class="nc">AdRequest</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">eventListener</span> <span class="p">=</span> <span class="kd">object</span> <span class="err">: </span><span class="nc">AdEventListener</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">trackingEventProcessed</span><span class="p">(</span>
+            <span class="n">event</span><span class="p">:</span> <span class="nc">AdTrackingEvent</span><span class="p">,</span>
+            <span class="n">processedURLs</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;,</span>
+            <span class="n">metadata</span><span class="p">:</span> <span class="nc">AdMetadata</span>
+        <span class="p">)</span> <span class="p">{</span>
+            
+        <span class="p">}</span>
+
+        <span class="k">override</span> <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">trackingEventProcessingFailed</span><span class="p">(</span>
+            <span class="n">event</span><span class="p">:</span> <span class="nc">AdTrackingEvent</span><span class="p">,</span>
+            <span class="n">processedURLs</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;,</span>
+            <span class="n">failedURLs</span><span class="p">:</span> <span class="nc">Map</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">,</span> <span class="nc">AdError</span><span class="p">&gt;</span>
+        <span class="p">):</span> <span class="nc">AdEventListener</span><span class="p">.</span><span class="nc">FailureAction</span> <span class="p">{</span>
+            
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// ...</span>
+</code></pre></div></div> <h3 id="step-2-2"> <a href="#step-2-2" class="anchor-heading" aria-labelledby="step-2-2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 2 </h3> <p>Let’s start with <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/tracking-event-processed.html">AdEventListener.trackingEventProcessed</a>, it signals a successful tracking on the server. As you can see, one <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tracking-event/index.html">AdTrackingEvent</a> can have multiple URLs to track on the server, so you have the <code class="language-plaintext highlighter-rouge">processedURLs</code> parameter, which contains a list of all the URLs that were requested.</p> <p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">AdItem.kt</code></p> <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ...</span>
+<span class="kd">class</span> <span class="nc">AdItemState</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">adService</span><span class="p">:</span> <span class="nc">AdService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">request</span><span class="p">:</span> <span class="nc">AdRequest</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">eventListener</span> <span class="p">=</span> <span class="kd">object</span> <span class="err">: </span><span class="nc">AdEventListener</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">trackingEventProcessed</span><span class="p">(</span>
+            <span class="n">event</span><span class="p">:</span> <span class="nc">AdTrackingEvent</span><span class="p">,</span>
+            <span class="n">processedURLs</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;,</span>
+            <span class="n">metadata</span><span class="p">:</span> <span class="nc">AdMetadata</span>
+        <span class="p">)</span> <span class="p">{</span>
+            <span class="k">when</span> <span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">is</span> <span class="nc">AdTrackingEvent</span><span class="p">.</span><span class="nc">Impression</span> <span class="p">-&gt;</span> <span class="p">{</span>
+                    <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span><span class="s">"AdItemState"</span><span class="p">,</span> <span class="s">"My ad $id is ready"</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="k">is</span> <span class="nc">AdTrackingEvent</span><span class="p">.</span><span class="nc">Viewable</span> <span class="p">-&gt;</span> <span class="p">{</span>
+                    <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span>
+                        <span class="s">"AdItemState"</span><span class="p">,</span>
+                        <span class="s">"${event.percentage.value}% of my ad $id is now visible on the screen."</span>
+                    <span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span>
+                <span class="s">"AdItemState"</span><span class="p">,</span> 
+                <span class="s">"SDK notified server about that via URLs: $processedURLs"</span>
+            <span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="k">override</span> <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">trackingEventProcessingFailed</span><span class="p">(</span>
+            <span class="n">event</span><span class="p">:</span> <span class="nc">AdTrackingEvent</span><span class="p">,</span>
+            <span class="n">processedURLs</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;,</span>
+            <span class="n">failedURLs</span><span class="p">:</span> <span class="nc">Map</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">,</span> <span class="nc">AdError</span><span class="p">&gt;</span>
+        <span class="p">):</span> <span class="nc">AdEventListener</span><span class="p">.</span><span class="nc">FailureAction</span> <span class="p">{</span>
+            
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// ...</span>
+</code></pre></div></div> <h3 id="step-3"> <a href="#step-3" class="anchor-heading" aria-labelledby="step-3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 3 </h3> <p><a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/tracking-event-processing-failed.html">AdEventListener.trackingEventProcessingFailed</a> is called in case of an error. In this case, since the event can have several URLs, you get a list of those URLs that were successfully requested and those that failed.</p> <p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">AdItem.kt</code></p> <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ...</span>
+<span class="kd">class</span> <span class="nc">AdItemState</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">adService</span><span class="p">:</span> <span class="nc">AdService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">request</span><span class="p">:</span> <span class="nc">AdRequest</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">eventListener</span> <span class="p">=</span> <span class="kd">object</span> <span class="err">: </span><span class="nc">AdEventListener</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">trackingEventProcessed</span><span class="p">(</span>
+            <span class="n">event</span><span class="p">:</span> <span class="nc">AdTrackingEvent</span><span class="p">,</span>
+            <span class="n">processedURLs</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;,</span>
+            <span class="n">metadata</span><span class="p">:</span> <span class="nc">AdMetadata</span>
+        <span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// ...</span>
+        <span class="p">}</span>
+
+        <span class="k">override</span> <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">trackingEventProcessingFailed</span><span class="p">(</span>
+            <span class="n">event</span><span class="p">:</span> <span class="nc">AdTrackingEvent</span><span class="p">,</span>
+            <span class="n">processedURLs</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;,</span>
+            <span class="n">failedURLs</span><span class="p">:</span> <span class="nc">Map</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">,</span> <span class="nc">AdError</span><span class="p">&gt;</span>
+        <span class="p">):</span> <span class="nc">AdEventListener</span><span class="p">.</span><span class="nc">FailureAction</span> <span class="p">{</span>
+            <span class="k">when</span> <span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">is</span> <span class="nc">AdTrackingEvent</span><span class="p">.</span><span class="nc">Impression</span> <span class="p">-&gt;</span> <span class="p">{</span>
+                    <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span><span class="s">"AdItemState"</span><span class="p">,</span> <span class="s">"My ad $id is ready"</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="k">is</span> <span class="nc">AdTrackingEvent</span><span class="p">.</span><span class="nc">Viewable</span> <span class="p">-&gt;</span> <span class="p">{</span>
+                    <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span>
+                        <span class="s">"AdItemState"</span><span class="p">,</span>
+                        <span class="s">"${event.percentage.value}% of my ad $id is now visible on the screen."</span>
+                    <span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span>
+                <span class="s">"AdItemState"</span><span class="p">,</span>
+                <span class="s">"""
+                    SDK notified server about that via URLs: $processedURLs",
+                    but failed during requesting those: $failedURLs
+                """</span><span class="p">.</span><span class="nf">trimIndent</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// ...</span>
+</code></pre></div></div> <h3 id="step-4"> <a href="#step-4" class="anchor-heading" aria-labelledby="step-4"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 4 </h3> <p>In addition, you should specify how you want to handle this error with <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/-failure-action/index.html">AdEventListener.FailureAction</a>. You can either <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/-failure-action/-i-g-n-o-r-e/index.html">AdEventListener.FailureAction.IGNORE</a> the error, in which case the server will not know about this event, or try to <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/-failure-action/-r-e-t-r-y/index.html">AdEventListener.FailureAction.RETRY</a> the requests to the URLs that failed.</p> <p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">AdItem.kt</code></p> <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ...</span>
+<span class="kd">class</span> <span class="nc">AdItemState</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">adService</span><span class="p">:</span> <span class="nc">AdService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">request</span><span class="p">:</span> <span class="nc">AdRequest</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">eventListener</span> <span class="p">=</span> <span class="kd">object</span> <span class="err">: </span><span class="nc">AdEventListener</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">trackingEventProcessed</span><span class="p">(</span>
+            <span class="n">event</span><span class="p">:</span> <span class="nc">AdTrackingEvent</span><span class="p">,</span>
+            <span class="n">processedURLs</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;,</span>
+            <span class="n">metadata</span><span class="p">:</span> <span class="nc">AdMetadata</span>
+        <span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// ...</span>
+        <span class="p">}</span>
+
+        <span class="k">override</span> <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">trackingEventProcessingFailed</span><span class="p">(</span>
+            <span class="n">event</span><span class="p">:</span> <span class="nc">AdTrackingEvent</span><span class="p">,</span>
+            <span class="n">processedURLs</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;,</span>
+            <span class="n">failedURLs</span><span class="p">:</span> <span class="nc">Map</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">,</span> <span class="nc">AdError</span><span class="p">&gt;</span>
+        <span class="p">):</span> <span class="nc">AdEventListener</span><span class="p">.</span><span class="nc">FailureAction</span> <span class="p">{</span>
+            <span class="k">when</span> <span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">is</span> <span class="nc">AdTrackingEvent</span><span class="p">.</span><span class="nc">Impression</span> <span class="p">-&gt;</span> <span class="p">{</span>
+                    <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span><span class="s">"AdItemState"</span><span class="p">,</span> <span class="s">"My ad $id is ready"</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="k">is</span> <span class="nc">AdTrackingEvent</span><span class="p">.</span><span class="nc">Viewable</span> <span class="p">-&gt;</span> <span class="p">{</span>
+                    <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span>
+                        <span class="s">"AdItemState"</span><span class="p">,</span>
+                        <span class="s">"${event.percentage.value}% of my ad $id is now visible on the screen."</span>
+                    <span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span>
+                <span class="s">"AdItemState"</span><span class="p">,</span>
+                <span class="s">"""
+                    SDK notified server about that via URLs: $processedURLs",
+                    but failed during requesting those: $failedURLs
+                """</span><span class="p">.</span><span class="nf">trimIndent</span><span class="p">()</span>
+            <span class="p">)</span>
+
+            <span class="k">return</span> <span class="nc">AdEventListener</span><span class="p">.</span><span class="nc">FailureAction</span><span class="p">.</span><span class="nc">IGNORE</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// ...</span>
+</code></pre></div></div> <h2 id="section-4-monitor-and-process-advertising-tap-events"> <a href="#section-4-monitor-and-process-advertising-tap-events" class="anchor-heading" aria-labelledby="section-4-monitor-and-process-advertising-tap-events"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Section 4: Monitor and process advertising tap events </h2> <p>As a rule, tapping on an ad will trigger a <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tap-event/index.html">AdTapEvent</a> in the SDK. This can be either a simple opening of the URL to the user in an external browser or more complex logic with redirect processing.</p> <p>In this section, we’ll look how we can work with <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tap-event/index.html">AdTapEvent</a>. Most often, you’ll use it for debugging or handling tap-related errors.</p> <h3 id="step-1-3"> <a href="#step-1-3" class="anchor-heading" aria-labelledby="step-1-3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 1 </h3> <p>Same with tracking events, you can use two methods to monitor tap events:</p> <ul> <li><a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/tap-event-processed.html">AdEventListener.tapEventProcessed</a></li> <li><a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/tap-event-processing-failed.html">AdEventListener.tapEventProcessingFailed</a></li> </ul> <p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">AdItem.kt</code></p> <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ...</span>
+<span class="kd">class</span> <span class="nc">AdItemState</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">adService</span><span class="p">:</span> <span class="nc">AdService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">request</span><span class="p">:</span> <span class="nc">AdRequest</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">eventListener</span> <span class="p">=</span> <span class="kd">object</span> <span class="err">: </span><span class="nc">AdEventListener</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">tapEventProcessed</span><span class="p">(</span>
+            <span class="n">event</span><span class="p">:</span> <span class="nc">AdTapEvent</span><span class="p">,</span>
+            <span class="n">processedURL</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span>
+            <span class="n">metadata</span><span class="p">:</span> <span class="nc">AdMetadata</span>
+        <span class="p">)</span> <span class="p">{</span>
+            
+        <span class="p">}</span>
+
+        <span class="k">override</span> <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">tapEventProcessingFailed</span><span class="p">(</span>
+            <span class="n">event</span><span class="p">:</span> <span class="nc">AdTapEvent</span><span class="p">,</span>
+            <span class="n">error</span><span class="p">:</span> <span class="nc">AdError</span>
+        <span class="p">):</span> <span class="nc">AdEventListener</span><span class="p">.</span><span class="nc">FailureAction</span> <span class="p">{</span>
+            
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// ...</span>
+</code></pre></div></div> <h3 id="step-2-3"> <a href="#step-2-3" class="anchor-heading" aria-labelledby="step-2-3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 2 </h3> <p>Let’s start with <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/tap-event-processed.html">AdEventListener.tapEventProcessed</a>, it signals a successful tap processing.</p> <p>As you can see, all <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tap-event/index.html">AdTapEvent</a> except <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tap-event/-silent-tap/index.html">AdTapEvent.SilentTap</a> should eventually show something to the user. In the case of <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tap-event/-silent-tap/index.html">AdTapEvent.SilentTap</a>, the SDK only handles the tracking associated with the tap.</p> <p><strong>Note:</strong> You can read the <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tap-event/-silent-tap/index.html">AdTapEvent.SilentTap</a> documentation to better understand when this event is used.</p> <p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">AdItem.kt</code></p> <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ...</span>
+<span class="kd">class</span> <span class="nc">AdItemState</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">adService</span><span class="p">:</span> <span class="nc">AdService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">request</span><span class="p">:</span> <span class="nc">AdRequest</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">eventListener</span> <span class="p">=</span> <span class="kd">object</span> <span class="err">: </span><span class="nc">AdEventListener</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">tapEventProcessed</span><span class="p">(</span>
+            <span class="n">event</span><span class="p">:</span> <span class="nc">AdTapEvent</span><span class="p">,</span>
+            <span class="n">processedURL</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span>
+            <span class="n">metadata</span><span class="p">:</span> <span class="nc">AdMetadata</span>
+        <span class="p">)</span> <span class="p">{</span>
+            <span class="k">when</span> <span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">is</span> <span class="nc">AdTapEvent</span><span class="p">.</span><span class="nc">Tap</span><span class="p">,</span> <span class="k">is</span> <span class="nc">AdTapEvent</span><span class="p">.</span><span class="nc">TapURL</span> <span class="p">-&gt;</span> <span class="p">{</span>
+                    <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span>
+                        <span class="s">"AdItemState"</span><span class="p">,</span>
+                        <span class="s">"""
+                            User tapped on my ad $id.
+                            $processedURL opened for the user.
+                        """</span><span class="p">.</span><span class="nf">trimIndent</span><span class="p">()</span>
+                    <span class="p">)</span>
+                <span class="p">}</span>
+                <span class="k">is</span> <span class="nc">AdTapEvent</span><span class="p">.</span><span class="nc">TapAsset</span> <span class="p">-&gt;</span> <span class="p">{</span>
+                    <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span>
+                        <span class="s">"AdItemState"</span><span class="p">,</span>
+                        <span class="s">"""
+                            User tapped on asset ${event.id} of my ad $id.
+                            $processedURL opened for the user.
+                        """</span><span class="p">.</span><span class="nf">trimIndent</span><span class="p">()</span>
+                    <span class="p">)</span>
+                <span class="p">}</span>
+                <span class="k">is</span> <span class="nc">AdTapEvent</span><span class="p">.</span><span class="nc">SilentTap</span> <span class="p">-&gt;</span> <span class="p">{</span>
+                    <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span>
+                        <span class="s">"AdItemState"</span><span class="p">,</span>
+                        <span class="s">"""
+                            The renderer of ad $id want to process click counter redirect.
+                            URL for redirect: ${event.url}.
+                            As a result of redirects we get $processedURL.
+                            This URL is NOT opened for the user.
+                        """</span><span class="p">.</span><span class="nf">trimIndent</span><span class="p">()</span>
+                    <span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">override</span> <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">tapEventProcessingFailed</span><span class="p">(</span>
+            <span class="n">event</span><span class="p">:</span> <span class="nc">AdTapEvent</span><span class="p">,</span>
+            <span class="n">error</span><span class="p">:</span> <span class="nc">AdError</span>
+        <span class="p">):</span> <span class="nc">AdEventListener</span><span class="p">.</span><span class="nc">FailureAction</span> <span class="p">{</span>
+            
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// ...</span>
+</code></pre></div></div> <h3 id="step-3-1"> <a href="#step-3-1" class="anchor-heading" aria-labelledby="step-3-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 3 </h3> <p><a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/tap-event-processing-failed.html">AdEventListener.tapEventProcessingFailed</a> is called in case of an error. In this case, we get the <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tap-event/index.html">AdTapEvent</a> that caused the <a href="ad_sdk/com.adition.ad_sdk.api.entities.exception/-ad-error/index.html">AdError</a>. Just like with <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tracking-event/index.html">AdTrackingEvent</a>, you can decide how you will handle this error with <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/-failure-action/index.html">AdEventListener.FailureAction</a>.</p> <p><strong>Note:</strong> Most often, the error is related to an incorrect URL received in the advertisement, but in the case of <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-tap-event/-silent-tap/index.html">AdTapEvent.SilentTap</a>, it can be errors related to redirect processing.</p> <p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">AdItem.kt</code></p> <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ...</span>
+<span class="kd">class</span> <span class="nc">AdItemState</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">adService</span><span class="p">:</span> <span class="nc">AdService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">request</span><span class="p">:</span> <span class="nc">AdRequest</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">eventListener</span> <span class="p">=</span> <span class="kd">object</span> <span class="err">: </span><span class="nc">AdEventListener</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">tapEventProcessed</span><span class="p">(</span>
+            <span class="n">event</span><span class="p">:</span> <span class="nc">AdTapEvent</span><span class="p">,</span>
+            <span class="n">processedURL</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span>
+            <span class="n">metadata</span><span class="p">:</span> <span class="nc">AdMetadata</span>
+        <span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// ...</span>
+        <span class="p">}</span>
+
+        <span class="k">override</span> <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">tapEventProcessingFailed</span><span class="p">(</span>
+            <span class="n">event</span><span class="p">:</span> <span class="nc">AdTapEvent</span><span class="p">,</span>
+            <span class="n">error</span><span class="p">:</span> <span class="nc">AdError</span>
+        <span class="p">):</span> <span class="nc">AdEventListener</span><span class="p">.</span><span class="nc">FailureAction</span> <span class="p">{</span>
+            <span class="k">when</span> <span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">is</span> <span class="nc">AdTapEvent</span><span class="p">.</span><span class="nc">Tap</span><span class="p">,</span> <span class="k">is</span> <span class="nc">AdTapEvent</span><span class="p">.</span><span class="nc">TapURL</span> <span class="p">-&gt;</span> <span class="p">{</span>
+                    <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span><span class="s">"AdItemState"</span><span class="p">,</span> <span class="s">"User tapped on my ad $id."</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="k">is</span> <span class="nc">AdTapEvent</span><span class="p">.</span><span class="nc">TapAsset</span> <span class="p">-&gt;</span> <span class="p">{</span>
+                    <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span><span class="s">"AdItemState"</span><span class="p">,</span> <span class="s">"User tapped on asset ${event.id} of my ad $id"</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="k">is</span> <span class="nc">AdTapEvent</span><span class="p">.</span><span class="nc">SilentTap</span> <span class="p">-&gt;</span> <span class="p">{</span>
+                    <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span>
+                        <span class="s">"AdItemState"</span><span class="p">,</span>
+                        <span class="s">"""
+                            The renderer of ad $id want to process click counter redirect.
+                            URL for redirect: ${event.url}.
+                        """</span><span class="p">.</span><span class="nf">trimIndent</span><span class="p">()</span>
+                    <span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            
+            <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span><span class="s">"AdItemState"</span><span class="p">,</span> <span class="s">"But processing failed with error: ${error.description}"</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="nc">AdEventListener</span><span class="p">.</span><span class="nc">FailureAction</span><span class="p">.</span><span class="nc">IGNORE</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// ...</span>
+</code></pre></div></div> <h2 id="section-5-monitor-and-process-custom-advertising-events"> <a href="#section-5-monitor-and-process-custom-advertising-events" class="anchor-heading" aria-labelledby="section-5-monitor-and-process-custom-advertising-events"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Section 5: Monitor and process custom advertising events </h2> <p>The AdSDK offers extensive customisation functionality, such as creating customised ads and sending customised events. In this section, we will consider only those events that can occur when using a custom renderer or custom HTML advertising.</p> <h3 id="step-1-4"> <a href="#step-1-4" class="anchor-heading" aria-labelledby="step-1-4"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 1 </h3> <p>Let’s start with the simplest event, when the <a href="ad_sdk/com.adition.ad_sdk.api.core/-ad-renderer/index.html">AdRenderer</a> wants to notify the application of an event with a name and an optional message – <a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/renderer-message-received.html">AdEventListener.rendererMessageReceived</a>.</p> <p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">AdItem.kt</code></p> <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ...</span>
+<span class="kd">class</span> <span class="nc">AdItemState</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">adService</span><span class="p">:</span> <span class="nc">AdService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">request</span><span class="p">:</span> <span class="nc">AdRequest</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">eventListener</span> <span class="p">=</span> <span class="kd">object</span> <span class="err">: </span><span class="nc">AdEventListener</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">rendererMessageReceived</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nc">String</span><span class="p">?)</span> <span class="p">{</span>
+
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// ...</span>
+</code></pre></div></div> <h3 id="step-2-4"> <a href="#step-2-4" class="anchor-heading" aria-labelledby="step-2-4"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 2 </h3> <p>The renderer can send any message that you can process. In our case, we just want to log this event.</p> <p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">AdItem.kt</code></p> <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ...</span>
+<span class="kd">class</span> <span class="nc">AdItemState</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">adService</span><span class="p">:</span> <span class="nc">AdService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">request</span><span class="p">:</span> <span class="nc">AdRequest</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">eventListener</span> <span class="p">=</span> <span class="kd">object</span> <span class="err">: </span><span class="nc">AdEventListener</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">rendererMessageReceived</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nc">String</span><span class="p">?)</span> <span class="p">{</span>
+            <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span>
+                <span class="s">"AdItemState"</span><span class="p">,</span>
+                <span class="s">"""
+                    Renderer of my ad $id sent me a message.
+                    Name: $name, message: $message"
+                    We can create custom logic in the application based on it.
+                """</span><span class="p">.</span><span class="nf">trimIndent</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// ...</span>
+</code></pre></div></div> <h3 id="step-3-2"> <a href="#step-3-2" class="anchor-heading" aria-labelledby="step-3-2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 3 </h3> <p>In addition, the custom <a href="ad_sdk/com.adition.ad_sdk.api.core/-ad-renderer/index.html">AdRenderer</a> can perform custom tracking. To monitor such events, you can use:</p> <ul> <li><a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/custom-tracking-event-processed.html">AdEventListener.customTrackingEventProcessed</a></li> <li><a href="ad_sdk/com.adition.ad_sdk.api.services.event_listener/-ad-event-listener/custom-tracking-event-processing-failed.html">AdEventListener.customTrackingEventProcessingFailed</a></li> </ul> <p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">AdItem.kt</code></p> <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ...</span>
+<span class="kd">class</span> <span class="nc">AdItemState</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">adService</span><span class="p">:</span> <span class="nc">AdService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">request</span><span class="p">:</span> <span class="nc">AdRequest</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">eventListener</span> <span class="p">=</span> <span class="kd">object</span> <span class="err">: </span><span class="nc">AdEventListener</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">customTrackingEventProcessed</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">metadata</span><span class="p">:</span> <span class="nc">AdMetadata</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="p">}</span>
+
+        <span class="k">override</span> <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">customTrackingEventProcessingFailed</span><span class="p">(</span>
+            <span class="n">name</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span>
+            <span class="n">url</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span>
+            <span class="n">error</span><span class="p">:</span> <span class="nc">AdError</span>
+        <span class="p">):</span> <span class="nc">AdEventListener</span><span class="p">.</span><span class="nc">FailureAction</span> <span class="p">{</span>
+
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// ...</span>
+</code></pre></div></div> <h3 id="step-4-1"> <a href="#step-4-1" class="anchor-heading" aria-labelledby="step-4-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 4 </h3> <p>The logic is similar to tracking or tap events monitoring and handling. You can get the name of the event, the URL where the request was made, a possible error, and decide how to handle it.</p> <p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">AdItem.kt</code></p> <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ...</span>
+<span class="kd">class</span> <span class="nc">AdItemState</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">adService</span><span class="p">:</span> <span class="nc">AdService</span><span class="p">,</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">request</span><span class="p">:</span> <span class="nc">AdRequest</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">private</span> <span class="kd">val</span> <span class="py">eventListener</span> <span class="p">=</span> <span class="kd">object</span> <span class="err">: </span><span class="nc">AdEventListener</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">customTrackingEventProcessed</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">metadata</span><span class="p">:</span> <span class="nc">AdMetadata</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span>
+                <span class="s">"AdItemState"</span><span class="p">,</span>
+                <span class="s">"Custom tracking event '$name' of my ad $id processed. URL: $url"</span>
+            <span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="k">override</span> <span class="k">suspend</span> <span class="k">fun</span> <span class="nf">customTrackingEventProcessingFailed</span><span class="p">(</span>
+            <span class="n">name</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span>
+            <span class="n">url</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span>
+            <span class="n">error</span><span class="p">:</span> <span class="nc">AdError</span>
+        <span class="p">):</span> <span class="nc">AdEventListener</span><span class="p">.</span><span class="nc">FailureAction</span> <span class="p">{</span>
+            <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span>
+                <span class="s">"AdItemState"</span><span class="p">,</span>
+                <span class="s">"""
+                    Custom tracking event '$name' of my ad $id failed during processing.
+                    URL: $url, error: ${error.description}
+                """</span><span class="p">.</span><span class="nf">trimIndent</span><span class="p">()</span>
+            <span class="p">)</span>
+            
+            <span class="k">return</span> <span class="nc">AdEventListener</span><span class="p">.</span><span class="nc">FailureAction</span><span class="p">.</span><span class="nc">IGNORE</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// ...</span>
+</code></pre></div></div> </main> </div> </div> <div class="search-overlay"></div> </div> </body> </html>
