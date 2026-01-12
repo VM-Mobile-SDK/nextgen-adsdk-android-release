@@ -48,7 +48,9 @@ credentials {
 ```
 
 ## Add the package dependencies
-In the build.gradle file you have to add your credentials:
+In the `build.gradle` file you have to add implementation.
+
+Before SDK 6.0.0 version dependencies:
 ```Groovy
 ....
 
@@ -58,8 +60,18 @@ dependencies {
 }
 
 ```
-For Maven you can look here:\
-https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#installing-a-package
+
+Starting with SDK 6.0.0 version, the `sdk_core` and `sdk_presentation_compose` modules have been merged into one. Therefore, if you plan to use SDK 6.0.0 or higher, your `build.gradle` should look like this:
+```Groovy
+....
+
+dependencies {
+    implementation 'com.adition.adsdk:ad_sdk:x.x.x'
+}
+
+```
+
+For Maven you can look [here](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#installing-a-package).
 
 ## Aditional documentation
 
