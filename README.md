@@ -73,8 +73,13 @@ dependencies {
 
 For Maven you can look [here](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#installing-a-package).
 
-## Aditional documentation
+## Documentation
 
 You can learn more about how to work with the SDK in the [documentation](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/).
-You can also follow our tutorial documentation that will show you how to integrate the SDK into a new application.
 
+## Tutorial
+
+You can also follow our [tutorial documentation](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/6.0.0/meet-adsdk.html) that will show you how to integrate the SDK into a new application.
+
+## Issues
+Have you found a problem with the SDK? [Create an issue report](https://vm-mobile-sdk.github.io/nextgen-adsdk-android-release/issue_report.html) and let us know!
